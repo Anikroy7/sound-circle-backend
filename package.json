@@ -1,0 +1,121 @@
+{
+  "name": "soundcircle-api-service",
+  "version": "0.0.1",
+  "description": "SoundCircle — musician discovery and band management API",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build:core-api": "env-cmd -f .env nest build core-api",
+    "start": "env-cmd -f .env nest start",
+    "start:prod": "env-cmd -f .env nest start",
+    "start:core-api:dev": "env-cmd -f .env nest start core-api --watch",
+    "start:core-api:stg": "nest start core-api",
+    "start:core-api:prod": "nest start core-api",
+    "start:debug": "env-cmd -f .env nest start --debug --watch",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "db:drop": "env-cmd -f .env -- yarn typeorm -- schema:drop -d libs/shared/src/config/datasource.ts",
+    "migration:create": "env-cmd -f .env -- yarn typeorm -- migration:create",
+    "__migration:generate": "env-cmd -f .env -- yarn typeorm -- -d libs/shared/src/config/datasource.ts migration:generate",
+    "migration:run": "env-cmd -f .env -- yarn typeorm -- migration:run -d libs/shared/src/config/datasource.ts",
+    "migration:run-stg": "yarn typeorm migration:run -d libs/shared/src/config/datasource.ts",
+    "migration:rollback": "env-cmd -f .env -- yarn typeorm -- migration:revert -d libs/shared/src/config/datasource.ts",
+    "migration:rollback-stg": "yarn typeorm -- migration:revert -d libs/shared/src/config/datasource.ts",
+    "test": "env-cmd -f .env --silent -- jest",
+    "test:watch": "env-cmd -f .env --silent -- jest --watch",
+    "test:cov": "env-cmd -f .env --silent -- jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "lint": "eslint \"**/*{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"**/*/{src,test}/**/*.ts\" --fix",
+    "formatter": "prettier --write \"**/*/{src,test}/**/*.ts\"",
+    "husky:prepare": "husky",
+    "postinstall": "yarn husky:prepare"
+  },
+  "dependencies": {
+    "@nestjs/cli": "11.0.24",
+    "@nestjs/common": "11.2.3",
+    "@nestjs/core": "11.2.3",
+    "@nestjs/platform-express": "11.2.3",
+    "@nestjs/swagger": "11.4.7",
+    "@nestjs/typeorm": "11.0.3",
+    "@types/express": "5.0.6",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.2",
+    "env-cmd": "11.0.0",
+    "helmet": "8.3.0",
+    "lodash": "4.17.21",
+    "moment": "2.30.1",
+    "nest-winston": "1.10.2",
+    "nestjs-typeorm-paginate": "4.1.0",
+    "pg": "8.23.0",
+    "reflect-metadata": "0.2.2",
+    "rimraf": "6.1.3",
+    "rxjs": "7.8.2",
+    "typeorm": "1.1.0",
+    "winston": "3.19.0",
+    "winston-daily-rotate-file": "5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@nestjs/schematics": "11.1.0",
+    "@nestjs/testing": "11.2.3",
+    "@types/jest": "30.0.0",
+    "@types/lodash": "4.17.25",
+    "@types/node": "24.13.3",
+    "@typescript-eslint/eslint-plugin": "8.68.0",
+    "@typescript-eslint/parser": "8.68.0",
+    "eslint": "10.9.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.6",
+    "husky": "9.1.7",
+    "jest": "30.4.2",
+    "lint-staged": "17.3.0",
+    "prettier": "3.9.6",
+    "source-map-support": "0.5.21",
+    "ts-jest": "29.4.12",
+    "ts-loader": "9.6.2",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "6.0.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.ts",
+      "!**/*.spec.ts",
+      "!**/*.d.ts"
+    ],
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleNameMapper": {
+      "^@soundcircle/shared(|/.*)$": "<rootDir>/libs/shared/src/$1",
+      "^@apps/core-api(|/.*)$": "<rootDir>/apps/core-api/src/$1"
+    }
+  },
+  "lint-staged": {
+    "**/*/{src,test}/**/*.{js,ts,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

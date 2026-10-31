@@ -1,0 +1,34 @@
+/node_modules
+/.env
+/.env.local
+/.env.staging
+/.env.production
+**/*/logs
+/logs
+/yarn-error.log
+/storage
+/TOKEN.MD
+/upload-files
+# NestJS generated files
+/dist/
+*.d.ts
+*.js.map
+
+# Compiled TypeScript
+*.tsbuildinfo
+
+# NestJS temporary files
+.eslintcache
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Test artefacts
+/coverage
+
+# VS Code specific files
+.vscode/
+
+# IDEA (e.g., WebStorm) specific files
+.idea/
