@@ -7,3 +7,7 @@
 
 /*========IDENTITY AND AUTH (§4.1)=========*/
 export const TABLE_USERS: string = "users";
+export const TABLE_USER_LOCATIONS: string = "user_locations";
+
+/*========REFERENCE DATA (§4.2)=========*/
+export const TABLE_LOCATIONS: string = "locations";

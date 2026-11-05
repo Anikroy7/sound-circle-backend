@@ -1,5 +1,5 @@
-# LOCAL DEVELOPMENT ONLY — PostgreSQL on a laptop. Port 5433, so it runs beside any other
-# Postgres already on 5432.
+# LOCAL DEVELOPMENT ONLY — PostgreSQL on a laptop. Port 5435, so it runs beside any other
+# Postgres already on 5432–5434.
 #
 #   docker compose -f infra/docker/docker-compose.local.yml up -d
 
@@ -7,7 +7,8 @@ name: soundcircle-local
 
 services:
   postgres:
-    image: postgres:18-alpine
+    # PostgreSQL 18 with PostGIS 3.6 — `locations.center_point` is a PostGIS geography (schema-design §4.2).
+    image: postgis/postgis:18-3.6-alpine
     container_name: soundcircle-postgres
     restart: unless-stopped
     environment:
@@ -15,7 +16,7 @@ services:
       POSTGRES_USER: soundcircle
       POSTGRES_PASSWORD: soundcircle
     ports:
-      - "5433:5432"
+      - "5435:5432"
     volumes:
       # PostgreSQL 18 moved the recommended mount point to /var/lib/postgresql; mounting
       # the old .../data path leaves the volume unused. See docker-library/postgres#1259.

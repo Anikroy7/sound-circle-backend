@@ -1,0 +1,98 @@
+[
+    {
+        "id": "cc-01",
+        "name": "Dhaka North City Corporation",
+        "nameBn": "ঢাকা উত্তর সিটি কর্পোরেশন",
+        "shortName": "DNCC",
+        "districtId": "dis-01",
+        "totalWards": 54
+    },
+    {
+        "id": "cc-02",
+        "name": "Dhaka South City Corporation",
+        "nameBn": "ঢাকা দক্ষিণ সিটি কর্পোরেশন",
+        "shortName": "DSCC",
+        "districtId": "dis-01",
+        "totalWards": 57
+    },
+    {
+        "id": "cc-03",
+        "name": "Chattogram City Corporation",
+        "nameBn": "চট্টগ্রাম সিটি কর্পোরেশন",
+        "shortName": "CCC",
+        "districtId": "dis-17",
+        "totalWards": 41
+    },
+    {
+        "id": "cc-04",
+        "name": "Gazipur City Corporation",
+        "nameBn": "গাজীপুর সিটি কর্পোরেশন",
+        "shortName": "GCC",
+        "districtId": "dis-03",
+        "totalWards": 57
+    },
+    {
+        "id": "cc-05",
+        "name": "Narayanganj City Corporation",
+        "nameBn": "নারায়ণগঞ্জ সিটি কর্পোরেশন",
+        "shortName": "NCC",
+        "districtId": "dis-09",
+        "totalWards": 27
+    },
+    {
+        "id": "cc-06",
+        "name": "Cumilla City Corporation",
+        "nameBn": "কুমিল্লা সিটি কর্পোরেশন",
+        "shortName": "ComCC",
+        "districtId": "dis-19",
+        "totalWards": 27
+    },
+    {
+        "id": "cc-07",
+        "name": "Khulna City Corporation",
+        "nameBn": "খুলনা সিটি কর্পোরেশন",
+        "shortName": "KCC",
+        "districtId": "dis-35",
+        "totalWards": 31
+    },
+    {
+        "id": "cc-08",
+        "name": "Rajshahi City Corporation",
+        "nameBn": "রাজশাহী সিটি কর্পোরেশন",
+        "shortName": "RCC",
+        "districtId": "dis-47",
+        "totalWards": 30
+    },
+    {
+        "id": "cc-09",
+        "name": "Barishal City Corporation",
+        "nameBn": "বরিশাল সিটি কর্পোরেশন",
+        "shortName": "BCC",
+        "districtId": "dis-26",
+        "totalWards": 30
+    },
+    {
+        "id": "cc-10",
+        "name": "Sylhet City Corporation",
+        "nameBn": "সিলেট সিটি কর্পোরেশন",
+        "shortName": "SCC",
+        "districtId": "dis-60",
+        "totalWards": 42
+    },
+    {
+        "id": "cc-11",
+        "name": "Mymensingh City Corporation",
+        "nameBn": "ময়মনসিংহ সিটি কর্পোরেশন",
+        "shortName": "MCC",
+        "districtId": "dis-62",
+        "totalWards": 33
+    },
+    {
+        "id": "cc-12",
+        "name": "Rangpur City Corporation",
+        "nameBn": "রংপুর সিটি কর্পোরেশন",
+        "shortName": "RpCC",
+        "districtId": "dis-55",
+        "totalWards": 33
+    }
+]

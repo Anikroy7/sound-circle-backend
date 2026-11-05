@@ -7,6 +7,7 @@ import { FilterUserDto } from "@soundcircle/shared/utils/dtos/identity/filter-us
 import { ApiResponse } from "@soundcircle/shared/utils/util/utils";
 import { UserService } from "@apps/core-api/modules/user/user.service";
 import { CreateUserDto } from "@apps/core-api/modules/user/dto/create-user.dto";
+import { UserWithLocations } from "@apps/core-api/modules/user/common/types/user.type";
 
 /** ⚠ Public until auth lands — which is why `GET /users` masks every non-PUBLIC email and phone. */
 @ApiTags("IDN")
@@ -23,9 +24,9 @@ export class UserPublicController extends PublicBaseController {
   }
 
   @Post()
-  @ApiOperation({ summary: "Create a user with an email and/or phone" })
-  async create(@Body() reqDto: CreateUserDto): Promise<UserEntity> {
-    const user: UserEntity = await this.userService.create(reqDto);
+  @ApiOperation({ summary: "Create a user with an email and/or phone, and optionally their available locations" })
+  async create(@Body() reqDto: CreateUserDto): Promise<UserWithLocations> {
+    const user: UserWithLocations = await this.userService.create(reqDto);
     return ApiResponse(user, "Created Successfully");
   }
 }

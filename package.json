@@ -24,6 +24,8 @@
     "migration:run": "env-cmd -f .env -- yarn typeorm -- migration:run -d libs/shared/src/config/datasource.ts",
     "migration:run-stg": "yarn typeorm migration:run -d libs/shared/src/config/datasource.ts",
     "migration:rollback": "env-cmd -f .env -- yarn typeorm -- migration:revert -d libs/shared/src/config/datasource.ts",
+    "seed:run": "env-cmd -f .env -- ts-node -r tsconfig-paths/register libs/shared/src/database/seeds/seed.ts",
+    "seed:run-stg": "ts-node -r tsconfig-paths/register libs/shared/src/database/seeds/seed.ts",
     "migration:rollback-stg": "yarn typeorm -- migration:revert -d libs/shared/src/config/datasource.ts",
     "test": "env-cmd -f .env --silent -- jest",
     "test:watch": "env-cmd -f .env --silent -- jest --watch",

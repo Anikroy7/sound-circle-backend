@@ -16,19 +16,19 @@
 ## Repository map
 
 ```
-apps/core-api/   the HTTP API — modules/app (health, ip), modules/user
+apps/core-api/   the HTTP API — modules/app (health, ip), modules/user, modules/location
 libs/shared/     @soundcircle/shared — organised by KIND OF FILE, not by feature
 doc/             the documents of record
 infra/docker/    local Postgres only
 ```
 
-**Entities, repositories and migrations always live in `libs/shared/src/database`**, never beside the feature.
+**Entities, repositories, migrations and seeds always live in `libs/shared/src/database`**, never beside the feature. `yarn seed:run` loads the reference data after `yarn migration:run` (coding-standards §9.1).
 
 **Path aliases:** `@soundcircle/shared/*` → `libs/shared/src/*` · `@apps/core-api/*` → `apps/core-api/src/*`.
 
 ## Current state
 
-Only `users` is built: `POST /api/v1/users` and `GET /api/v1/users`, plus `/health` and `/ip`. **There is no auth yet.** Every route is on `PublicBaseController`, `AuthUser.get()` is always null (so `created_by` is null and `created_ip` is set), and `GET /users` masks every email/phone that is not `PUBLIC`. Everything else in schema-design §4 is designed, not built.
+Built: `users` (`POST` / `GET /api/v1/users`), `user_locations` (written at signup) and `locations` (seeded; `GET /api/v1/locations`), plus `/health` and `/ip`. **There is no auth yet.** Every route is on `PublicBaseController`, `AuthUser.get()` is always null (so `created_by` is null and `created_ip` is set), and `GET /users` masks every email/phone that is not `PUBLIC`. Everything else in schema-design §4 is designed, not built (§8 tracks it).
 
 ## Traps
 
@@ -45,6 +45,8 @@ Each of these fails **silently**.
 - **Every enum is a `smallint`, and its numeric values are contract.** Never renumbered; a retired value stays burnt.
 - **One migration per table**, with its indexes and constraints in the same file. Constraint names are **pinned on the entity too**, or `migration:generate` proposes dropping them.
 - **The `sort-order.query-builder` side-effect import** in `main.ts` must stay, or every `.sortOrder()` throws.
+- **The database must have PostGIS.** `locations.center_point` is a `geography`, so plain `postgres` images fail with `type "geometry" does not exist`. Local Docker uses `postgis/postgis:18-3.6-alpine`.
+- **GeoJSON is `[longitude, latitude]`.** The seeder rejects points outside Bangladesh to catch a swap.
 - **Loose TypeScript** (`strictNullChecks` / `noImplicitAny` off). Handle null and undefined deliberately; the compiler will not.
 
 ## Comments

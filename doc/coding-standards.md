@@ -239,7 +239,7 @@ export class UserPublicController extends PublicBaseController {
 - Route params are integers → `ParseIntPipe`. Paths are `kebab-case` plural nouns. The version lives in the global prefix (`api/v1`), never in a controller path.
 - **Annotate every handler's return type** and type the local before returning it.
 - **Messages:** `"Fetch Successfully"`, `"Created Successfully"`, `"Updated Successfully"`, `"Deleted Successfully"`.
-- `@ApiTags` per domain: `"IDN"` identity, `"MUS"` musician, `"BND"` band.
+- `@ApiTags` per domain: `"IDN"` identity, `"REF"` reference data, `"MUS"` musician, `"BND"` band.
 
 ---
 
@@ -273,8 +273,25 @@ Schema changes are always explicit migrations under `libs/shared/src/database/mi
 - Filename `<timestamp>-create_<table>_table.ts`; class `Create<Table>Table<timestamp>`. **The timestamp is a dependency statement:** a table takes a timestamp after every table it references.
 - Table names come from `TABLE_*` constants. Constraint names follow `` `${TABLE_X}_fk_<col>` ``, `_idx_`, `_uq_`, `_ck_`, pinned on the entity too.
 - **Always implement `down()`**: `dropTable(TABLE_X, true, true, true)`.
-- `migration:generate` is a **diff check**, not the source. Generate it, read it, fold the change into the owning table's file. Raw-SQL objects TypeORM cannot model (a `pg_trgm` index, a PostGIS column) are invisible to it, so it will propose dropping them; reject those drops.
+- `migration:generate` is a **diff check**, not the source. Generate it, read it, fold the change into the owning table's file. Raw-SQL objects TypeORM cannot model (a `pg_trgm` index, an expression index) are invisible to it, so it will propose dropping them; reject those drops. A PostGIS `geography` column and its `spatial: true` index are **not** raw SQL: TypeORM models them, so declare them on the entity like any other column (`locations.center_point`).
 - **In development, a schema change is an edit to the table's own `create_<table>_table` file.** Once a table is on a shared database, stop editing it and add a new `add_`/`alter_` migration instead.
+
+### 9.1 Seeds
+
+Reference data (schema-design §4.2) is seeded, never inserted by a migration. `libs/shared/src/database/seeds/reference/location.seeder.ts` is the pattern.
+
+```
+database/seeds/seed.ts                         # the runner: SEEDERS, in order, in one transaction
+database/seeds/seeder.ts                       # the Seeder interface
+database/seeds/reference/location.seeder.ts    # + location.seeder.spec.ts beside it
+database/seeds/data/locations/*.json           # the source data, unmodified
+```
+
+- `yarn seed:run` runs **after** `yarn migration:run`. A seeder whose table references another's goes after it in `SEEDERS`.
+- **Idempotent:** upsert on a stable key (`manager.upsert(..., { conflictPaths: ["id"] })`), never a blind insert. Re-running after a data change must be safe.
+- Write through the `manager` the runner passes, never a repository.
+- **Explicit ids move the identity sequence past them** (`setval(pg_get_serial_sequence(...), max(id))`), or the next row inserted without an id collides.
+- Turning the source into rows is a **pure function** with a spec that runs against the real data file, so a broken data refresh fails in `yarn test`, not halfway through a seed.
 
 ---
 

@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { Transform } from "class-transformer";
-import { IsEmail, IsOptional, IsString, Length, Matches, MaxLength, ValidateIf } from "class-validator";
+import { ArrayMaxSize, ArrayUnique, IsArray, IsEmail, IsInt, IsOptional, IsString, Length, Matches, MaxLength, ValidateIf } from "class-validator";
 import { CreateCommonDto } from "@soundcircle/shared/utils/dtos/create-common.dto";
 import { UserEntity } from "@soundcircle/shared/database/entities/identity/user.entity";
 import { ContactVisibility } from "@soundcircle/shared/database/entities/identity/enums/identity.enum";
@@ -8,6 +8,7 @@ import { IsNumeric } from "@soundcircle/shared/utils/validators/is-number-string
 import { IsUnique } from "@soundcircle/shared/utils/validators/is-unique.validator";
 import { IsValueIn } from "@soundcircle/shared/utils/validators/is-value-in.validator";
 import { enumToString, enumValuesToArray } from "@soundcircle/shared/utils/util/utils";
+import { MAX_USER_LOCATIONS } from "@soundcircle/shared/utils/util/constant";
 
 /** At least one of `email` / `phone` — mirrors `users_ck_email_or_phone` (schema-design §4.1). */
 export class CreateUserDto extends CreateCommonDto {
@@ -47,4 +48,16 @@ export class CreateUserDto extends CreateCommonDto {
   @IsValueIn(enumValuesToArray(ContactVisibility))
   @ApiPropertyOptional({ type: Number, enum: ContactVisibility, default: ContactVisibility.ONLY_ME, description: enumToString(ContactVisibility) })
   phone_visibility?: ContactVisibility;
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(MAX_USER_LOCATIONS)
+  @ArrayUnique()
+  @IsInt({ each: true })
+  @ApiPropertyOptional({
+    type: [Number],
+    example: [30, 2015],
+    description: "Where the user is available to join a band: ids from GET /locations, any level. A division covers everything inside it",
+  })
+  location_ids?: number[];
 }

@@ -1,0 +1,5753 @@
+[
+    {
+        "id": "tha-0001",
+        "name": "Dhamrai",
+        "nameBn": "ধামরাই",
+        "type": "rural",
+        "upazilaId": "upa-001",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0002",
+        "name": "Dohar",
+        "nameBn": "দোহার",
+        "type": "rural",
+        "upazilaId": "upa-002",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0003",
+        "name": "Keraniganj",
+        "nameBn": "কেরানীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-003",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0004",
+        "name": "Nawabganj",
+        "nameBn": "নবাবগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-004",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0005",
+        "name": "Savar",
+        "nameBn": "সাভার",
+        "type": "rural",
+        "upazilaId": "upa-005",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0006",
+        "name": "Gazipur Sadar",
+        "nameBn": "গাজীপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-006",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0007",
+        "name": "Kaliakair",
+        "nameBn": "কালিয়াকৈর",
+        "type": "rural",
+        "upazilaId": "upa-007",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0008",
+        "name": "Kaliganj",
+        "nameBn": "কালীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-008",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0009",
+        "name": "Kapasia",
+        "nameBn": "কাপাসিয়া",
+        "type": "rural",
+        "upazilaId": "upa-009",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0010",
+        "name": "Sreepur",
+        "nameBn": "শ্রীপুর",
+        "type": "rural",
+        "upazilaId": "upa-010",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0011",
+        "name": "Alfadanga",
+        "nameBn": "আলফাডাঙ্গা",
+        "type": "rural",
+        "upazilaId": "upa-011",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0012",
+        "name": "Boalmari",
+        "nameBn": "বোয়ালমারী",
+        "type": "rural",
+        "upazilaId": "upa-012",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0013",
+        "name": "Charbhadrasan",
+        "nameBn": "চরভদ্রাসন",
+        "type": "rural",
+        "upazilaId": "upa-013",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0014",
+        "name": "Faridpur Sadar",
+        "nameBn": "ফরিদপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-014",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0015",
+        "name": "Madhukhali",
+        "nameBn": "মধুখালি",
+        "type": "rural",
+        "upazilaId": "upa-015",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0016",
+        "name": "Nagarkanda",
+        "nameBn": "নগরকান্দা",
+        "type": "rural",
+        "upazilaId": "upa-016",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0017",
+        "name": "Bhanga",
+        "nameBn": "ভাঙ্গা",
+        "type": "rural",
+        "upazilaId": "upa-017",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0018",
+        "name": "Sadarpur",
+        "nameBn": "সদরপুর",
+        "type": "rural",
+        "upazilaId": "upa-018",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0019",
+        "name": "Saltha",
+        "nameBn": "সালথা",
+        "type": "rural",
+        "upazilaId": "upa-019",
+        "districtId": "dis-02",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0020",
+        "name": "Gopalganj Sadar",
+        "nameBn": "গোপালগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-020",
+        "districtId": "dis-04",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0021",
+        "name": "Kashiani",
+        "nameBn": "কাশিয়ানী",
+        "type": "rural",
+        "upazilaId": "upa-021",
+        "districtId": "dis-04",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0022",
+        "name": "Muksudpur",
+        "nameBn": "মুকসুদপুর",
+        "type": "rural",
+        "upazilaId": "upa-022",
+        "districtId": "dis-04",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0023",
+        "name": "Tungipara",
+        "nameBn": "টুংগীপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-023",
+        "districtId": "dis-04",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0024",
+        "name": "Kotalipara",
+        "nameBn": "কোটালীপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-024",
+        "districtId": "dis-04",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0025",
+        "name": "Madaripur Sadar",
+        "nameBn": "মাদারীপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-025",
+        "districtId": "dis-06",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0026",
+        "name": "Shibchar",
+        "nameBn": "শিবচর",
+        "type": "rural",
+        "upazilaId": "upa-026",
+        "districtId": "dis-06",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0027",
+        "name": "Kalkini",
+        "nameBn": "কালকিনি",
+        "type": "rural",
+        "upazilaId": "upa-027",
+        "districtId": "dis-06",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0028",
+        "name": "Rajoir",
+        "nameBn": "রাজৈর",
+        "type": "rural",
+        "upazilaId": "upa-028",
+        "districtId": "dis-06",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0029",
+        "name": "Dasar",
+        "nameBn": "ডাসার",
+        "type": "rural",
+        "upazilaId": "upa-029",
+        "districtId": "dis-06",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0030",
+        "name": "Harirampur",
+        "nameBn": "হরিরামপুর",
+        "type": "rural",
+        "upazilaId": "upa-030",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0031",
+        "name": "Saturia",
+        "nameBn": "সাটুরিয়া",
+        "type": "rural",
+        "upazilaId": "upa-031",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0032",
+        "name": "Manikganj Sadar",
+        "nameBn": "মানিকগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-032",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0033",
+        "name": "Ghior",
+        "nameBn": "ঘিওর",
+        "type": "rural",
+        "upazilaId": "upa-033",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0034",
+        "name": "Shivalaya",
+        "nameBn": "শিবালয়",
+        "type": "rural",
+        "upazilaId": "upa-034",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0035",
+        "name": "Daulatpur",
+        "nameBn": "দৌলতপুর",
+        "type": "rural",
+        "upazilaId": "upa-035",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0036",
+        "name": "Singair",
+        "nameBn": "সিংগাইর",
+        "type": "rural",
+        "upazilaId": "upa-036",
+        "districtId": "dis-07",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0037",
+        "name": "Munshiganj Sadar",
+        "nameBn": "মুন্সীগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-037",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0038",
+        "name": "Sreenagar",
+        "nameBn": "শ্রীনগর",
+        "type": "rural",
+        "upazilaId": "upa-038",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0039",
+        "name": "Sirajdikhan",
+        "nameBn": "সিরাজদিখান",
+        "type": "rural",
+        "upazilaId": "upa-039",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0040",
+        "name": "Lohajang",
+        "nameBn": "লৌহজং",
+        "type": "rural",
+        "upazilaId": "upa-040",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0041",
+        "name": "Gazaria",
+        "nameBn": "গজারিয়া",
+        "type": "rural",
+        "upazilaId": "upa-041",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0042",
+        "name": "Tongibari",
+        "nameBn": "টংগীবাড়ি",
+        "type": "rural",
+        "upazilaId": "upa-042",
+        "districtId": "dis-08",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0043",
+        "name": "Araihazar",
+        "nameBn": "আড়াইহাজার",
+        "type": "rural",
+        "upazilaId": "upa-043",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0044",
+        "name": "Narayanganj Sadar",
+        "nameBn": "নারায়ণগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-044",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0045",
+        "name": "Rupganj",
+        "nameBn": "রূপগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-045",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0046",
+        "name": "Sonargaon",
+        "nameBn": "সোনারগাঁও",
+        "type": "rural",
+        "upazilaId": "upa-046",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0047",
+        "name": "Belabo",
+        "nameBn": "বেলাবো",
+        "type": "rural",
+        "upazilaId": "upa-047",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0048",
+        "name": "Monohardi",
+        "nameBn": "মনোহরদী",
+        "type": "rural",
+        "upazilaId": "upa-048",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0049",
+        "name": "Narsingdi Sadar",
+        "nameBn": "নরসিংদী সদর",
+        "type": "rural",
+        "upazilaId": "upa-049",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0050",
+        "name": "Palash",
+        "nameBn": "পলাশ",
+        "type": "rural",
+        "upazilaId": "upa-050",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0051",
+        "name": "Raipura",
+        "nameBn": "রায়পুরা",
+        "type": "rural",
+        "upazilaId": "upa-051",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0052",
+        "name": "Shibpur",
+        "nameBn": "শিবপুর",
+        "type": "rural",
+        "upazilaId": "upa-052",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0053",
+        "name": "Rajbari Sadar",
+        "nameBn": "রাজবাড়ী সদর",
+        "type": "rural",
+        "upazilaId": "upa-053",
+        "districtId": "dis-11",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0054",
+        "name": "Goalanda",
+        "nameBn": "গোয়ালন্দ",
+        "type": "rural",
+        "upazilaId": "upa-054",
+        "districtId": "dis-11",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0055",
+        "name": "Pangsha",
+        "nameBn": "পাংশা",
+        "type": "rural",
+        "upazilaId": "upa-055",
+        "districtId": "dis-11",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0056",
+        "name": "Baliakandi",
+        "nameBn": "বালিয়াকান্দি",
+        "type": "rural",
+        "upazilaId": "upa-056",
+        "districtId": "dis-11",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0057",
+        "name": "Kalukhali",
+        "nameBn": "কালুখালী",
+        "type": "rural",
+        "upazilaId": "upa-057",
+        "districtId": "dis-11",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0058",
+        "name": "Shariatpur Sadar",
+        "nameBn": "শরিয়তপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-058",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0059",
+        "name": "Naria",
+        "nameBn": "নড়িয়া",
+        "type": "rural",
+        "upazilaId": "upa-059",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0060",
+        "name": "Zajira",
+        "nameBn": "জাজিরা",
+        "type": "rural",
+        "upazilaId": "upa-060",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0061",
+        "name": "Gosairhat",
+        "nameBn": "গোসাইরহাট",
+        "type": "rural",
+        "upazilaId": "upa-061",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0062",
+        "name": "Bhedarganj",
+        "nameBn": "ভেদরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-062",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0063",
+        "name": "Damudya",
+        "nameBn": "ডামুড্যা",
+        "type": "rural",
+        "upazilaId": "upa-063",
+        "districtId": "dis-12",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0064",
+        "name": "Basail",
+        "nameBn": "বাসাইল",
+        "type": "rural",
+        "upazilaId": "upa-064",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0065",
+        "name": "Bhuapur",
+        "nameBn": "ভুয়াপুর",
+        "type": "rural",
+        "upazilaId": "upa-065",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0066",
+        "name": "Delduar",
+        "nameBn": "দেলদুয়ার",
+        "type": "rural",
+        "upazilaId": "upa-066",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0067",
+        "name": "Ghatail",
+        "nameBn": "ঘাটাইল",
+        "type": "rural",
+        "upazilaId": "upa-067",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0068",
+        "name": "Gopalpur",
+        "nameBn": "গোপালপুর",
+        "type": "rural",
+        "upazilaId": "upa-068",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0069",
+        "name": "Madhupur",
+        "nameBn": "মধুপুর",
+        "type": "rural",
+        "upazilaId": "upa-069",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0070",
+        "name": "Mirzapur",
+        "nameBn": "মির্জাপুর",
+        "type": "rural",
+        "upazilaId": "upa-070",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0071",
+        "name": "Nagarpur",
+        "nameBn": "নাগরপুর",
+        "type": "rural",
+        "upazilaId": "upa-071",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0072",
+        "name": "Sakhipur",
+        "nameBn": "সখিপুর",
+        "type": "rural",
+        "upazilaId": "upa-072",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0073",
+        "name": "Tangail Sadar",
+        "nameBn": "টাঙ্গাইল সদর",
+        "type": "rural",
+        "upazilaId": "upa-073",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0074",
+        "name": "Kalihati",
+        "nameBn": "কালিহাতী",
+        "type": "rural",
+        "upazilaId": "upa-074",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0075",
+        "name": "Dhanbari",
+        "nameBn": "ধনবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-075",
+        "districtId": "dis-13",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0076",
+        "name": "Itna",
+        "nameBn": "ইটনা",
+        "type": "rural",
+        "upazilaId": "upa-076",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0077",
+        "name": "Katiadi",
+        "nameBn": "কটিয়াদী",
+        "type": "rural",
+        "upazilaId": "upa-077",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0078",
+        "name": "Vairab",
+        "nameBn": "ভৈরব",
+        "type": "rural",
+        "upazilaId": "upa-078",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0079",
+        "name": "Tarail",
+        "nameBn": "তাড়াইল",
+        "type": "rural",
+        "upazilaId": "upa-079",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0080",
+        "name": "Hossainpur",
+        "nameBn": "হোসেনপুর",
+        "type": "rural",
+        "upazilaId": "upa-080",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0081",
+        "name": "Pakundia",
+        "nameBn": "পাকুন্দিয়া",
+        "type": "rural",
+        "upazilaId": "upa-081",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0082",
+        "name": "Kuliarchar",
+        "nameBn": "কুলিয়ারচর",
+        "type": "rural",
+        "upazilaId": "upa-082",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0083",
+        "name": "Kishoreganj Sadar",
+        "nameBn": "কিশোরগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-083",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0084",
+        "name": "Karimganj",
+        "nameBn": "করিমগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-084",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0085",
+        "name": "Bajitpur",
+        "nameBn": "বাজিতপুর",
+        "type": "rural",
+        "upazilaId": "upa-085",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0086",
+        "name": "Astagram",
+        "nameBn": "অষ্টগ্রাম",
+        "type": "rural",
+        "upazilaId": "upa-086",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0087",
+        "name": "Mithamain",
+        "nameBn": "মিঠামইন",
+        "type": "rural",
+        "upazilaId": "upa-087",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0088",
+        "name": "Nikli",
+        "nameBn": "নিকলী",
+        "type": "rural",
+        "upazilaId": "upa-088",
+        "districtId": "dis-05",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0089",
+        "name": "Debidwar",
+        "nameBn": "দেবিদ্বার",
+        "type": "rural",
+        "upazilaId": "upa-089",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0090",
+        "name": "Barura",
+        "nameBn": "বরুড়া",
+        "type": "rural",
+        "upazilaId": "upa-090",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0091",
+        "name": "Brahmanpara",
+        "nameBn": "ব্রাহ্মণপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-091",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0092",
+        "name": "Chandina",
+        "nameBn": "চান্দিনা",
+        "type": "rural",
+        "upazilaId": "upa-092",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0093",
+        "name": "Chowddagram",
+        "nameBn": "চৌদ্দগ্রাম",
+        "type": "rural",
+        "upazilaId": "upa-093",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0094",
+        "name": "Daudkandi",
+        "nameBn": "দাউদকান্দি",
+        "type": "rural",
+        "upazilaId": "upa-094",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0095",
+        "name": "Homna",
+        "nameBn": "হোমনা",
+        "type": "rural",
+        "upazilaId": "upa-095",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0096",
+        "name": "Laksam",
+        "nameBn": "লাকসাম",
+        "type": "rural",
+        "upazilaId": "upa-096",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0097",
+        "name": "Muradnagar",
+        "nameBn": "মুরাদনগর",
+        "type": "rural",
+        "upazilaId": "upa-097",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0098",
+        "name": "Nangalkot",
+        "nameBn": "নাঙ্গলকোট",
+        "type": "rural",
+        "upazilaId": "upa-098",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0099",
+        "name": "Cumilla Sadar",
+        "nameBn": "কুমিল্লা সদর",
+        "type": "rural",
+        "upazilaId": "upa-099",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0100",
+        "name": "Meghna",
+        "nameBn": "মেঘনা",
+        "type": "rural",
+        "upazilaId": "upa-100",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0101",
+        "name": "Monohorgonj",
+        "nameBn": "মনোহরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-101",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0102",
+        "name": "Sadar Dakshin",
+        "nameBn": "সদর দক্ষিণ",
+        "type": "rural",
+        "upazilaId": "upa-102",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0103",
+        "name": "Titas",
+        "nameBn": "তিতাস",
+        "type": "rural",
+        "upazilaId": "upa-103",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0104",
+        "name": "Burichong",
+        "nameBn": "বুড়িচং",
+        "type": "rural",
+        "upazilaId": "upa-104",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0105",
+        "name": "Lalmai",
+        "nameBn": "লালমাই",
+        "type": "rural",
+        "upazilaId": "upa-105",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0106",
+        "name": "Chhagalnaiya",
+        "nameBn": "ছাগলনাইয়া",
+        "type": "rural",
+        "upazilaId": "upa-106",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0107",
+        "name": "Feni Sadar",
+        "nameBn": "ফেনী সদর",
+        "type": "rural",
+        "upazilaId": "upa-107",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0108",
+        "name": "Sonagazi",
+        "nameBn": "সোনাগাজী",
+        "type": "rural",
+        "upazilaId": "upa-108",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0109",
+        "name": "Phulgazi",
+        "nameBn": "ফুলগাজী",
+        "type": "rural",
+        "upazilaId": "upa-109",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0110",
+        "name": "Parshuram",
+        "nameBn": "পরশুরাম",
+        "type": "rural",
+        "upazilaId": "upa-110",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0111",
+        "name": "Daganbhuiyan",
+        "nameBn": "দাগনভূঞা",
+        "type": "rural",
+        "upazilaId": "upa-111",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0112",
+        "name": "Brahmanbaria Sadar",
+        "nameBn": "ব্রাহ্মণবাড়িয়া সদর",
+        "type": "rural",
+        "upazilaId": "upa-112",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0113",
+        "name": "Kasba",
+        "nameBn": "কসবা",
+        "type": "rural",
+        "upazilaId": "upa-113",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0114",
+        "name": "Nasirnagar",
+        "nameBn": "নাসিরনগর",
+        "type": "rural",
+        "upazilaId": "upa-114",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0115",
+        "name": "Sarail",
+        "nameBn": "সরাইল",
+        "type": "rural",
+        "upazilaId": "upa-115",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0116",
+        "name": "Ashuganj",
+        "nameBn": "আশুগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-116",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0117",
+        "name": "Akhaura",
+        "nameBn": "আখাউড়া",
+        "type": "rural",
+        "upazilaId": "upa-117",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0118",
+        "name": "Nabinagar",
+        "nameBn": "নবীনগর",
+        "type": "rural",
+        "upazilaId": "upa-118",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0119",
+        "name": "Bancharampur",
+        "nameBn": "বাঞ্ছারামপুর",
+        "type": "rural",
+        "upazilaId": "upa-119",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0120",
+        "name": "Bijoynagar",
+        "nameBn": "বিজয়নগর",
+        "type": "rural",
+        "upazilaId": "upa-120",
+        "districtId": "dis-15",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0121",
+        "name": "Rangamati Sadar",
+        "nameBn": "রাঙ্গামাটি সদর",
+        "type": "rural",
+        "upazilaId": "upa-121",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0122",
+        "name": "Kaptai",
+        "nameBn": "কাপ্তাই",
+        "type": "rural",
+        "upazilaId": "upa-122",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0123",
+        "name": "Kaukhali",
+        "nameBn": "কাউখালী",
+        "type": "rural",
+        "upazilaId": "upa-123",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0124",
+        "name": "Baghaichhari",
+        "nameBn": "বাঘাইছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-124",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0125",
+        "name": "Barkal",
+        "nameBn": "বরকল",
+        "type": "rural",
+        "upazilaId": "upa-125",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0126",
+        "name": "Langadu",
+        "nameBn": "লংগদু",
+        "type": "rural",
+        "upazilaId": "upa-126",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0127",
+        "name": "Rajasthali",
+        "nameBn": "রাজস্থলী",
+        "type": "rural",
+        "upazilaId": "upa-127",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0128",
+        "name": "Bilaichhari",
+        "nameBn": "বিলাইছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-128",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0129",
+        "name": "Juraichhari",
+        "nameBn": "জুরাছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-129",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0130",
+        "name": "Naniarchar",
+        "nameBn": "নানিয়ারচর",
+        "type": "rural",
+        "upazilaId": "upa-130",
+        "districtId": "dis-24",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0131",
+        "name": "Noakhali Sadar",
+        "nameBn": "নোয়াখালী",
+        "type": "rural",
+        "upazilaId": "upa-131",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0132",
+        "name": "Companiganj",
+        "nameBn": "কোম্পানীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-132",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0133",
+        "name": "Begumganj",
+        "nameBn": "বেগমগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-133",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0134",
+        "name": "Hatia",
+        "nameBn": "হাতিয়া",
+        "type": "rural",
+        "upazilaId": "upa-134",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0135",
+        "name": "Subarnachar",
+        "nameBn": "সুবর্ণচর",
+        "type": "rural",
+        "upazilaId": "upa-135",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0136",
+        "name": "Kabirhat",
+        "nameBn": "কবিরহাট",
+        "type": "rural",
+        "upazilaId": "upa-136",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0137",
+        "name": "Senbagh",
+        "nameBn": "সেনবাগ",
+        "type": "rural",
+        "upazilaId": "upa-137",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0138",
+        "name": "Chatkhil",
+        "nameBn": "চাটখিল",
+        "type": "rural",
+        "upazilaId": "upa-138",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0139",
+        "name": "Sonaimuri",
+        "nameBn": "সোনাইমুড়ী",
+        "type": "rural",
+        "upazilaId": "upa-139",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0140",
+        "name": "Haimchar",
+        "nameBn": "হাইমচর",
+        "type": "rural",
+        "upazilaId": "upa-140",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0141",
+        "name": "Kachua",
+        "nameBn": "কচুয়া",
+        "type": "rural",
+        "upazilaId": "upa-141",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0142",
+        "name": "Shahrasti",
+        "nameBn": "শাহরাস্তি",
+        "type": "rural",
+        "upazilaId": "upa-142",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0143",
+        "name": "Chandpur Sadar",
+        "nameBn": "চাঁদপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-143",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0144",
+        "name": "Matlab Uttar",
+        "nameBn": "মতলব উত্তর",
+        "type": "rural",
+        "upazilaId": "upa-144",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0145",
+        "name": "Hajiganj",
+        "nameBn": "হাজীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-145",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0146",
+        "name": "Matlab Dakkhin",
+        "nameBn": "মতলব দক্ষিণ",
+        "type": "rural",
+        "upazilaId": "upa-146",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0147",
+        "name": "Faridganj",
+        "nameBn": "ফরিদগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-147",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0148",
+        "name": "Lakshmipur Sadar",
+        "nameBn": "লক্ষ্মীপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-148",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0149",
+        "name": "Kamalnagar",
+        "nameBn": "কমলনগর",
+        "type": "rural",
+        "upazilaId": "upa-149",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0150",
+        "name": "Raipur",
+        "nameBn": "রায়পুর",
+        "type": "rural",
+        "upazilaId": "upa-150",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0151",
+        "name": "Ramgati",
+        "nameBn": "রামগতি",
+        "type": "rural",
+        "upazilaId": "upa-151",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0152",
+        "name": "Ramganj",
+        "nameBn": "রামগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-152",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0153",
+        "name": "Rangunia",
+        "nameBn": "রাঙ্গুনিয়া",
+        "type": "rural",
+        "upazilaId": "upa-153",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0154",
+        "name": "Sitakunda",
+        "nameBn": "সীতাকুন্ড",
+        "type": "rural",
+        "upazilaId": "upa-154",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0155",
+        "name": "Mirsarai",
+        "nameBn": "মীরসরাই",
+        "type": "rural",
+        "upazilaId": "upa-155",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0156",
+        "name": "Patiya",
+        "nameBn": "পটিয়া",
+        "type": "rural",
+        "upazilaId": "upa-156",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0157",
+        "name": "Sandwip",
+        "nameBn": "সন্দ্বীপ",
+        "type": "rural",
+        "upazilaId": "upa-157",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0158",
+        "name": "Banshkhali",
+        "nameBn": "বাঁশখালী",
+        "type": "rural",
+        "upazilaId": "upa-158",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0159",
+        "name": "Boalkhali",
+        "nameBn": "বোয়ালখালী",
+        "type": "rural",
+        "upazilaId": "upa-159",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0160",
+        "name": "Anwara",
+        "nameBn": "আনোয়ারা",
+        "type": "rural",
+        "upazilaId": "upa-160",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0161",
+        "name": "Chandanaish",
+        "nameBn": "চন্দনাইশ",
+        "type": "rural",
+        "upazilaId": "upa-161",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0162",
+        "name": "Satkania",
+        "nameBn": "সাতকানিয়া",
+        "type": "rural",
+        "upazilaId": "upa-162",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0163",
+        "name": "Lohagara",
+        "nameBn": "লোহাগাড়া",
+        "type": "rural",
+        "upazilaId": "upa-163",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0164",
+        "name": "Hathazari",
+        "nameBn": "হাটহাজারী",
+        "type": "rural",
+        "upazilaId": "upa-164",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0165",
+        "name": "Fatikchhari",
+        "nameBn": "ফটিকছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-165",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0166",
+        "name": "Rauzan",
+        "nameBn": "রাউজান",
+        "type": "rural",
+        "upazilaId": "upa-166",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0167",
+        "name": "Karnaphuli",
+        "nameBn": "কর্ণফুলী",
+        "type": "rural",
+        "upazilaId": "upa-167",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0168",
+        "name": "Cox's Bazar Sadar",
+        "nameBn": "কক্সবাজার সদর",
+        "type": "rural",
+        "upazilaId": "upa-168",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0169",
+        "name": "Chakaria",
+        "nameBn": "চকরিয়া",
+        "type": "rural",
+        "upazilaId": "upa-169",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0170",
+        "name": "Kutubdia",
+        "nameBn": "কুতুবদিয়া",
+        "type": "rural",
+        "upazilaId": "upa-170",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0171",
+        "name": "Ukhiya",
+        "nameBn": "উখিয়া",
+        "type": "rural",
+        "upazilaId": "upa-171",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0172",
+        "name": "Maheshkhali",
+        "nameBn": "মহেশখালী",
+        "type": "rural",
+        "upazilaId": "upa-172",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0173",
+        "name": "Pekua",
+        "nameBn": "পেকুয়া",
+        "type": "rural",
+        "upazilaId": "upa-173",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0174",
+        "name": "Ramu",
+        "nameBn": "রামু",
+        "type": "rural",
+        "upazilaId": "upa-174",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0175",
+        "name": "Teknaf",
+        "nameBn": "টেকনাফ",
+        "type": "rural",
+        "upazilaId": "upa-175",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0176",
+        "name": "Khagrachhari Sadar",
+        "nameBn": "খাগড়াছড়ি সদর",
+        "type": "rural",
+        "upazilaId": "upa-176",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0177",
+        "name": "Dighinala",
+        "nameBn": "দিঘীনালা",
+        "type": "rural",
+        "upazilaId": "upa-177",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0178",
+        "name": "Panchhari",
+        "nameBn": "পানছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-178",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0179",
+        "name": "Lakshichhari",
+        "nameBn": "লক্ষীছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-179",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0180",
+        "name": "Mahalchhari",
+        "nameBn": "মহালছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-180",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0181",
+        "name": "Manikchhari",
+        "nameBn": "মানিকছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-181",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0182",
+        "name": "Ramgarh",
+        "nameBn": "রামগড়",
+        "type": "rural",
+        "upazilaId": "upa-182",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0183",
+        "name": "Matiranga",
+        "nameBn": "মাটিরাঙ্গা",
+        "type": "rural",
+        "upazilaId": "upa-183",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0184",
+        "name": "Guimara",
+        "nameBn": "গুইমারা",
+        "type": "rural",
+        "upazilaId": "upa-184",
+        "districtId": "dis-21",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0185",
+        "name": "Bandarban Sadar",
+        "nameBn": "বান্দরবান সদর",
+        "type": "rural",
+        "upazilaId": "upa-185",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0186",
+        "name": "Ali Kadam",
+        "nameBn": "আলীকদম",
+        "type": "rural",
+        "upazilaId": "upa-186",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0187",
+        "name": "Naikhongchhari",
+        "nameBn": "নাইক্ষ্যংছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-187",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0188",
+        "name": "Rowangchhari",
+        "nameBn": "রোয়াংছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-188",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0189",
+        "name": "Lama",
+        "nameBn": "লামা",
+        "type": "rural",
+        "upazilaId": "upa-189",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0190",
+        "name": "Ruma",
+        "nameBn": "রুমা",
+        "type": "rural",
+        "upazilaId": "upa-190",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0191",
+        "name": "Thanchi",
+        "nameBn": "থানচি",
+        "type": "rural",
+        "upazilaId": "upa-191",
+        "districtId": "dis-14",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0192",
+        "name": "Belkuchi",
+        "nameBn": "বেলকুচি",
+        "type": "rural",
+        "upazilaId": "upa-192",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0193",
+        "name": "Chauhali",
+        "nameBn": "চৌহালি",
+        "type": "rural",
+        "upazilaId": "upa-193",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0194",
+        "name": "Kamarbandha",
+        "nameBn": "কামারখন্দ",
+        "type": "rural",
+        "upazilaId": "upa-194",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0195",
+        "name": "Kazipur",
+        "nameBn": "কাজীপুর",
+        "type": "rural",
+        "upazilaId": "upa-195",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0196",
+        "name": "Raiganj",
+        "nameBn": "রায়গঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-196",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0197",
+        "name": "Shahjadpur",
+        "nameBn": "শাহজাদপুর",
+        "type": "rural",
+        "upazilaId": "upa-197",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0198",
+        "name": "Sirajganj Sadar",
+        "nameBn": "সিরাজগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-198",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0199",
+        "name": "Tarash",
+        "nameBn": "তাড়াশ",
+        "type": "rural",
+        "upazilaId": "upa-199",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0200",
+        "name": "Ullapara",
+        "nameBn": "উল্লাপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-200",
+        "districtId": "dis-48",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0201",
+        "name": "Sujanagar",
+        "nameBn": "সুজানগর",
+        "type": "rural",
+        "upazilaId": "upa-201",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0202",
+        "name": "Ishwardi",
+        "nameBn": "ঈশ্বরদী",
+        "type": "rural",
+        "upazilaId": "upa-202",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0203",
+        "name": "Bhangura",
+        "nameBn": "ভাঙ্গুড়া",
+        "type": "rural",
+        "upazilaId": "upa-203",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0204",
+        "name": "Pabna Sadar",
+        "nameBn": "পাবনা সদর",
+        "type": "rural",
+        "upazilaId": "upa-204",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0205",
+        "name": "Bera",
+        "nameBn": "বেড়া",
+        "type": "rural",
+        "upazilaId": "upa-205",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0206",
+        "name": "Atgharia",
+        "nameBn": "আটঘরিয়া",
+        "type": "rural",
+        "upazilaId": "upa-206",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0207",
+        "name": "Chatmohor",
+        "nameBn": "চাটমোহর",
+        "type": "rural",
+        "upazilaId": "upa-207",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0208",
+        "name": "Santhia",
+        "nameBn": "সাঁথিয়া",
+        "type": "rural",
+        "upazilaId": "upa-208",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0209",
+        "name": "Faridpur",
+        "nameBn": "ফরিদপুর",
+        "type": "rural",
+        "upazilaId": "upa-209",
+        "districtId": "dis-46",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0210",
+        "name": "Kahaloo",
+        "nameBn": "কাহালু",
+        "type": "rural",
+        "upazilaId": "upa-210",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0211",
+        "name": "Bogra Sadar",
+        "nameBn": "বগুড়া সদর",
+        "type": "rural",
+        "upazilaId": "upa-211",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0212",
+        "name": "Sariakandi",
+        "nameBn": "সারিয়াকান্দি",
+        "type": "rural",
+        "upazilaId": "upa-212",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0213",
+        "name": "Shajahanpur",
+        "nameBn": "শাজাহানপুর",
+        "type": "rural",
+        "upazilaId": "upa-213",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0214",
+        "name": "Dupchanchia",
+        "nameBn": "দুপচাচিঁয়া",
+        "type": "rural",
+        "upazilaId": "upa-214",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0215",
+        "name": "Adamdighi",
+        "nameBn": "আদমদিঘি",
+        "type": "rural",
+        "upazilaId": "upa-215",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0216",
+        "name": "Nandigram",
+        "nameBn": "নন্দিগ্রাম",
+        "type": "rural",
+        "upazilaId": "upa-216",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0217",
+        "name": "Sonatala",
+        "nameBn": "সোনাতলা",
+        "type": "rural",
+        "upazilaId": "upa-217",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0218",
+        "name": "Dhunat",
+        "nameBn": "ধুনট",
+        "type": "rural",
+        "upazilaId": "upa-218",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0219",
+        "name": "Gabtali",
+        "nameBn": "গাবতলী",
+        "type": "rural",
+        "upazilaId": "upa-219",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0220",
+        "name": "Sherpur",
+        "nameBn": "শেরপুর",
+        "type": "rural",
+        "upazilaId": "upa-220",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0221",
+        "name": "Shibganj",
+        "nameBn": "শিবগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-221",
+        "districtId": "dis-41",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0222",
+        "name": "Paba",
+        "nameBn": "পবা",
+        "type": "rural",
+        "upazilaId": "upa-222",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0223",
+        "name": "Durgapur",
+        "nameBn": "দুর্গাপুর",
+        "type": "rural",
+        "upazilaId": "upa-223",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0224",
+        "name": "Mohonpur",
+        "nameBn": "মোহনপুর",
+        "type": "rural",
+        "upazilaId": "upa-224",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0225",
+        "name": "Charghat",
+        "nameBn": "চারঘাট",
+        "type": "rural",
+        "upazilaId": "upa-225",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0226",
+        "name": "Puthia",
+        "nameBn": "পুঠিয়া",
+        "type": "rural",
+        "upazilaId": "upa-226",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0227",
+        "name": "Bagha",
+        "nameBn": "বাঘা",
+        "type": "rural",
+        "upazilaId": "upa-227",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0228",
+        "name": "Godagari",
+        "nameBn": "গোদাগাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-228",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0229",
+        "name": "Tanore",
+        "nameBn": "তানোর",
+        "type": "rural",
+        "upazilaId": "upa-229",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0230",
+        "name": "Bagmara",
+        "nameBn": "বাগমারা",
+        "type": "rural",
+        "upazilaId": "upa-230",
+        "districtId": "dis-47",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0231",
+        "name": "Natore Sadar",
+        "nameBn": "নাটোর সদর",
+        "type": "rural",
+        "upazilaId": "upa-231",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0232",
+        "name": "Singra",
+        "nameBn": "সিংড়া",
+        "type": "rural",
+        "upazilaId": "upa-232",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0233",
+        "name": "Baraigram",
+        "nameBn": "বড়াইগ্রাম",
+        "type": "rural",
+        "upazilaId": "upa-233",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0234",
+        "name": "Bagatipara",
+        "nameBn": "বাগাতিপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-234",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0235",
+        "name": "Lalpur",
+        "nameBn": "লালপুর",
+        "type": "rural",
+        "upazilaId": "upa-235",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0236",
+        "name": "Gurudaspur",
+        "nameBn": "গুরুদাসপুর",
+        "type": "rural",
+        "upazilaId": "upa-236",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0237",
+        "name": "Naldanga",
+        "nameBn": "নলডাঙ্গা",
+        "type": "rural",
+        "upazilaId": "upa-237",
+        "districtId": "dis-44",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0238",
+        "name": "Akkelpur",
+        "nameBn": "আক্কেলপুর",
+        "type": "rural",
+        "upazilaId": "upa-238",
+        "districtId": "dis-42",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0239",
+        "name": "Kalai",
+        "nameBn": "কালাই",
+        "type": "rural",
+        "upazilaId": "upa-239",
+        "districtId": "dis-42",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0240",
+        "name": "Khetlal",
+        "nameBn": "ক্ষেতলাল",
+        "type": "rural",
+        "upazilaId": "upa-240",
+        "districtId": "dis-42",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0241",
+        "name": "Panchbibi",
+        "nameBn": "পাঁচবিবি",
+        "type": "rural",
+        "upazilaId": "upa-241",
+        "districtId": "dis-42",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0242",
+        "name": "Joypurhat Sadar",
+        "nameBn": "জয়পুরহাট সদর",
+        "type": "rural",
+        "upazilaId": "upa-242",
+        "districtId": "dis-42",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0243",
+        "name": "Chapai Nawabganj Sadar",
+        "nameBn": "চাঁপাইনবাবগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-243",
+        "districtId": "dis-45",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0244",
+        "name": "Gomastapur",
+        "nameBn": "গোমস্তাপুর",
+        "type": "rural",
+        "upazilaId": "upa-244",
+        "districtId": "dis-45",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0245",
+        "name": "Nachol",
+        "nameBn": "নাচোল",
+        "type": "rural",
+        "upazilaId": "upa-245",
+        "districtId": "dis-45",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0246",
+        "name": "Bholahat",
+        "nameBn": "ভোলাহাট",
+        "type": "rural",
+        "upazilaId": "upa-246",
+        "districtId": "dis-45",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0247",
+        "name": "Shibganj",
+        "nameBn": "শিবগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-247",
+        "districtId": "dis-45",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0248",
+        "name": "Mohadevpur",
+        "nameBn": "মহাদেবপুর",
+        "type": "rural",
+        "upazilaId": "upa-248",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0249",
+        "name": "Badalgachi",
+        "nameBn": "বদলগাছী",
+        "type": "rural",
+        "upazilaId": "upa-249",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0250",
+        "name": "Patnitala",
+        "nameBn": "পত্নিতলা",
+        "type": "rural",
+        "upazilaId": "upa-250",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0251",
+        "name": "Dhamoirhat",
+        "nameBn": "ধামইরহাট",
+        "type": "rural",
+        "upazilaId": "upa-251",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0252",
+        "name": "Niamatpur",
+        "nameBn": "নিয়ামতপুর",
+        "type": "rural",
+        "upazilaId": "upa-252",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0253",
+        "name": "Manda",
+        "nameBn": "মান্দা",
+        "type": "rural",
+        "upazilaId": "upa-253",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0254",
+        "name": "Atrai",
+        "nameBn": "আত্রাই",
+        "type": "rural",
+        "upazilaId": "upa-254",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0255",
+        "name": "Raninagar",
+        "nameBn": "রাণীনগর",
+        "type": "rural",
+        "upazilaId": "upa-255",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0256",
+        "name": "Naogaon Sadar",
+        "nameBn": "নওগাঁ সদর",
+        "type": "rural",
+        "upazilaId": "upa-256",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0257",
+        "name": "Porsha",
+        "nameBn": "পোরশা",
+        "type": "rural",
+        "upazilaId": "upa-257",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0258",
+        "name": "Sapahar",
+        "nameBn": "সাপাহার",
+        "type": "rural",
+        "upazilaId": "upa-258",
+        "districtId": "dis-43",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0259",
+        "name": "Monirampur",
+        "nameBn": "মণিরামপুর",
+        "type": "rural",
+        "upazilaId": "upa-259",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0260",
+        "name": "Abhaynagar",
+        "nameBn": "অভয়নগর",
+        "type": "rural",
+        "upazilaId": "upa-260",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0261",
+        "name": "Bagharpara",
+        "nameBn": "বাঘারপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-261",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0262",
+        "name": "Chowgacha",
+        "nameBn": "চৌগাছা",
+        "type": "rural",
+        "upazilaId": "upa-262",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0263",
+        "name": "Jhikargacha",
+        "nameBn": "ঝিকরগাছা",
+        "type": "rural",
+        "upazilaId": "upa-263",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0264",
+        "name": "Keshabpur",
+        "nameBn": "কেশবপুর",
+        "type": "rural",
+        "upazilaId": "upa-264",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0265",
+        "name": "Jessore Sadar",
+        "nameBn": "যশোর সদর",
+        "type": "rural",
+        "upazilaId": "upa-265",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0266",
+        "name": "Sharsha",
+        "nameBn": "শার্শা",
+        "type": "rural",
+        "upazilaId": "upa-266",
+        "districtId": "dis-33",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0267",
+        "name": "Assasuni",
+        "nameBn": "আশাশুনি",
+        "type": "rural",
+        "upazilaId": "upa-267",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0268",
+        "name": "Debhata",
+        "nameBn": "দেবহাটা",
+        "type": "rural",
+        "upazilaId": "upa-268",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0269",
+        "name": "Kalaroa",
+        "nameBn": "কলারোয়া",
+        "type": "rural",
+        "upazilaId": "upa-269",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0270",
+        "name": "Satkhira Sadar",
+        "nameBn": "সাতক্ষীরা সদর",
+        "type": "rural",
+        "upazilaId": "upa-270",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0271",
+        "name": "Shyamnagar",
+        "nameBn": "শ্যামনগর",
+        "type": "rural",
+        "upazilaId": "upa-271",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0272",
+        "name": "Tala",
+        "nameBn": "তালা",
+        "type": "rural",
+        "upazilaId": "upa-272",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0273",
+        "name": "Kaliaganj",
+        "nameBn": "কালিগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-273",
+        "districtId": "dis-40",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0274",
+        "name": "Mujibnagar",
+        "nameBn": "মুজিবনগর",
+        "type": "rural",
+        "upazilaId": "upa-274",
+        "districtId": "dis-38",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0275",
+        "name": "Meherpur Sadar",
+        "nameBn": "মেহেরপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-275",
+        "districtId": "dis-38",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0276",
+        "name": "Gangni",
+        "nameBn": "গাংনী",
+        "type": "rural",
+        "upazilaId": "upa-276",
+        "districtId": "dis-38",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0277",
+        "name": "Narail Sadar",
+        "nameBn": "নড়াইল সদর",
+        "type": "rural",
+        "upazilaId": "upa-277",
+        "districtId": "dis-39",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0278",
+        "name": "Lohagara",
+        "nameBn": "লোহাগড়া",
+        "type": "rural",
+        "upazilaId": "upa-278",
+        "districtId": "dis-39",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0279",
+        "name": "Kalia",
+        "nameBn": "কালিয়া",
+        "type": "rural",
+        "upazilaId": "upa-279",
+        "districtId": "dis-39",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0280",
+        "name": "Chuadanga Sadar",
+        "nameBn": "চুয়াডাঙ্গা সদর",
+        "type": "rural",
+        "upazilaId": "upa-280",
+        "districtId": "dis-32",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0281",
+        "name": "Alamdanga",
+        "nameBn": "আলমডাঙ্গা",
+        "type": "rural",
+        "upazilaId": "upa-281",
+        "districtId": "dis-32",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0282",
+        "name": "Damurhuda",
+        "nameBn": "দামুড়হুদা",
+        "type": "rural",
+        "upazilaId": "upa-282",
+        "districtId": "dis-32",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0283",
+        "name": "Jibannagar",
+        "nameBn": "জীবননগর",
+        "type": "rural",
+        "upazilaId": "upa-283",
+        "districtId": "dis-32",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0284",
+        "name": "Kushtia Sadar",
+        "nameBn": "কুষ্টিয়া সদর",
+        "type": "rural",
+        "upazilaId": "upa-284",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0285",
+        "name": "Kumarkhali",
+        "nameBn": "কুমারখালী",
+        "type": "rural",
+        "upazilaId": "upa-285",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0286",
+        "name": "Khoksa",
+        "nameBn": "খোকসা",
+        "type": "rural",
+        "upazilaId": "upa-286",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0287",
+        "name": "Mirpur",
+        "nameBn": "মিরপুর",
+        "type": "rural",
+        "upazilaId": "upa-287",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0288",
+        "name": "Daulatpur",
+        "nameBn": "দৌলতপুর",
+        "type": "rural",
+        "upazilaId": "upa-288",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0289",
+        "name": "Bheramara",
+        "nameBn": "ভেড়ামারা",
+        "type": "rural",
+        "upazilaId": "upa-289",
+        "districtId": "dis-36",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0290",
+        "name": "Shalikha",
+        "nameBn": "শালিখা",
+        "type": "rural",
+        "upazilaId": "upa-290",
+        "districtId": "dis-37",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0291",
+        "name": "Sreepur",
+        "nameBn": "শ্রীপুর",
+        "type": "rural",
+        "upazilaId": "upa-291",
+        "districtId": "dis-37",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0292",
+        "name": "Magura Sadar",
+        "nameBn": "মাগুরা সদর",
+        "type": "rural",
+        "upazilaId": "upa-292",
+        "districtId": "dis-37",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0293",
+        "name": "Mohammadpur",
+        "nameBn": "মহম্মদপুর",
+        "type": "rural",
+        "upazilaId": "upa-293",
+        "districtId": "dis-37",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0294",
+        "name": "Paikgachha",
+        "nameBn": "পাইকগাছা",
+        "type": "rural",
+        "upazilaId": "upa-294",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0295",
+        "name": "Phultala",
+        "nameBn": "ফুলতলা",
+        "type": "rural",
+        "upazilaId": "upa-295",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0296",
+        "name": "Dighalia",
+        "nameBn": "দিঘলিয়া",
+        "type": "rural",
+        "upazilaId": "upa-296",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0297",
+        "name": "Rupsa",
+        "nameBn": "রূপসা",
+        "type": "rural",
+        "upazilaId": "upa-297",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0298",
+        "name": "Terokhada",
+        "nameBn": "তেরখাদা",
+        "type": "rural",
+        "upazilaId": "upa-298",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0299",
+        "name": "Dumuria",
+        "nameBn": "ডুমুরিয়া",
+        "type": "rural",
+        "upazilaId": "upa-299",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0300",
+        "name": "Batiaghata",
+        "nameBn": "বটিয়াঘাটা",
+        "type": "rural",
+        "upazilaId": "upa-300",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0301",
+        "name": "Dacope",
+        "nameBn": "দাকোপ",
+        "type": "rural",
+        "upazilaId": "upa-301",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0302",
+        "name": "Koyra",
+        "nameBn": "কোয়রা",
+        "type": "rural",
+        "upazilaId": "upa-302",
+        "districtId": "dis-35",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0303",
+        "name": "Fakirhat",
+        "nameBn": "ফকিরহাট",
+        "type": "rural",
+        "upazilaId": "upa-303",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0304",
+        "name": "Bagerhat Sadar",
+        "nameBn": "বাগেরহাট সদর",
+        "type": "rural",
+        "upazilaId": "upa-304",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0305",
+        "name": "Mollahat",
+        "nameBn": "মোল্লাহাট",
+        "type": "rural",
+        "upazilaId": "upa-305",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0306",
+        "name": "Sarankhola",
+        "nameBn": "শরণখোলা",
+        "type": "rural",
+        "upazilaId": "upa-306",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0307",
+        "name": "Rampal",
+        "nameBn": "রামপাল",
+        "type": "rural",
+        "upazilaId": "upa-307",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0308",
+        "name": "Morrelganj",
+        "nameBn": "মোড়েলগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-308",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0309",
+        "name": "Kachua",
+        "nameBn": "কচুয়া",
+        "type": "rural",
+        "upazilaId": "upa-309",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0310",
+        "name": "Mongla",
+        "nameBn": "মোংলা",
+        "type": "rural",
+        "upazilaId": "upa-310",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0311",
+        "name": "Chitalmari",
+        "nameBn": "চিতলমারী",
+        "type": "rural",
+        "upazilaId": "upa-311",
+        "districtId": "dis-31",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0312",
+        "name": "Jhenaidah Sadar",
+        "nameBn": "ঝিনাইদহ সদর",
+        "type": "rural",
+        "upazilaId": "upa-312",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0313",
+        "name": "Shailkupa",
+        "nameBn": "শৈলকুপা",
+        "type": "rural",
+        "upazilaId": "upa-313",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0314",
+        "name": "Harinakundu",
+        "nameBn": "হরিণাকুন্ডু",
+        "type": "rural",
+        "upazilaId": "upa-314",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0315",
+        "name": "Kaliganj",
+        "nameBn": "কালীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-315",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0316",
+        "name": "Kotchandpur",
+        "nameBn": "কোটচাঁদপুর",
+        "type": "rural",
+        "upazilaId": "upa-316",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0317",
+        "name": "Moheshpur",
+        "nameBn": "মহেশপুর",
+        "type": "rural",
+        "upazilaId": "upa-317",
+        "districtId": "dis-34",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0318",
+        "name": "Jhalokathi Sadar",
+        "nameBn": "ঝালকাঠি সদর",
+        "type": "rural",
+        "upazilaId": "upa-318",
+        "districtId": "dis-28",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0319",
+        "name": "Kathalia",
+        "nameBn": "কাঠালিয়া",
+        "type": "rural",
+        "upazilaId": "upa-319",
+        "districtId": "dis-28",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0320",
+        "name": "Nalchity",
+        "nameBn": "নলছিটি",
+        "type": "rural",
+        "upazilaId": "upa-320",
+        "districtId": "dis-28",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0321",
+        "name": "Rajapur",
+        "nameBn": "রাজাপুর",
+        "type": "rural",
+        "upazilaId": "upa-321",
+        "districtId": "dis-28",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0322",
+        "name": "Bauphal",
+        "nameBn": "বাউফল",
+        "type": "rural",
+        "upazilaId": "upa-322",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0323",
+        "name": "Patuakhali Sadar",
+        "nameBn": "পটুয়াখালী সদর",
+        "type": "rural",
+        "upazilaId": "upa-323",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0324",
+        "name": "Dumki",
+        "nameBn": "দুমকি",
+        "type": "rural",
+        "upazilaId": "upa-324",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0325",
+        "name": "Dashmina",
+        "nameBn": "দশমিনা",
+        "type": "rural",
+        "upazilaId": "upa-325",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0326",
+        "name": "Kalapara",
+        "nameBn": "কলাপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-326",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0327",
+        "name": "Mirzaganj",
+        "nameBn": "মির্জাগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-327",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0328",
+        "name": "Galachipa",
+        "nameBn": "গলাচিপা",
+        "type": "rural",
+        "upazilaId": "upa-328",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0329",
+        "name": "Rangabali",
+        "nameBn": "রাঙ্গাবালী",
+        "type": "rural",
+        "upazilaId": "upa-329",
+        "districtId": "dis-29",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0330",
+        "name": "Pirojpur Sadar",
+        "nameBn": "পিরোজপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-330",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0331",
+        "name": "Nazirpur",
+        "nameBn": "নাজিরপুর",
+        "type": "rural",
+        "upazilaId": "upa-331",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0332",
+        "name": "Kaukhali",
+        "nameBn": "কাউখালী",
+        "type": "rural",
+        "upazilaId": "upa-332",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0333",
+        "name": "Bhandaria",
+        "nameBn": "ভান্ডারিয়া",
+        "type": "rural",
+        "upazilaId": "upa-333",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0334",
+        "name": "Mathbaria",
+        "nameBn": "মঠবাড়ীয়া",
+        "type": "rural",
+        "upazilaId": "upa-334",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0335",
+        "name": "Nesarabad",
+        "nameBn": "নেছারাবাদ",
+        "type": "rural",
+        "upazilaId": "upa-335",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0336",
+        "name": "Indurkani",
+        "nameBn": "ইন্দুরকানী",
+        "type": "rural",
+        "upazilaId": "upa-336",
+        "districtId": "dis-30",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0337",
+        "name": "Barishal Sadar",
+        "nameBn": "বরিশাল সদর",
+        "type": "rural",
+        "upazilaId": "upa-337",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0338",
+        "name": "Bakerganj",
+        "nameBn": "বাকেরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-338",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0339",
+        "name": "Babuganj",
+        "nameBn": "বাবুগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-339",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0340",
+        "name": "Uzirpur",
+        "nameBn": "উজিরপুর",
+        "type": "rural",
+        "upazilaId": "upa-340",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0341",
+        "name": "Banaripara",
+        "nameBn": "বানারীপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-341",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0342",
+        "name": "Gournadi",
+        "nameBn": "গৌরনদী",
+        "type": "rural",
+        "upazilaId": "upa-342",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0343",
+        "name": "Agailjhara",
+        "nameBn": "আগৈলঝাড়া",
+        "type": "rural",
+        "upazilaId": "upa-343",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0344",
+        "name": "Mehendiganj",
+        "nameBn": "মেহেন্দিগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-344",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0345",
+        "name": "Muladi",
+        "nameBn": "মুলাদী",
+        "type": "rural",
+        "upazilaId": "upa-345",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0346",
+        "name": "Hijla",
+        "nameBn": "হিজলা",
+        "type": "rural",
+        "upazilaId": "upa-346",
+        "districtId": "dis-26",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0347",
+        "name": "Bhola Sadar",
+        "nameBn": "ভোলা সদর",
+        "type": "rural",
+        "upazilaId": "upa-347",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0348",
+        "name": "Borhanuddin",
+        "nameBn": "বোরহান উদ্দিন",
+        "type": "rural",
+        "upazilaId": "upa-348",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0349",
+        "name": "Char Fasson",
+        "nameBn": "চরফ্যাশন",
+        "type": "rural",
+        "upazilaId": "upa-349",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0350",
+        "name": "Daulatkhan",
+        "nameBn": "দৌলতখান",
+        "type": "rural",
+        "upazilaId": "upa-350",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0351",
+        "name": "Monpura",
+        "nameBn": "মনপুরা",
+        "type": "rural",
+        "upazilaId": "upa-351",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0352",
+        "name": "Tazumuddin",
+        "nameBn": "তজুমদ্দিন",
+        "type": "rural",
+        "upazilaId": "upa-352",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0353",
+        "name": "Lalmohan",
+        "nameBn": "লালমোহন",
+        "type": "rural",
+        "upazilaId": "upa-353",
+        "districtId": "dis-27",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0354",
+        "name": "Amtali",
+        "nameBn": "আমতলী",
+        "type": "rural",
+        "upazilaId": "upa-354",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0355",
+        "name": "Barguna Sadar",
+        "nameBn": "বরগুনা সদর",
+        "type": "rural",
+        "upazilaId": "upa-355",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0356",
+        "name": "Betagi",
+        "nameBn": "বেতাগী",
+        "type": "rural",
+        "upazilaId": "upa-356",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0357",
+        "name": "Bamna",
+        "nameBn": "বামনা",
+        "type": "rural",
+        "upazilaId": "upa-357",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0358",
+        "name": "Patharghata",
+        "nameBn": "পাথরঘাটা",
+        "type": "rural",
+        "upazilaId": "upa-358",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0359",
+        "name": "Taltoli",
+        "nameBn": "তালতলি",
+        "type": "rural",
+        "upazilaId": "upa-359",
+        "districtId": "dis-25",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0360",
+        "name": "Balaganj",
+        "nameBn": "বালাগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-360",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0361",
+        "name": "Beanibazar",
+        "nameBn": "বিয়ানীবাজার",
+        "type": "rural",
+        "upazilaId": "upa-361",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0362",
+        "name": "Bishwanath",
+        "nameBn": "বিশ্বনাথ",
+        "type": "rural",
+        "upazilaId": "upa-362",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0363",
+        "name": "Komponganj",
+        "nameBn": "কোম্পানীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-363",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0364",
+        "name": "Fenchuganj",
+        "nameBn": "ফেঞ্চুগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-364",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0365",
+        "name": "Golapganj",
+        "nameBn": "গোলাপগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-365",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0366",
+        "name": "Gowainghat",
+        "nameBn": "গোয়াইনঘাট",
+        "type": "rural",
+        "upazilaId": "upa-366",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0367",
+        "name": "Jaintapur",
+        "nameBn": "জৈন্তাপুর",
+        "type": "rural",
+        "upazilaId": "upa-367",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0368",
+        "name": "Kanaighat",
+        "nameBn": "কানাইঘাট",
+        "type": "rural",
+        "upazilaId": "upa-368",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0369",
+        "name": "Sylhet Sadar",
+        "nameBn": "সিলেট সদর",
+        "type": "rural",
+        "upazilaId": "upa-369",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0370",
+        "name": "Zakiganj",
+        "nameBn": "জকিগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-370",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0371",
+        "name": "Dakshin Surma",
+        "nameBn": "দক্ষিণ সুরমা",
+        "type": "rural",
+        "upazilaId": "upa-371",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0372",
+        "name": "Osmani",
+        "nameBn": "ওসমানী",
+        "type": "rural",
+        "upazilaId": "upa-372",
+        "districtId": "dis-60",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0373",
+        "name": "Bara Lekha",
+        "nameBn": "বড়লেখা",
+        "type": "rural",
+        "upazilaId": "upa-373",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0374",
+        "name": "Kamalganj",
+        "nameBn": "কমলগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-374",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0375",
+        "name": "Kulaura",
+        "nameBn": "কুলাউড়া",
+        "type": "rural",
+        "upazilaId": "upa-375",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0376",
+        "name": "Moulvibazar Sadar",
+        "nameBn": "মৌলভীবাজার সদর",
+        "type": "rural",
+        "upazilaId": "upa-376",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0377",
+        "name": "Rajnagar",
+        "nameBn": "রাজনগর",
+        "type": "rural",
+        "upazilaId": "upa-377",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0378",
+        "name": "Sreemangal",
+        "nameBn": "শ্রীমঙ্গল",
+        "type": "rural",
+        "upazilaId": "upa-378",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0379",
+        "name": "Juri",
+        "nameBn": "জুড়ী",
+        "type": "rural",
+        "upazilaId": "upa-379",
+        "districtId": "dis-58",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0380",
+        "name": "Nabiganj",
+        "nameBn": "নবীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-380",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0381",
+        "name": "Bahubal",
+        "nameBn": "বাহুবল",
+        "type": "rural",
+        "upazilaId": "upa-381",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0382",
+        "name": "Azmiriganj",
+        "nameBn": "আজমিরীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-382",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0383",
+        "name": "Baniachang",
+        "nameBn": "বানিয়াচং",
+        "type": "rural",
+        "upazilaId": "upa-383",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0384",
+        "name": "Lakhai",
+        "nameBn": "লাখাই",
+        "type": "rural",
+        "upazilaId": "upa-384",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0385",
+        "name": "Chunarughat",
+        "nameBn": "চুনারুঘাট",
+        "type": "rural",
+        "upazilaId": "upa-385",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0386",
+        "name": "Habiganj Sadar",
+        "nameBn": "হবিগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-386",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0387",
+        "name": "Madhabpur",
+        "nameBn": "মাধবপুর",
+        "type": "rural",
+        "upazilaId": "upa-387",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0388",
+        "name": "Shaistaganj",
+        "nameBn": "শায়েস্তাগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-388",
+        "districtId": "dis-57",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0389",
+        "name": "Sunamganj Sadar",
+        "nameBn": "সুনামগঞ্জ সদর",
+        "type": "rural",
+        "upazilaId": "upa-389",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0390",
+        "name": "South Sunamganj",
+        "nameBn": "দক্ষিণ সুনামগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-390",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0391",
+        "name": "Bishwambharpur",
+        "nameBn": "বিশ্বম্ভরপুর",
+        "type": "rural",
+        "upazilaId": "upa-391",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0392",
+        "name": "Chatak",
+        "nameBn": "ছাতক",
+        "type": "rural",
+        "upazilaId": "upa-392",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0393",
+        "name": "Jagannathpur",
+        "nameBn": "জগন্নাথপুর",
+        "type": "rural",
+        "upazilaId": "upa-393",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0394",
+        "name": "Dewarabazar",
+        "nameBn": "দোয়ারাবাজার",
+        "type": "rural",
+        "upazilaId": "upa-394",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0395",
+        "name": "Taherpur",
+        "nameBn": "তাহিরপুর",
+        "type": "rural",
+        "upazilaId": "upa-395",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0396",
+        "name": "Dharmapasha",
+        "nameBn": "ধর্মপাশা",
+        "type": "rural",
+        "upazilaId": "upa-396",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0397",
+        "name": "Jamalganj",
+        "nameBn": "জামালগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-397",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0398",
+        "name": "Shalla",
+        "nameBn": "শাল্লা",
+        "type": "rural",
+        "upazilaId": "upa-398",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0399",
+        "name": "Dirai",
+        "nameBn": "দিরাই",
+        "type": "rural",
+        "upazilaId": "upa-399",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0400",
+        "name": "Madhyanagar",
+        "nameBn": "মধ্যনগর",
+        "type": "rural",
+        "upazilaId": "upa-400",
+        "districtId": "dis-59",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0401",
+        "name": "Panchagarh Sadar",
+        "nameBn": "পঞ্চগড়",
+        "type": "rural",
+        "upazilaId": "upa-401",
+        "districtId": "dis-54",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0402",
+        "name": "Debiganj",
+        "nameBn": "দেবীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-402",
+        "districtId": "dis-54",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0403",
+        "name": "Boda",
+        "nameBn": "বোদা",
+        "type": "rural",
+        "upazilaId": "upa-403",
+        "districtId": "dis-54",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0404",
+        "name": "Atwari",
+        "nameBn": "আটোয়ারী",
+        "type": "rural",
+        "upazilaId": "upa-404",
+        "districtId": "dis-54",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0405",
+        "name": "Tetulia",
+        "nameBn": "তেতুলিয়া",
+        "type": "rural",
+        "upazilaId": "upa-405",
+        "districtId": "dis-54",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0406",
+        "name": "Nawabganj",
+        "nameBn": "নবাবগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-406",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0407",
+        "name": "Birganj",
+        "nameBn": "বীরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-407",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0408",
+        "name": "Ghoraghat",
+        "nameBn": "ঘোড়াঘাট",
+        "type": "rural",
+        "upazilaId": "upa-408",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0409",
+        "name": "Birampur",
+        "nameBn": "বিরামপুর",
+        "type": "rural",
+        "upazilaId": "upa-409",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0410",
+        "name": "Parbatipur",
+        "nameBn": "পার্বতীপুর",
+        "type": "rural",
+        "upazilaId": "upa-410",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0411",
+        "name": "Bochaganj",
+        "nameBn": "বোচাগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-411",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0412",
+        "name": "Kaharol",
+        "nameBn": "কাহারোল",
+        "type": "rural",
+        "upazilaId": "upa-412",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0413",
+        "name": "Phulbari",
+        "nameBn": "ফুলবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-413",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0414",
+        "name": "Dinajpur Sadar",
+        "nameBn": "দিনাজপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-414",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0415",
+        "name": "Hakimpur",
+        "nameBn": "হাকিমপুর",
+        "type": "rural",
+        "upazilaId": "upa-415",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0416",
+        "name": "Khansama",
+        "nameBn": "খানসামা",
+        "type": "rural",
+        "upazilaId": "upa-416",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0417",
+        "name": "Birol",
+        "nameBn": "বিরল",
+        "type": "rural",
+        "upazilaId": "upa-417",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0418",
+        "name": "Chirirbandar",
+        "nameBn": "চিরিরবন্দর",
+        "type": "rural",
+        "upazilaId": "upa-418",
+        "districtId": "dis-49",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0419",
+        "name": "Lalmonirhat Sadar",
+        "nameBn": "লালমনিরহাট সদর",
+        "type": "rural",
+        "upazilaId": "upa-419",
+        "districtId": "dis-52",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0420",
+        "name": "Kaliganj",
+        "nameBn": "কালীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-420",
+        "districtId": "dis-52",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0421",
+        "name": "Hatibandha",
+        "nameBn": "হাতীবান্ধা",
+        "type": "rural",
+        "upazilaId": "upa-421",
+        "districtId": "dis-52",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0422",
+        "name": "Patgram",
+        "nameBn": "পাটগ্রাম",
+        "type": "rural",
+        "upazilaId": "upa-422",
+        "districtId": "dis-52",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0423",
+        "name": "Aditmari",
+        "nameBn": "আদিতমারী",
+        "type": "rural",
+        "upazilaId": "upa-423",
+        "districtId": "dis-52",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0424",
+        "name": "Saidpur",
+        "nameBn": "সৈয়দপুর",
+        "type": "rural",
+        "upazilaId": "upa-424",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0425",
+        "name": "Domar",
+        "nameBn": "ডোমার",
+        "type": "rural",
+        "upazilaId": "upa-425",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0426",
+        "name": "Dimla",
+        "nameBn": "ডিমলা",
+        "type": "rural",
+        "upazilaId": "upa-426",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0427",
+        "name": "Jaldhaka",
+        "nameBn": "জলঢাকা",
+        "type": "rural",
+        "upazilaId": "upa-427",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0428",
+        "name": "Kishoreganj",
+        "nameBn": "কিশোরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-428",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0429",
+        "name": "Nilphamari Sadar",
+        "nameBn": "নীলফামারী সদর",
+        "type": "rural",
+        "upazilaId": "upa-429",
+        "districtId": "dis-53",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0430",
+        "name": "Sadullapur",
+        "nameBn": "সাদুল্লাপুর",
+        "type": "rural",
+        "upazilaId": "upa-430",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0431",
+        "name": "Gaibandha Sadar",
+        "nameBn": "গাইবান্ধা সদর",
+        "type": "rural",
+        "upazilaId": "upa-431",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0432",
+        "name": "Polashbari",
+        "nameBn": "পলাশবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-432",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0433",
+        "name": "Saghata",
+        "nameBn": "সাঘাটা",
+        "type": "rural",
+        "upazilaId": "upa-433",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0434",
+        "name": "Gobindaganj",
+        "nameBn": "গোবিন্দগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-434",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0435",
+        "name": "Sundarganj",
+        "nameBn": "সুন্দরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-435",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0436",
+        "name": "Phulchhari",
+        "nameBn": "ফুলছড়ি",
+        "type": "rural",
+        "upazilaId": "upa-436",
+        "districtId": "dis-50",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0437",
+        "name": "Thakurgaon Sadar",
+        "nameBn": "ঠাকুরগাঁও সদর",
+        "type": "rural",
+        "upazilaId": "upa-437",
+        "districtId": "dis-56",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0438",
+        "name": "Pirganj",
+        "nameBn": "পীরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-438",
+        "districtId": "dis-56",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0439",
+        "name": "Ranisankail",
+        "nameBn": "রাণীশংকৈল",
+        "type": "rural",
+        "upazilaId": "upa-439",
+        "districtId": "dis-56",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0440",
+        "name": "Haripur",
+        "nameBn": "হরিপুর",
+        "type": "rural",
+        "upazilaId": "upa-440",
+        "districtId": "dis-56",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0441",
+        "name": "Baliadangi",
+        "nameBn": "বালিয়াডাঙ্গী",
+        "type": "rural",
+        "upazilaId": "upa-441",
+        "districtId": "dis-56",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0442",
+        "name": "Rangpur Sadar",
+        "nameBn": "রংপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-442",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0443",
+        "name": "Gangachara",
+        "nameBn": "গংগাচড়া",
+        "type": "rural",
+        "upazilaId": "upa-443",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0444",
+        "name": "Taraganj",
+        "nameBn": "তারাগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-444",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0445",
+        "name": "Badarganj",
+        "nameBn": "বদরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-445",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0446",
+        "name": "Mithapukur",
+        "nameBn": "মিঠাপুকুর",
+        "type": "rural",
+        "upazilaId": "upa-446",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0447",
+        "name": "Pirganj",
+        "nameBn": "পীরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-447",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0448",
+        "name": "Kaunia",
+        "nameBn": "কাউনিয়া",
+        "type": "rural",
+        "upazilaId": "upa-448",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0449",
+        "name": "Pirgacha",
+        "nameBn": "পীরগাছা",
+        "type": "rural",
+        "upazilaId": "upa-449",
+        "districtId": "dis-55",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0450",
+        "name": "Kurigram Sadar",
+        "nameBn": "কুড়িগ্রাম সদর",
+        "type": "rural",
+        "upazilaId": "upa-450",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0451",
+        "name": "Nageswari",
+        "nameBn": "নাগেশ্বরী",
+        "type": "rural",
+        "upazilaId": "upa-451",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0452",
+        "name": "Bhurungamari",
+        "nameBn": "ভুরুঙ্গামারী",
+        "type": "rural",
+        "upazilaId": "upa-452",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0453",
+        "name": "Phulbari",
+        "nameBn": "ফুলবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-453",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0454",
+        "name": "Rajarhat",
+        "nameBn": "রাজারহাট",
+        "type": "rural",
+        "upazilaId": "upa-454",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0455",
+        "name": "Ulipur",
+        "nameBn": "উলিপুর",
+        "type": "rural",
+        "upazilaId": "upa-455",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0456",
+        "name": "Chilmari",
+        "nameBn": "চিলমারী",
+        "type": "rural",
+        "upazilaId": "upa-456",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0457",
+        "name": "Roumari",
+        "nameBn": "রৌমারী",
+        "type": "rural",
+        "upazilaId": "upa-457",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0458",
+        "name": "Char Rajibpur",
+        "nameBn": "চর রাজিবপুর",
+        "type": "rural",
+        "upazilaId": "upa-458",
+        "districtId": "dis-51",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0459",
+        "name": "Sherpur Sadar",
+        "nameBn": "শেরপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-459",
+        "districtId": "dis-64",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0460",
+        "name": "Nalitabari",
+        "nameBn": "নালিতাবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-460",
+        "districtId": "dis-64",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0461",
+        "name": "Sreebardi",
+        "nameBn": "শ্রীবরদী",
+        "type": "rural",
+        "upazilaId": "upa-461",
+        "districtId": "dis-64",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0462",
+        "name": "Nakla",
+        "nameBn": "নকলা",
+        "type": "rural",
+        "upazilaId": "upa-462",
+        "districtId": "dis-64",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0463",
+        "name": "Jhenaigati",
+        "nameBn": "ঝিনাইগাতী",
+        "type": "rural",
+        "upazilaId": "upa-463",
+        "districtId": "dis-64",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0464",
+        "name": "Fulbaria",
+        "nameBn": "ফুলবাড়ীয়া",
+        "type": "rural",
+        "upazilaId": "upa-464",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0465",
+        "name": "Trishal",
+        "nameBn": "ত্রিশাল",
+        "type": "rural",
+        "upazilaId": "upa-465",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0466",
+        "name": "Bhaluka",
+        "nameBn": "ভালুকা",
+        "type": "rural",
+        "upazilaId": "upa-466",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0467",
+        "name": "Muktagachha",
+        "nameBn": "মুক্তাগাছা",
+        "type": "rural",
+        "upazilaId": "upa-467",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0468",
+        "name": "Mymensingh Sadar",
+        "nameBn": "ময়মনসিংহ সদর",
+        "type": "rural",
+        "upazilaId": "upa-468",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0469",
+        "name": "Dhoubaura",
+        "nameBn": "ধোবাউড়া",
+        "type": "rural",
+        "upazilaId": "upa-469",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0470",
+        "name": "Phulpur",
+        "nameBn": "ফুলপুর",
+        "type": "rural",
+        "upazilaId": "upa-470",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0471",
+        "name": "Haluaghat",
+        "nameBn": "হালুয়াঘাট",
+        "type": "rural",
+        "upazilaId": "upa-471",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0472",
+        "name": "Gouripur",
+        "nameBn": "গৌরীপুর",
+        "type": "rural",
+        "upazilaId": "upa-472",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0473",
+        "name": "Gafargaon",
+        "nameBn": "গফরগাঁও",
+        "type": "rural",
+        "upazilaId": "upa-473",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0474",
+        "name": "Ishwarganj",
+        "nameBn": "ঈশ্বরগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-474",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0475",
+        "name": "Nandail",
+        "nameBn": "নান্দাইল",
+        "type": "rural",
+        "upazilaId": "upa-475",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0476",
+        "name": "Tarakanda",
+        "nameBn": "তারাকান্দা",
+        "type": "rural",
+        "upazilaId": "upa-476",
+        "districtId": "dis-62",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0477",
+        "name": "Jamalpur Sadar",
+        "nameBn": "জামালপুর সদর",
+        "type": "rural",
+        "upazilaId": "upa-477",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0478",
+        "name": "Melandaha",
+        "nameBn": "মেলান্দহ",
+        "type": "rural",
+        "upazilaId": "upa-478",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0479",
+        "name": "Islampur",
+        "nameBn": "ইসলামপুর",
+        "type": "rural",
+        "upazilaId": "upa-479",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0480",
+        "name": "Dewanganj",
+        "nameBn": "দেওয়ানগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-480",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0481",
+        "name": "Sarisabari",
+        "nameBn": "সরিষাবাড়ী",
+        "type": "rural",
+        "upazilaId": "upa-481",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0482",
+        "name": "Madariganj",
+        "nameBn": "মাদারগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-482",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0483",
+        "name": "Bakshiganj",
+        "nameBn": "বকশীগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-483",
+        "districtId": "dis-61",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0484",
+        "name": "Barhatta",
+        "nameBn": "বারহাট্টা",
+        "type": "rural",
+        "upazilaId": "upa-484",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0485",
+        "name": "Durgapur",
+        "nameBn": "দুর্গাপুর",
+        "type": "rural",
+        "upazilaId": "upa-485",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0486",
+        "name": "Kendua",
+        "nameBn": "কেন্দুয়া",
+        "type": "rural",
+        "upazilaId": "upa-486",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0487",
+        "name": "Atpara",
+        "nameBn": "আটপাড়া",
+        "type": "rural",
+        "upazilaId": "upa-487",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0488",
+        "name": "Madan",
+        "nameBn": "মদন",
+        "type": "rural",
+        "upazilaId": "upa-488",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0489",
+        "name": "Khaliajuri",
+        "nameBn": "খালিয়াজুরী",
+        "type": "rural",
+        "upazilaId": "upa-489",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0490",
+        "name": "Khalmakanda",
+        "nameBn": "কলমাকান্দা",
+        "type": "rural",
+        "upazilaId": "upa-490",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0491",
+        "name": "Mohanganj",
+        "nameBn": "মোহনগঞ্জ",
+        "type": "rural",
+        "upazilaId": "upa-491",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0492",
+        "name": "Purbadhala",
+        "nameBn": "পূর্বধলা",
+        "type": "rural",
+        "upazilaId": "upa-492",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0493",
+        "name": "Netrokona Sadar",
+        "nameBn": "নেত্রকোণা সদর",
+        "type": "rural",
+        "upazilaId": "upa-493",
+        "districtId": "dis-63",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0494",
+        "name": "Eidgaon",
+        "nameBn": "ঈদগাঁও",
+        "type": "rural",
+        "upazilaId": "upa-494",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0495",
+        "name": "Bandar",
+        "nameBn": "বন্দর",
+        "type": "rural",
+        "upazilaId": "upa-495",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0496",
+        "name": "Comilla Sadar South",
+        "nameBn": "কুমিল্লা সদর দক্ষিণ",
+        "type": "sub-district",
+        "upazilaId": "upa-094",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0497",
+        "name": "Bangrabazar",
+        "nameBn": "বাংরাবাজার",
+        "type": "sub-district",
+        "upazilaId": "upa-089",
+        "districtId": "dis-19",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0498",
+        "name": "Shahrasti",
+        "nameBn": "শাহরাস্তি",
+        "type": "sub-district",
+        "upazilaId": "upa-099",
+        "districtId": "dis-16",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0499",
+        "name": "Raipur",
+        "nameBn": "রায়পুর",
+        "type": "sub-district",
+        "upazilaId": "upa-116",
+        "districtId": "dis-22",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0500",
+        "name": "Subarnachar",
+        "nameBn": "সুবর্ণচর",
+        "type": "sub-district",
+        "upazilaId": "upa-107",
+        "districtId": "dis-23",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0501",
+        "name": "Sonagazi",
+        "nameBn": "সোনাগাজী",
+        "type": "sub-district",
+        "upazilaId": "upa-111",
+        "districtId": "dis-20",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0502",
+        "name": "Hathazari",
+        "nameBn": "হাটহাজারী",
+        "type": "sub-district",
+        "upazilaId": "upa-143",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0503",
+        "name": "Sandwip",
+        "nameBn": "সন্দ্বীপ",
+        "type": "sub-district",
+        "upazilaId": "upa-144",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0504",
+        "name": "Anwara",
+        "nameBn": "আনোয়ারা",
+        "type": "sub-district",
+        "upazilaId": "upa-145",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0505",
+        "name": "Banshkhali",
+        "nameBn": "বাঁশখালী",
+        "type": "sub-district",
+        "upazilaId": "upa-146",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0506",
+        "name": "Boalkhali",
+        "nameBn": "বোয়ালখালী",
+        "type": "sub-district",
+        "upazilaId": "upa-147",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0507",
+        "name": "Chandanaish",
+        "nameBn": "চন্দনাইশ",
+        "type": "sub-district",
+        "upazilaId": "upa-148",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0508",
+        "name": "Fatikchhari",
+        "nameBn": "ফটিকছড়ি",
+        "type": "sub-district",
+        "upazilaId": "upa-149",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0509",
+        "name": "Lohagara",
+        "nameBn": "লোহাগাড়া",
+        "type": "sub-district",
+        "upazilaId": "upa-151",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0510",
+        "name": "Mirsharai",
+        "nameBn": "মীরসরাই",
+        "type": "sub-district",
+        "upazilaId": "upa-152",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0511",
+        "name": "Patiya",
+        "nameBn": "পটিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-153",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0512",
+        "name": "Rangunia",
+        "nameBn": "রাঙ্গুনিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-154",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0513",
+        "name": "Raozan",
+        "nameBn": "রাউজান",
+        "type": "sub-district",
+        "upazilaId": "upa-155",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0514",
+        "name": "Sitakund",
+        "nameBn": "সীতাকুন্ড",
+        "type": "sub-district",
+        "upazilaId": "upa-156",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0515",
+        "name": "Satkania",
+        "nameBn": "সাতকানিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-157",
+        "districtId": "dis-17",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0516",
+        "name": "Ashulia",
+        "nameBn": "আশুলিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-001",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0517",
+        "name": "Keraniganj Model",
+        "nameBn": "কেরানীগঞ্জ মডেল",
+        "type": "sub-district",
+        "upazilaId": "upa-003",
+        "districtId": "dis-01",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0518",
+        "name": "Palash",
+        "nameBn": "পলাশ",
+        "type": "sub-district",
+        "upazilaId": "upa-050",
+        "districtId": "dis-10",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0519",
+        "name": "Teknaf",
+        "nameBn": "টেকনাফ",
+        "type": "sub-district",
+        "upazilaId": "upa-131",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0520",
+        "name": "Ukhia",
+        "nameBn": "উখিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-132",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0521",
+        "name": "Rupganj",
+        "nameBn": "রূপগঞ্জ",
+        "type": "sub-district",
+        "upazilaId": "upa-044",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0522",
+        "name": "Araihazar",
+        "nameBn": "আড়াইহাজার",
+        "type": "sub-district",
+        "upazilaId": "upa-040",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0523",
+        "name": "Sonargaon",
+        "nameBn": "সোনারগাঁও",
+        "type": "sub-district",
+        "upazilaId": "upa-043",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0524",
+        "name": "Kaliakair",
+        "nameBn": "কালিয়াকৈর",
+        "type": "sub-district",
+        "upazilaId": "upa-021",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0525",
+        "name": "Kapasia",
+        "nameBn": "কাপাসিয়া",
+        "type": "sub-district",
+        "upazilaId": "upa-022",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0526",
+        "name": "Sreepur",
+        "nameBn": "শ্রীপুর",
+        "type": "sub-district",
+        "upazilaId": "upa-023",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0527",
+        "name": "Kaliganj",
+        "nameBn": "কালীগঞ্জ",
+        "type": "sub-district",
+        "upazilaId": "upa-020",
+        "districtId": "dis-03",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0528",
+        "name": "Eidgaon",
+        "nameBn": "ঈদগাঁও",
+        "type": "sub-district",
+        "upazilaId": "upa-494",
+        "districtId": "dis-18",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0529",
+        "name": "Bandar",
+        "nameBn": "বন্দর",
+        "type": "sub-district",
+        "upazilaId": "upa-495",
+        "districtId": "dis-09",
+        "cityCorpId": null
+    },
+    {
+        "id": "tha-0530",
+        "name": "Adabor",
+        "nameBn": "আদাবর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0531",
+        "name": "Airport",
+        "nameBn": "এয়ারপোর্ট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0532",
+        "name": "Badda",
+        "nameBn": "বাড্ডা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0533",
+        "name": "Banani",
+        "nameBn": "বনানী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0534",
+        "name": "Bangshal",
+        "nameBn": "বংশাল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0535",
+        "name": "Bhashantek",
+        "nameBn": "ভাষানটেক",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0536",
+        "name": "Cantonment",
+        "nameBn": "ক্যান্টনমেন্ট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0537",
+        "name": "Chawkbazar",
+        "nameBn": "চকবাজার",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0538",
+        "name": "Dakshin Khan",
+        "nameBn": "দক্ষিণ খান",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0539",
+        "name": "Darus-Salam",
+        "nameBn": "দারুস সালাম",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0540",
+        "name": "Demra",
+        "nameBn": "ডেমরা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0541",
+        "name": "Dhanmondi",
+        "nameBn": "ধানমন্ডি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0542",
+        "name": "Gandaria",
+        "nameBn": "গেন্ডারিয়া",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0543",
+        "name": "Gulshan",
+        "nameBn": "গুলশান",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0544",
+        "name": "Hatirjheel",
+        "nameBn": "হাতিরঝিল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0545",
+        "name": "Hazaribagh",
+        "nameBn": "হাজারীবাগ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0546",
+        "name": "Jatrabari",
+        "nameBn": "যাত্রাবাড়ী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0547",
+        "name": "Kadamtoli",
+        "nameBn": "কদমতলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0548",
+        "name": "Kafrul",
+        "nameBn": "কাফরুল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0549",
+        "name": "Kalabagan",
+        "nameBn": "কলাবাগান",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0550",
+        "name": "Kamrangirchar",
+        "nameBn": "কামরাঙ্গীরচর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0551",
+        "name": "Khilgaon",
+        "nameBn": "খিলগাঁও",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0552",
+        "name": "Khilkhet",
+        "nameBn": "খিলক্ষেত",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0553",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0554",
+        "name": "Lalbagh",
+        "nameBn": "লালবাগ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0555",
+        "name": "Mirpur Model",
+        "nameBn": "মিরপুর মডেল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0556",
+        "name": "Mohammadpur",
+        "nameBn": "মোহাম্মদপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0557",
+        "name": "Motijheel",
+        "nameBn": "মতিঝিল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0558",
+        "name": "Mugda",
+        "nameBn": "মুগদা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0559",
+        "name": "New Market",
+        "nameBn": "নিউ মার্কেট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0560",
+        "name": "Pallabi",
+        "nameBn": "পল্লবী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0561",
+        "name": "Paltan Model",
+        "nameBn": "পল্টন মডেল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0562",
+        "name": "Ramna Model",
+        "nameBn": "রমনা মডেল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0563",
+        "name": "Rampura",
+        "nameBn": "রামপুরা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0564",
+        "name": "Rupnagar",
+        "nameBn": "রূপনগর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0565",
+        "name": "Sabujbagh",
+        "nameBn": "সবুজবাগ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0566",
+        "name": "Shah Ali",
+        "nameBn": "শাহ আলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0567",
+        "name": "Shahbagh",
+        "nameBn": "শাহবাগ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0568",
+        "name": "Shahjahanpur",
+        "nameBn": "শাহজাহানপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0569",
+        "name": "Sher-e-Bangla Nagar",
+        "nameBn": "শেরে বাংলা নগর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0570",
+        "name": "Shyampur",
+        "nameBn": "শ্যামপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0571",
+        "name": "Sutrapur",
+        "nameBn": "সূত্রাপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0572",
+        "name": "Tejgaon",
+        "nameBn": "তেজগাঁও",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0573",
+        "name": "Tejgaon Industrial",
+        "nameBn": "তেজগাঁও শিল্প এলাকা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0574",
+        "name": "Turag",
+        "nameBn": "তুরাগ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0575",
+        "name": "Uttar Khan",
+        "nameBn": "উত্তর খান",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0576",
+        "name": "Uttara East",
+        "nameBn": "উত্তরা পূর্ব",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0577",
+        "name": "Uttara West",
+        "nameBn": "উত্তরা পশ্চিম",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0578",
+        "name": "Vatara",
+        "nameBn": "ভাটারা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-01"
+    },
+    {
+        "id": "tha-0579",
+        "name": "Wari",
+        "nameBn": "ওয়ারী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-01",
+        "cityCorpId": "cc-02"
+    },
+    {
+        "id": "tha-0580",
+        "name": "Akbarshah",
+        "nameBn": "আকবরশাহ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0581",
+        "name": "Bakalia",
+        "nameBn": "বাকলিয়া",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0582",
+        "name": "Bandar",
+        "nameBn": "বন্দর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0583",
+        "name": "Bayazid",
+        "nameBn": "বায়েজীদ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0584",
+        "name": "Chandgaon",
+        "nameBn": "চান্দগাঁও",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0585",
+        "name": "Chawkbazar",
+        "nameBn": "চকবাজার",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0586",
+        "name": "Double Mooring",
+        "nameBn": "ডবলমুরিং",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0587",
+        "name": "EPZ",
+        "nameBn": "ইপিজেড",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0588",
+        "name": "Halishahar",
+        "nameBn": "হালিশহর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0589",
+        "name": "Karnaphuli",
+        "nameBn": "কর্ণফুলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0590",
+        "name": "Khulshi",
+        "nameBn": "খুলশী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0591",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0592",
+        "name": "Pahartali",
+        "nameBn": "পাহাড়তলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0593",
+        "name": "Panchlaish",
+        "nameBn": "পাঁচলাইশ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0594",
+        "name": "Patenga",
+        "nameBn": "পতেঙ্গা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0595",
+        "name": "Sadarghat",
+        "nameBn": "সদরঘাট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-17",
+        "cityCorpId": "cc-03"
+    },
+    {
+        "id": "tha-0596",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0597",
+        "name": "Sonadanga",
+        "nameBn": "সোনাডাঙ্গা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0598",
+        "name": "Khalishpur",
+        "nameBn": "খালিশপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0599",
+        "name": "Daulatpur",
+        "nameBn": "দৌলতপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0600",
+        "name": "Khan Jahan Ali",
+        "nameBn": "খানজাহান আলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0601",
+        "name": "Labanchara",
+        "nameBn": "লবণচরা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0602",
+        "name": "Horintana",
+        "nameBn": "হরিণটানা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0603",
+        "name": "Aranghata",
+        "nameBn": "আড়ংঘাটা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-35",
+        "cityCorpId": "cc-07"
+    },
+    {
+        "id": "tha-0604",
+        "name": "Boalia Model",
+        "nameBn": "বোয়ালিয়া মডেল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-47",
+        "cityCorpId": "cc-08"
+    },
+    {
+        "id": "tha-0605",
+        "name": "Rajpara",
+        "nameBn": "রাজপাড়া",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-47",
+        "cityCorpId": "cc-08"
+    },
+    {
+        "id": "tha-0606",
+        "name": "Motihar",
+        "nameBn": "মতিহার",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-47",
+        "cityCorpId": "cc-08"
+    },
+    {
+        "id": "tha-0607",
+        "name": "Shah Makhdum",
+        "nameBn": "শাহ মখদুম",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-47",
+        "cityCorpId": "cc-08"
+    },
+    {
+        "id": "tha-0608",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0609",
+        "name": "South Surma",
+        "nameBn": "দক্ষিণ সুরমা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0610",
+        "name": "Jalalabad",
+        "nameBn": "জালালাবাদ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0611",
+        "name": "Airport",
+        "nameBn": "এয়ারপোর্ট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0612",
+        "name": "Moglabazar",
+        "nameBn": "মোগলাবাজার",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0613",
+        "name": "Shah Paran",
+        "nameBn": "হজরত শাহ পরান",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-60",
+        "cityCorpId": "cc-10"
+    },
+    {
+        "id": "tha-0614",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0615",
+        "name": "Airport",
+        "nameBn": "এয়ারপোর্ট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0616",
+        "name": "Kashipur",
+        "nameBn": "কাশিপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0617",
+        "name": "Bandara",
+        "nameBn": "বন্দর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0618",
+        "name": "Rupatali",
+        "nameBn": "রূপাতলী",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0619",
+        "name": "Char Aila Kathi",
+        "nameBn": "চর আইলাকাঠি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0620",
+        "name": "Sadar",
+        "nameBn": "সদর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0621",
+        "name": "Barial",
+        "nameBn": "বারিয়াল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-26",
+        "cityCorpId": "cc-09"
+    },
+    {
+        "id": "tha-0622",
+        "name": "Joydebpur",
+        "nameBn": "জয়দেবপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0623",
+        "name": "Tongi East",
+        "nameBn": "টঙ্গী পূর্ব",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0624",
+        "name": "Tongi West",
+        "nameBn": "টঙ্গী পশ্চিম",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0625",
+        "name": "Bason",
+        "nameBn": "বাসন",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0626",
+        "name": "Gacha",
+        "nameBn": "গাছা",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0627",
+        "name": "Kashimpur",
+        "nameBn": "কাশিমপুর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0628",
+        "name": "Konabari",
+        "nameBn": "কোনাবাড়ি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0629",
+        "name": "Pubail",
+        "nameBn": "পূবাইল",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-03",
+        "cityCorpId": "cc-04"
+    },
+    {
+        "id": "tha-0630",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0631",
+        "name": "Tajhat",
+        "nameBn": "তাজহাট",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0632",
+        "name": "Haragach",
+        "nameBn": "হারাগাছ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0633",
+        "name": "Mahiganj",
+        "nameBn": "মাহিগঞ্জ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0634",
+        "name": "Parshuram",
+        "nameBn": "পরশুরাম",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0635",
+        "name": "Tukuria",
+        "nameBn": "তুকুরিয়া",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-55",
+        "cityCorpId": "cc-12"
+    },
+    {
+        "id": "tha-0636",
+        "name": "Narayanganj Sadar",
+        "nameBn": "নারায়ণগঞ্জ সদর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-09",
+        "cityCorpId": "cc-05"
+    },
+    {
+        "id": "tha-0637",
+        "name": "Fatullah",
+        "nameBn": "ফতুল্লাহ",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-09",
+        "cityCorpId": "cc-05"
+    },
+    {
+        "id": "tha-0638",
+        "name": "Kotwali",
+        "nameBn": "কোতোয়ালি",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-62",
+        "cityCorpId": "cc-11"
+    },
+    {
+        "id": "tha-0639",
+        "name": "Sadar",
+        "nameBn": "সদর",
+        "type": "metropolitan",
+        "upazilaId": null,
+        "districtId": "dis-62",
+        "cityCorpId": "cc-11"
+    }
+]
