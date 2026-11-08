@@ -2,7 +2,7 @@
 
 **What the database is.** Every table, column, enum, index and rule the requirements need, grouped by domain. [`coding-standards.md`](coding-standards.md) owns *how* each table is written in code; this document owns *what* exists. **This document wins** where they disagree.
 
-**Status.** `users`, `user_locations` (§4.1) and `locations` (§4.2) are built; `users` lags this design (§8). Everything else is designed here and not yet implemented.
+**Status.** Identity and auth (§4.1), reference data (§4.2), media (§4.3) and the musician profile (§4.4) are built; `users` lags this design (§8). Bands, activity and the public site are designed here and not yet implemented.
 
 ## Contents
 
@@ -52,6 +52,10 @@ erDiagram
   musician_profiles ||--o{ musician_genres : ""
   musician_profiles ||--o{ musician_collaboration_types : ""
   musician_profiles ||--o{ musician_video_links : ""
+  musician_profiles ||--o{ musician_availability_slots : ""
+  musician_profiles ||--o{ musician_band_experiences : ""
+  musician_band_experiences ||--o{ musician_video_links : ""
+  musician_band_experiences ||--o{ portfolio_media : "owns (BAND_EXPERIENCE)"
   musician_profiles ||--o{ profile_views : "viewed"
   instruments ||--o{ musician_instruments : ""
   genres ||--o{ musician_genres : ""
@@ -65,7 +69,7 @@ erDiagram
   band_open_roles ||--o{ band_membership_requests : "for"
 ```
 
-The two `portfolio_media` lines are drawn for reading only: `owner_id` is polymorphic and has no foreign key (§4.3). `contact_messages` stands alone (a contact message may come from a visitor).
+The `portfolio_media` ownership lines are drawn for reading only: `owner_id` is polymorphic and has no foreign key (§4.3). `contact_messages` stands alone (a contact message may come from a visitor).
 
 ---
 
@@ -79,12 +83,15 @@ All `smallint`. The **column** they live in is given so a reader can find them i
 | `LocationLevel` | `locations.level` | `DIVISION = 1` · `DISTRICT = 2` · `SUBDISTRICT = 3` (upazila or city corporation) · `LOCALITY = 4` (thana or area) |
 | `LocationType` | `locations.type` | `DIVISION = 1` · `DISTRICT = 2` · `UPAZILA = 3` · `CITY_CORPORATION = 4` · `THANA = 5` · `AREA = 6` |
 | `ExperienceLevel` | `musician_profiles.experience_level` | `BEGINNER = 1` · `INTERMEDIATE = 2` · `ADVANCED = 3` · `PROFESSIONAL = 4` |
-| `Availability` | `musician_profiles.availability` | `AVAILABLE = 1` · `LIMITED = 2` · `NOT_AVAILABLE = 3` |
 | `CollaborationType` | `musician_collaboration_types.collaboration_type` | `JOIN_BAND = 1` · `SESSION_WORK = 2` · `JAMMING = 3` · `ONLINE_COLLAB = 4` · `TEACHING = 5` |
-| `SkillLevel` | `musician_instruments.skill_level` | same values as `ExperienceLevel` |
-| `MediaOwnerType` | `portfolio_media.owner_type` | `USER = 1` · `BAND = 2` |
-| `MediaType` | `portfolio_media.media_type` | `IMAGE = 1` · `VIDEO = 2` · `AUDIO = 3` |
-| `VideoProvider` | `musician_video_links.provider` | `YOUTUBE = 1` · `VIMEO = 2` |
+| `SkillLevel` | `musician_instruments.skill_level` | `BEGINNER = 1` · `INTERMEDIATE = 2` · `ADVANCED = 3` · `PROFESSIONAL = 4` |
+| `GenreRelation` | `musician_genres.relation` | `PERFORMS = 1` · `LISTENS = 2` |
+| `Weekday` | `musician_availability_slots.day_of_week` | ISO: `MONDAY = 1` … `SUNDAY = 7`. Null in the column is "any day" |
+| `BandInterest` | `musician_profiles.band_interest` | `NOT_INTERESTED = 1` · `OPEN_TO_EXISTING_BAND = 2` (wants a band, would join an existing one) · `NEW_BAND_ONLY = 3` (wants a band, would rather start a new one) |
+| `MediaOwnerType` | `portfolio_media.owner_type` | `USER = 1` · `BAND = 2` · `BAND_EXPERIENCE = 3` |
+| `MediaType` | `portfolio_media.media_type` | `IMAGE = 1` · `VIDEO = 2` (burnt: video is a link, never an upload) · `AUDIO = 3` |
+| `VideoProvider` | `musician_video_links.provider` | `YOUTUBE = 1` · `VIMEO = 2` · `FACEBOOK = 3` |
+| `BandType` | `bands.band_type` | `NEW = 1` (newly forming) · `EXISTING = 2` (already playing together) |
 | `BandMemberRole` | `band_members.role` | `OWNER = 1` · `MEMBER = 2` |
 | `BandLeaveReason` | `band_members.leave_reason` | `LEFT = 1` · `REMOVED = 2` |
 | `OpenRoleStatus` | `band_open_roles.status` | `OPEN = 1` · `FILLED = 2` · `CLOSED = 3` |
@@ -144,7 +151,7 @@ Indexes: `user_locations_uq_user_id_location_id` unique `WHERE deleted_at IS NUL
 2. Choosing a row fills the next dropdown with `?parent_id=<its id>`. Its first option is **"All of <the row above>"**, which stops there. Steps 3 and 4 group their options by `type`: city corporations before upazilas, thanas before areas.
 3. A row with `child_count = 0` leaves the next dropdown disabled.
 4. **Add location** stores the deepest choice as a chip. The user repeats for as many places as they like, across any divisions.
-5. Signup sends the chips as `location_ids` on `POST /api/v1/users`.
+5. Profile setup step 1 sends the chips as `location_ids` on `PUT /api/v1/profiles/me/about` (at least one). `POST /api/v1/users` still accepts them, but the signup form no longer asks.
 
 | User action | Rows stored |
 |---|---|
@@ -154,29 +161,33 @@ Indexes: `user_locations_uq_user_id_location_id` unique `WHERE deleted_at IS NUL
 
 A pick at any level is **one row**. Its children are included by matching (§5.4) and never expanded into rows, so a place added to the tree later is covered automatically.
 
-**Saving** happens in the user's create transaction. The service rejects unknown ids (400) and drops a pick another pick already covers (Dhaka division + Savar → Dhaka division). The DTO caps the list at 20 and rejects duplicates.
+**Saving** happens in step 1's transaction (or the user's create transaction, from signup). The service rejects unknown ids (400) and drops a pick another pick already covers (Dhaka division + Savar → Dhaka division). The DTO caps the list at 20 and rejects duplicates.
 
-⚠ **Editing the set after signup waits for auth.** It will be a `PUT` that replaces the whole set for the signed-in user. A public route keyed by a user id would let anyone rewrite anyone's locations.
+**Editing** is step 1 again (`PUT /profiles/me/about`), or the locations on their own from the profile page (`PUT /profiles/me/locations { location_ids }`, which leaves `setup_step` alone). Both are signed in and always `me`, and replace the whole set, keeping rows that stay and soft-removing the rest. There is deliberately no route keyed by a user id. `GET /profiles/me` returns each location with a `label` ("Savar, Dhaka": the place and the places above it) and its `ancestor_ids`.
 
 ### 4.2 Reference data
 
 Seeded, admin-editable lists. Filters pass ids.
 
-#### `instruments`
+#### `instruments` ✅ built
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
-| `name` | `varchar(60)` | no | Guitar, Drums, Bass, Vocals, Keyboard, … `instruments_uq_name` unique `WHERE deleted_at IS NULL` |
-| `sort_order` | `smallint` | no | default 0 |
+| `name` | `varchar(60)` | no | Vocals, Acoustic guitar, Tabla, Dotara, … `instruments_uq_name` unique `WHERE deleted_at IS NULL` |
+| `sort_order` | `smallint` | no | default 0. The order pickers list them in |
 
 ⚠ **A band role is an instrument.** "Looking for a drummer" is `band_open_roles.instrument_id` = Drums, so a role search and an instrument search are the same query. "Vocals" is an instrument row for this reason.
 
-#### `genres`
+**Seed data.** `instrument.seeder.ts`: the instruments common in Bangladesh, Western and local (harmonium, tabla, dhol, dotara, ektara, bansuri, esraj, …). Ids are fixed in the seeder and the seed is an upsert on `id`, so the same instrument has the same id everywhere. `GET /api/v1/instruments` lists them in `sort_order`.
+
+#### `genres` ✅ built
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `name` | `varchar(60)` | no | `genres_uq_name` unique `WHERE deleted_at IS NULL` |
 | `sort_order` | `smallint` | no | default 0 |
+
+**Seed data.** `genre.seeder.ts`, fixed ids, upsert on `id`: international genres plus Bangladeshi ones (Baul, Lalon Geeti, Rabindra Sangeet, Nazrul Geeti, Adhunik, …). `GET /api/v1/genres`.
 
 #### `locations` ✅ built
 
@@ -255,85 +266,158 @@ It is an extra, not a replacement: matching (§5.4) stays containment ("Dhaka di
 
 ### 4.3 Media
 
-#### `portfolio_media`
+#### `portfolio_media` ✅ built
 
-A musician's or a band's portfolio: images, videos and audio, **stored and served by Cloudinary**. The database keeps metadata only.
+Images and audio for a musician's gallery (profile setup step 7), a band experience (step 8) and, later, a band. **Stored and served by Cloudinary**; the database keeps metadata only. Video files are never uploaded: a video is a link (`musician_video_links`).
 
 **Upload flow** (signed uploads; the Cloudinary API secret never leaves the server):
 
-1. `POST /media/upload-signature` with `owner_type` (+ `owner_id` for a band). NestJS checks the caller may write to that owner, then signs the upload parameters (timestamp, folder `soundcircle/<owner_type>/<owner_id>`, allowed formats) and returns the signature, timestamp, API key, cloud name and folder.
-2. The frontend uploads the file straight to Cloudinary.
-3. Cloudinary returns `public_id`, `secure_url`, `version`, `signature` and the file metadata.
-4. The frontend sends that result to `POST /media`. NestJS verifies Cloudinary's response signature, checks that `public_id` sits inside the folder it signed, and saves the row.
+1. `POST /profiles/me/media/signature` with `media_type` (`AUDIO` or `IMAGE`) and, for a band experience, `band_experience_id`. The service checks the caller owns that owner and is under its limit, then **generates the `public_id` itself**, `soundcircle/<users|band-experiences>/<owner id>/<audio|photos>/<24 random hex>`, and signs `public_id`, `timestamp`, `overwrite=false` and `allowed_formats`. It returns the signature, timestamp, API key, cloud name, `resource_type` and the upload URL.
+2. The frontend uploads the file straight to Cloudinary with exactly those parameters. A changed `public_id` or format list breaks the signature.
+3. The frontend sends the `public_id` to `POST /profiles/me/media`.
+4. The service checks the `public_id` is under the prefix it signs for this caller and owner, then **reads the asset back from Cloudinary's Admin API** (`GET /resources/<resource_type>/upload/<public_id>`). Size, format, duration and the delivery URL come from that answer, never from the client. An asset over 10 MB, of the wrong kind (a video file sent as audio) or in a disallowed format is destroyed and refused with 400.
 5. The frontend displays media from `secure_url`.
 
-**Delete** soft-removes the row and destroys the Cloudinary asset by `public_id`.
+Only a signed request can create an asset under `soundcircle/users/<id>/`, so an asset found there was uploaded through step 1 for that user. An upload that is never saved (the tab closed between steps 2 and 3) stays in Cloudinary as an orphan; nothing references it.
+
+**Delete** soft-removes the row, then destroys the Cloudinary asset by `public_id` after the commit. A failed destroy is logged, never rolled back into the row.
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `owner_type` | `smallint` | no | `MediaOwnerType` |
-| `owner_id` | `int` | no | `users.id` or `bands.id`, per `owner_type`. **No FK** |
-| `media_type` | `smallint` | no | `MediaType`. Cloudinary's `resource_type` is `image` for `IMAGE` and `video` for `VIDEO` and `AUDIO` |
+| `owner_id` | `int` | no | `users.id`, `bands.id` or `musician_band_experiences.id`, per `owner_type`. **No FK** |
+| `media_type` | `smallint` | no | `MediaType`. Cloudinary's `resource_type` is `image` for `IMAGE` and `video` for `AUDIO` |
 | `file_name` | `varchar(255)` | yes | Original name, display only |
 | `public_id` | `varchar(255)` | no | Cloudinary id, used to transform or delete. `portfolio_media_uq_public_id` unique `WHERE deleted_at IS NULL` |
-| `secure_url` | `text` | no | HTTPS delivery URL |
-| `thumbnail_url` | `text` | yes | Video only |
-| `mime_type` | `varchar(100)` | no | |
-| `file_size` | `bigint` | no | Bytes |
-| `caption` | `text` | yes | Max 500 characters (DTO) |
+| `secure_url` | `text` | no | HTTPS delivery URL, from the Admin API |
+| `format` | `varchar(20)` | no | `mp3`, `jpg`, …, from the Admin API |
+| `file_size` | `int` | no | Bytes, from the Admin API. At most 10 MB (10,485,760) |
+| `duration_seconds` | `int` | yes | Audio only |
 
-Index: `portfolio_media_idx_owner_type_owner_id`. Limit: 20 per owner, enforced in the service.
+Index: `portfolio_media_idx_owner_type_owner_id`.
 
-⚠ **`owner_id` has no foreign key**, because it points at two tables. The service checks that the owner exists and that the caller may write to it (self for `USER`, band owner for `BAND`), and soft-deletes an owner's media when it soft-deletes the owner.
+| Kind | Formats | Max size | Limit |
+|---|---|---|---|
+| Audio (gallery only) | mp3, wav, m4a, aac, ogg, flac, opus | 10 MB | 10 per user |
+| Photo, gallery | jpg, jpeg, png, webp | 10 MB | 20 per user |
+| Photo, band experience | jpg, jpeg, png, webp | 10 MB | 10 per band experience |
 
-The **profile photo** and **band logo** are not portfolio items. They use the same signed flow and are stored as two columns on their row (`musician_profiles.photo_*`, `bands.logo_*`).
+⚠ **`owner_id` has no foreign key**, because it points at several tables. The service checks the owner exists and the caller may write to it (self for `USER`, the profile's owner for `BAND_EXPERIENCE`, band owner for `BAND`), and soft-deletes an owner's media when it soft-deletes the owner.
+
+The **profile photo** and **band logo** are not portfolio items. They use the same signed flow and are stored as two columns on their row (`musician_profiles.photo_*` ✅ built; `bands.logo_*` later). The photo goes under `soundcircle/users/<user id>/avatar/<24 hex>`: `POST /profiles/me/photo/signature`, the browser uploads, then `PUT /profiles/me/photo { public_id }` checks it against Cloudinary like a gallery photo (image, ≤ 10 MB). It saves as it uploads, not with a step, and creates the profile if step 1 has not been saved yet. A replaced photo is destroyed once the new one has committed; if the save fails, the new upload is destroyed instead. `DELETE /profiles/me/photo` removes it. Login and `GET /auth/me` return `photo_url` for the header avatar.
 
 ### 4.4 Musician profile
 
-#### `musician_profiles`
+**Profile setup is eight steps**, each saved on its own (`PUT /profiles/me/<step>`), so a user can stop after any step and continue later:
 
-One per user, created at profile setup step 1. Name comes from `users.name`.
+| Step | Collects | Stored in |
+|---|---|---|
+| 1 About me | photo (optional, saves as it uploads), locations (≥ 1), bio | `musician_profiles.photo_*`, `user_locations`, `musician_profiles.bio` |
+| 2 Music genres | genres performed, genres listened to | `musician_genres` |
+| 3 Instruments | instruments, a skill level each | `musician_instruments` |
+| 4 Contact | phone, whether it is public | `users.phone`, `users.phone_visibility` |
+| 5 Availability | days and time ranges | `musician_availability_slots` |
+| 6 Band joining | interest in joining a band | `musician_profiles.band_interest` |
+| 7 Gallery | audio samples, photos, video links | `portfolio_media` (`USER`), `musician_video_links` (`band_experience_id` null) |
+| 8 Band experience | current and previous bands, with photos and video links | `musician_band_experiences`, `portfolio_media` (`BAND_EXPERIENCE`), `musician_video_links` |
+
+Saving step N needs `setup_step >= N - 1`, and moves `setup_step` to at least N. A step is a replace: the request carries the step's whole state, rows no longer in it are soft-removed, and rows still in it are kept. Every step write runs in one transaction behind `SELECT … FOR UPDATE` on the profile row, then recomputes `profile_completion` (§5.3).
+
+#### `musician_profiles` ✅ built
+
+One per user, created by step 1. Name comes from `users.name`.
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `user_id` | `int` | no | FK `users`. `musician_profiles_uq_user_id` unique `WHERE deleted_at IS NULL` |
-| `slug` | `varchar(120)` | no | Public URL `/musicians/:slug`. `musician_profiles_uq_slug` unique `WHERE deleted_at IS NULL` |
-| `headline` | `varchar(120)` | yes | Step 1 |
-| `bio` | `text` | yes | Step 1, max 2,000 characters (DTO) |
-| `experience_level` | `smallint` | yes | `ExperienceLevel`. Step 1 |
-| `years_of_experience` | `smallint` | yes | Step 1 |
-| `availability` | `smallint` | yes | `Availability`. Step 1 |
-| `photo_public_id` | `varchar(255)` | yes | Cloudinary id of the profile photo. Step 3 |
-| `photo_url` | `text` | yes | Its `secure_url` |
-| `setup_step` | `smallint` | no | default 0: the last completed step, 0–3 |
-| `profile_completion` | `smallint` | no | default 0, 0–100. Recomputed by the service on every profile write (§5.3) |
-| `is_discoverable` | `boolean` | no | default false. True once step 2 is done (has at least one instrument), so empty profiles stay out of search |
+| `slug` | `varchar(120)` | no | Public URL `/musicians/:slug`: the name in kebab case plus `-<user_id>`, so it is unique by construction. `musician_profiles_uq_slug` unique `WHERE deleted_at IS NULL` |
+| `bio` | `text` | yes | Step 1, 30–1,000 characters (DTO) |
+| `band_interest` | `smallint` | yes | `BandInterest`. Step 6 |
+| `photo_public_id` | `varchar(255)` | yes | The profile photo on Cloudinary (§4.3). Added by `add_photo_to_musician_profiles` |
+| `photo_url` | `varchar(500)` | yes | Its `secure_url` |
+| `setup_step` | `smallint` | no | default 0: the last completed step, 0–8. `_ck_setup_step` `CHECK (setup_step BETWEEN 0 AND 8)` |
+| `profile_completion` | `smallint` | no | default 0, 0–100. Recomputed on every profile write (§5.3). `_ck_profile_completion` `CHECK (profile_completion BETWEEN 0 AND 100)` |
+| `is_discoverable` | `boolean` | no | default false. True once the profile has at least one instrument, so empty profiles stay out of search |
 
-Indexes: `_idx_availability` · `_idx_experience_level` · `_ck_profile_completion` `CHECK (profile_completion BETWEEN 0 AND 100)`.
+Not built yet, because no step collects them: `headline`, `experience_level`, `years_of_experience`. There is no cover photo: it was dropped from the design. The `availability` enum column of the first design is replaced by `musician_availability_slots`.
 
-#### `musician_instruments` — step 2
-
-| Column | Type | Null | Notes |
-|---|---|---|---|
-| `musician_profile_id` | `int` | no | FK `musician_profiles` |
-| `instrument_id` | `int` | no | FK `instruments` |
-| `skill_level` | `smallint` | yes | `SkillLevel` |
-| `is_primary` | `boolean` | no | default false. At most one per profile |
-
-Indexes: `_uq_musician_profile_id_instrument_id` unique `WHERE deleted_at IS NULL` · `_uq_musician_profile_id_primary` unique `(musician_profile_id) WHERE is_primary AND deleted_at IS NULL` · `_idx_instrument_id`.
-
-#### `musician_genres` — step 2
+#### `musician_genres` ✅ built — step 2
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `musician_profile_id` | `int` | no | FK `musician_profiles` |
 | `genre_id` | `int` | no | FK `genres` |
+| `relation` | `smallint` | no | `GenreRelation`: performs or listens to. A genre can be both: two rows |
 
-Indexes: `_uq_musician_profile_id_genre_id` unique `WHERE deleted_at IS NULL` · `_idx_genre_id`.
+Indexes: `_uq_musician_profile_id_genre_id_relation` unique `WHERE deleted_at IS NULL` · `_idx_genre_id`. At least one `PERFORMS`, at most 10 of each (DTO).
 
-#### `musician_collaboration_types` — step 1
+#### `musician_instruments` ✅ built — step 3
 
-What the musician is open to. Backs the "collaboration" filter.
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `musician_profile_id` | `int` | no | FK `musician_profiles` |
+| `instrument_id` | `int` | no | FK `instruments` |
+| `skill_level` | `smallint` | no | `SkillLevel`. Every instrument has one |
+
+Indexes: `_uq_musician_profile_id_instrument_id` unique `WHERE deleted_at IS NULL` · `_idx_instrument_id`. 1–10 per profile (DTO). The first design's `is_primary` is not built; no step asks for a main instrument.
+
+#### `musician_availability_slots` ✅ built — step 5
+
+When the musician is free. One row per slot; a null means "any".
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `musician_profile_id` | `int` | no | FK `musician_profiles` |
+| `day_of_week` | `smallint` | yes | `Weekday`. Null = any day |
+| `start_time` | `time` | yes | Null with `end_time` = any time |
+| `end_time` | `time` | yes | Before `start_time` means the slot runs past midnight (10 PM – 2 AM) |
+
+| Constraint | Definition |
+|---|---|
+| `_ck_time_range` | `CHECK ((start_time IS NULL) = (end_time IS NULL))`: both or neither |
+| `_ck_time_not_empty` | `CHECK (start_time IS NULL OR start_time <> end_time)` |
+| `_idx_musician_profile_id` | |
+
+| Musician says | Rows |
+|---|---|
+| Any day, any time | one row: `(null, null, null)`, and it must be the only one |
+| Friday, anytime | `(FRIDAY, null, null)` |
+| Saturday 4 PM – 8 PM | `(SATURDAY, 16:00, 20:00)` |
+| Any day 6 PM – 10 PM | `(null, 18:00, 22:00)` |
+
+1–21 slots, no duplicates (DTO and service).
+
+#### `musician_band_experiences` ✅ built — step 8
+
+Bands the musician is in or has been in. Free text: a band does not have to be on SoundCircle.
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `musician_profile_id` | `int` | no | FK `musician_profiles` |
+| `band_name` | `varchar(100)` | no | |
+| `role` | `varchar(120)` | no | Their role or what they played, e.g. "Lead guitar, backing vocals" |
+| `is_current` | `boolean` | no | default false: still in the band |
+
+Index: `_idx_musician_profile_id`. At most 10 per profile. Photos are `portfolio_media` with `owner_type = BAND_EXPERIENCE`; videos are `musician_video_links` with its `band_experience_id`. Audio is not offered here. Removing a band experience soft-removes its photos and video links too.
+
+#### `musician_video_links` ✅ built — steps 7 and 8
+
+YouTube, Facebook and Vimeo links. Video files are never uploaded.
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `musician_profile_id` | `int` | no | FK `musician_profiles` |
+| `band_experience_id` | `int` | yes | FK `musician_band_experiences`. Null = the musician's own gallery (step 7) |
+| `provider` | `smallint` | no | `VideoProvider`, detected from the URL |
+| `external_video_id` | `varchar(64)` | no | Parsed from the URL on save; a URL no provider pattern matches is refused |
+| `url` | `varchar(512)` | no | As entered, trimmed |
+| `sort_order` | `smallint` | no | default 0: the order entered |
+
+Indexes: `_idx_musician_profile_id` · `_idx_band_experience_id`. Limits: 10 in the gallery, 5 per band experience. A duplicate within one list is refused.
+
+#### `musician_collaboration_types`
+
+What the musician is open to. Backs the "collaboration" filter. Not built: the eight steps do not ask for it.
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
@@ -342,69 +426,79 @@ What the musician is open to. Backs the "collaboration" filter.
 
 Indexes: `_uq_musician_profile_id_collaboration_type` unique `WHERE deleted_at IS NULL` · `_idx_collaboration_type`.
 
-#### `musician_video_links` — step 3
-
-YouTube / Vimeo links. Uploaded files go to `portfolio_media` instead.
-
-| Column | Type | Null | Notes |
-|---|---|---|---|
-| `musician_profile_id` | `int` | no | FK `musician_profiles` |
-| `provider` | `smallint` | no | `VideoProvider` |
-| `external_video_id` | `varchar(32)` | no | Parsed from the URL on save; the embed is built from this, never from the raw URL |
-| `url` | `varchar(512)` | no | As entered |
-| `title` | `varchar(120)` | yes | |
-| `sort_order` | `smallint` | no | default 0 |
-
-Index: `_uq_musician_profile_id_provider_external_video_id` unique `WHERE deleted_at IS NULL`. Limit: 5 per profile.
-
 ### 4.5 Bands
 
-#### `bands`
+**Creating a band is three steps** (`/bands/new`, `/members`, `/media`), then Publish. Step 1 creates a **draft** (`published_at IS NULL`) with the creator as its `OWNER` member; everything after saves as it is made, so a creator can leave and resume (`GET /bands/me/draft`). Publishing sets the slug and `published_at`, and the band is public at `/bands/:slug`. Every `/bands/:id/*` write is the owner's only, and a band the caller does not own answers 404.
+
+| Step | Collects | Stored in |
+|---|---|---|
+| 1 Band information | logo (uploads on its own), name, genres, practice location, description, band type | `bands`, `band_genres` |
+| 2 Members | SoundCircle users (search) and people outside SoundCircle (name, role, photo) | `band_members` |
+| 3 Performance media | photos, video links | `portfolio_media` (`BAND`), `band_video_links` |
+
+**Invite Members** on a published band's page (owner only) opens the step 2 editor. Members are added to the line-up directly; the invitation-and-accept flow (`band_membership_requests`) is designed, not built.
+
+#### `bands` ✅ built
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
-| `name` | `varchar(100)` | no | |
-| `slug` | `varchar(120)` | no | Public URL `/bands/:slug`. `bands_uq_slug` unique `WHERE deleted_at IS NULL` |
-| `logo_public_id` | `varchar(255)` | yes | Cloudinary id of the logo |
-| `logo_url` | `text` | yes | Its `secure_url` |
-| `bio` | `text` | yes | |
-| `location_id` | `int` | no | FK `locations`, any level. Musicians are matched against it (§5.4) |
-| `setup_step` | `smallint` | no | default 0. Drives the creation progress bar: 1 details, 2 genres, 3 roles, 4 invitations sent |
+| `name` | `varchar(100)` | no | 2–100 characters (DTO) |
+| `slug` | `varchar(120)` | yes | Public URL `/bands/:slug`, set on publish: the name in kebab case plus `-<id>`, unique by construction. Null while a draft. `bands_uq_slug` unique `WHERE deleted_at IS NULL` |
+| `logo_public_id` | `varchar(255)` | yes | Cloudinary id of the logo, `soundcircle/bands/<id>/logo/…` (§4.3) |
+| `logo_url` | `varchar(500)` | yes | Its `secure_url` |
+| `bio` | `text` | no | The description, 30–2,000 characters (DTO) |
+| `location_id` | `int` | no | FK `locations`, any level: where the band practises. Musicians are matched against it (§5.4) |
+| `band_type` | `smallint` | no | `BandType` |
+| `published_at` | `timestamptz` | yes | Null while a draft. `bands_ck_slug_when_published` `CHECK (published_at IS NULL OR slug IS NOT NULL)` |
 
 Index: `bands_idx_location_id`.
 
-⚠ **No `owner_id` column.** Ownership is the `band_members` row with `role = OWNER` (§4.5 `band_members`), so it cannot disagree with membership. `created_by` records who created the band.
+⚠ **No `owner_id` column.** Ownership is the `band_members` row with `role = OWNER`, so it cannot disagree with membership. `created_by` records who created the band. The first design's `setup_step` is not built: a draft exists or it does not, and later steps need only that.
 
-#### `band_genres`
+#### `band_genres` ✅ built
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `band_id` | `int` | no | FK `bands` |
 | `genre_id` | `int` | no | FK `genres` |
 
-Index: `_uq_band_id_genre_id` unique `WHERE deleted_at IS NULL`.
+Index: `_uq_band_id_genre_id` unique `WHERE deleted_at IS NULL`. Step 1 replaces the set (1–10 genres).
 
-#### `band_members`
+#### `band_members` ✅ built
 
-Membership history. A current member is a row with `left_at IS NULL`.
+The line-up. A member is either a **SoundCircle user** (`user_id`; their name and photo come from their account and profile) or **someone outside SoundCircle** (`name`, optional photo). Removing a member soft-removes the row; an outside member's photo is destroyed once that commits.
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
 | `band_id` | `int` | no | FK `bands` |
-| `user_id` | `int` | no | FK `users` |
+| `user_id` | `int` | yes | FK `users`. Null for someone outside SoundCircle |
 | `role` | `smallint` | no | `BandMemberRole` |
-| `instrument_id` | `int` | yes | FK `instruments`: what they play in this band |
-| `joined_at` | `timestamptz` | no | |
-| `left_at` | `timestamptz` | yes | |
-| `leave_reason` | `smallint` | yes | `BandLeaveReason` |
-| `removed_by_user_id` | `int` | yes | FK `users`. Set when `leave_reason = REMOVED` |
+| `name` | `varchar(100)` | yes | Someone outside SoundCircle only |
+| `position` | `varchar(120)` | yes | Their role or instrument in the band: "Lead guitar". Required for someone outside SoundCircle (service) |
+| `photo_public_id` | `varchar(255)` | yes | Someone outside SoundCircle only: `soundcircle/bands/<id>/members/…` |
+| `photo_url` | `varchar(500)` | yes | Its `secure_url` |
 
 | Constraint | Definition |
 |---|---|
-| `band_members_uq_band_id_user_id_current` | unique `(band_id, user_id) WHERE left_at IS NULL AND deleted_at IS NULL`: one live membership per person |
-| `band_members_uq_band_id_owner` | unique `(band_id) WHERE role = 1 AND left_at IS NULL AND deleted_at IS NULL`: **exactly one owner** at a time |
-| `band_members_ck_left` | `CHECK ((left_at IS NULL) = (leave_reason IS NULL))` |
+| `band_members_uq_band_id_user_id` | unique `(band_id, user_id) WHERE user_id IS NOT NULL AND deleted_at IS NULL`: one row per person (a second add is 409) |
+| `band_members_uq_band_id_owner` | unique `(band_id) WHERE role = 1 AND deleted_at IS NULL`: **exactly one owner**; the owner cannot be removed |
+| `band_members_ck_user_or_name` | `CHECK ((user_id IS NULL) = (name IS NOT NULL))` |
+| `band_members_ck_owner_is_user` | `CHECK (role <> 1 OR user_id IS NOT NULL)` |
 | `band_members_idx_user_id` | "My bands" on the dashboard |
+
+Up to 30 members, owner included, checked under a lock on the band row. **Member search** (`GET /bands/:id/member-candidates?q=`, 2+ characters, 10 results) matches users by name, never lists anyone already in the band, and returns only name, profile photo and instruments. The first design's `instrument_id`, `joined_at`, `left_at`, `leave_reason` and `removed_by_user_id` (membership history) are not built.
+
+#### `band_video_links` ✅ built
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `band_id` | `int` | no | FK `bands`. `_idx_band_id` |
+| `provider` | `smallint` | no | `VideoProvider` |
+| `external_video_id` | `varchar(64)` | no | Parsed from `url` (`video-link.util.ts`) |
+| `url` | `varchar(512)` | no | |
+| `sort_order` | `smallint` | no | default 0 |
+
+Step 3 replaces the list (up to 10). Performance photos are `portfolio_media` with `owner_type = BAND` (up to 20).
 
 #### `band_open_roles`
 
@@ -531,19 +625,23 @@ Roles are read from `band_members` on every request. **There is no permission ta
 
 ### 5.3 Profile completion
 
-Recomputed and stored on every profile write, so the dashboard and discovery read a column rather than compute it:
+Recomputed and stored on every profile write, so the dashboard and discovery read a column rather than compute it. Each item matches a setup step (§4.4):
 
 | Item | Weight |
 |---|---|
-| Headline | 10 |
-| Bio | 15 |
-| ≥ 1 available location | 10 |
-| Experience level + availability | 10 |
-| ≥ 1 instrument | 20 |
-| ≥ 1 genre | 10 |
-| Profile photo | 15 |
-| ≥ 1 portfolio item or video link | 10 |
+| Bio | 10 |
+| ≥ 1 location | 5 |
+| Profile photo | 5 |
+| ≥ 1 performed genre | 15 |
+| ≥ 1 instrument | 15 |
+| Phone | 10 |
+| ≥ 1 availability slot | 10 |
+| Band interest answered | 10 |
+| ≥ 1 gallery item (audio, photo or video link) | 10 |
+| Band experience step done | 10 |
 | **Total** | **100** |
+
+The profile photo and the gallery are the optional parts, so a profile that skips both finishes at 85%.
 
 ### 5.4 Location matching
 
@@ -608,7 +706,7 @@ Sort: `newest` (`created_at`), `completion` (`profile_completion`). Default: `co
 | Signup / login (email or phone + password) | `users`, `user_locations` |
 | JWT access + refresh in cookies, route guards | none (stateless, §4.1) |
 | Email / phone visibility | `users.email_visibility`, `users.phone_visibility` |
-| Profile setup steps 1–3 | `musician_profiles`, `user_locations`, `musician_collaboration_types` · `musician_instruments`, `musician_genres` · `portfolio_media`, `musician_video_links`, `musician_profiles.photo_*` |
+| Profile setup steps 1–8 (§4.4) | `musician_profiles`, `musician_genres`, `musician_instruments`, `users.phone*`, `musician_availability_slots`, `portfolio_media`, `musician_video_links`, `musician_band_experiences` |
 | Portfolio (musician and band) | `portfolio_media` |
 | Profile completion % | `musician_profiles.profile_completion` (§5.3) |
 | Dashboard | `profile_completion`, `band_membership_requests`, `band_members`, §5.5, `notifications`, `profile_views` |
@@ -623,14 +721,23 @@ Sort: `newest` (`created_at`), `completion` (`profile_completion`). Default: `co
 | Table | Status |
 |---|---|
 | `users` | ✅ entity, migration, repository, `POST /api/v1/users`, `GET /api/v1/users`. ⚠ **Lags §4.1**: still has `google_id` and `users_uq_google_id`, and `password_hash` is nullable with the password required only alongside an email |
-| `user_locations` | ✅ entity, migration, repository; written by `POST /api/v1/users`. Editing after signup waits for auth |
+| `user_locations` | ✅ entity, migration, repository; set in profile setup step 1, edited with `PUT /profiles/me/locations` |
 | `locations` | ✅ entity, migration, repository, seeder (689 rows), `GET /api/v1/locations` |
+| auth (no table) | ✅ email + password login, access/refresh JWT cookies, `AuthBaseController` + `AuthGuard`. Phone login is designed, not built |
+| `instruments`, `genres` | ✅ entity, migration, repository, seeder, `GET /api/v1/instruments`, `GET /api/v1/genres` |
+| `musician_profiles`, `musician_genres`, `musician_instruments`, `musician_availability_slots`, `musician_band_experiences`, `musician_video_links` | ✅ entity, migration, repository, `/api/v1/profiles/me/*` (§4.4) |
+| `portfolio_media` | ✅ entity, migration, repository, Cloudinary signed upload (§4.3) |
+| `bands`, `band_genres`, `band_members`, `band_video_links` | ✅ entity, migration, repository, `/api/v1/bands/*` (§4.5): draft, members, media, publish, public `GET /bands/:slug` |
 | everything else in §4 | ⬜ designed, not built |
 
-**Built routes** (public, since auth does not exist yet):
+**Built routes** (all public except `GET /auth/me`):
 
 | Route | Does |
 |---|---|
 | `POST /api/v1/users` | Creates a user. Body: `name`, `email` and/or `phone`, `password` (currently required only with `email`), optional `email_visibility` / `phone_visibility`, optional `location_ids[]` (§4.1). Hashes the password; 400 on a taken email/phone or an unknown location id, 409 if a concurrent create wins the race. Returns the user with its `locations` |
+| `POST /api/v1/auth/login` | Body: `email`, `password`, optional `remember`. Sets `sc_access` (15 min, path `/`) and `sc_refresh` (7 days, path `/api/v1/auth`), both `httpOnly`, `SameSite=Lax`, `Secure` outside LOCAL; persistent only with `remember`, otherwise browser-session cookies. Stamps `last_login_at`. One 401 message for an unknown email and a wrong password. Returns the user |
+| `POST /api/v1/auth/refresh` | Swaps a valid `sc_refresh` for a fresh pair, keeping `remember`; 401 if the token or its account is gone |
+| `POST /api/v1/auth/logout` | Clears both cookies. Public, so an expired session can still sign out. ⚠ Cannot revoke the refresh token (§4.1) |
+| `GET /api/v1/auth/me` | The signed-in user (`AuthBaseController`); 401 for a visitor |
 | `GET /api/v1/locations` | The location picker (§4.1). `level`, `parent_id`, `search` (name or `name_bn`), `page_no` / `page_size`, `sort_order_by[]`; default order is by name. `near_location_id` + `radius_km` (default 10, max 300) keeps places within that distance, nearest first, each with `distance_km`. Each row carries `type`, `child_count`, `latitude` and `longitude` |
 | `GET /api/v1/users` | Lists users. `search` (name), `row_status`, `page_no` / `page_size`, `sort_order_by[]` on `id`, `name`, `created_at`. `email` / `phone` are returned only when `PUBLIC`, because every caller is a visitor until auth lands |

@@ -190,7 +190,7 @@ async create(reqDto: CreateUserDto): Promise<UserEntity> {
 - The service is the **only** place that throws domain exceptions. Not found → `BadRequestException`; not yours → `ForbiddenException`; lost a race → **`ConflictException` (409)**.
 - **A write returns the row re-read through the repository**, never the entity it saved, so `select: false` columns cannot leak.
 - **Stamping fires only on entity persistence.** `save()` (of an entity instance) and `softRemove()` trigger the hooks; `update()`, `insert()` and `softDelete()` fire nothing and must carry `updated_by` / `updated_ip` in the patch. **`softDelete()` is banned.**
-- Read the actor with `AuthUser.get()`. Never take a user id as a parameter, and never read a header. (⚠ Null until auth lands.)
+- Read the actor with `AuthUser.get()`. Never take a user id as a parameter, and never read a header. (⚠ Null for a visitor.)
 
 ---
 
@@ -232,7 +232,7 @@ export class UserPublicController extends PublicBaseController {
 }
 ```
 
-- **Pick the base controller by auth surface.** Today there is one: `PublicBaseController` (no guard, file suffix `*.public.controller.ts`). Auth adds an authenticated base controller with its guard. Guards are never scattered across individual controllers.
+- **Pick the base controller by auth surface.** `PublicBaseController` (no guard, file suffix `*.public.controller.ts`) or `AuthBaseController` (`AuthGuard`: 401 without a valid access cookie, file suffix `*.controller.ts`). Guards are never scattered across individual controllers.
 - **Thin:** delegate to the service, wrap in `ApiResponse(data, "message")`. No logic, no queries, no try/catch; the global `CustomExceptionFilter` handles errors.
 - **Inject only the service.**
 - **Verbs:** `@Get()` getAll · `@Get(":id")` getOne · `@Post()` create · `@Patch(":id")` update · `@Delete(":id")` delete · `@Post(":id/<action>")` for a transition.

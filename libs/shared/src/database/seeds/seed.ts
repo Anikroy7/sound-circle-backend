@@ -3,12 +3,14 @@ import { DataSource } from "typeorm";
 import DatabaseConfig from "@soundcircle/shared/config/database.config";
 import { Seeder } from "@soundcircle/shared/database/seeds/seeder";
 import { LocationSeeder } from "@soundcircle/shared/database/seeds/reference/location.seeder";
+import { InstrumentSeeder } from "@soundcircle/shared/database/seeds/reference/instrument.seeder";
+import { GenreSeeder } from "@soundcircle/shared/database/seeds/reference/genre.seeder";
 
 /**
  * `yarn seed:run` — run AFTER `yarn migration:run`. Every seeder, in this order, in one transaction.
  * A seeder whose table references another's goes after it.
  */
-const SEEDERS: Seeder[] = [new LocationSeeder()];
+const SEEDERS: Seeder[] = [new LocationSeeder(), new InstrumentSeeder(), new GenreSeeder()];
 
 async function seed(): Promise<void> {
   // Logging off: a few hundred upserted rows would otherwise print as one enormous statement.

@@ -8,8 +8,8 @@ import { UserEntity } from "@soundcircle/shared/database/entities/identity/user.
 /**
  * The per-request context, written once by `RequestContextMiddleware`.
  *
- * `user` is the signed-in user. ⚠ Always null until auth lands (schema-design §8) — so
- * every `created_by` is null for now, while `created_ip` is already stamped.
+ * `user` is the signed-in user, resolved from the access-token cookie; null for a visitor,
+ * so a visitor's `created_by` is null while `created_ip` is still stamped.
  */
 export interface CustomRequestType {
   user_agent: string;

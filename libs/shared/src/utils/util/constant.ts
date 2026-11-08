@@ -16,3 +16,47 @@ export const MAX_NEAR_RADIUS_KM = 300;
 
 /** Postgres `unique_violation` — a unique index caught a duplicate the pre-check missed. */
 export const PG_UNIQUE_VIOLATION = "23505";
+
+/**
+ * Auth (schema-design §4.1): a short-lived access JWT and a refresh JWT, each in its own httpOnly cookie.
+ * ⚠ A stateless refresh token cannot be revoked, so its lifetime stays short.
+ */
+export const ACCESS_TOKEN_COOKIE = "sc_access";
+export const REFRESH_TOKEN_COOKIE = "sc_refresh";
+export const ACCESS_TOKEN_TTL_SECONDS = 15 * 60;
+export const REFRESH_TOKEN_TTL_SECONDS = 7 * 24 * 60 * 60;
+
+/** Media (schema-design §4.3). Every upload is at most 10 MB, image or audio. */
+export const MAX_MEDIA_FILE_BYTES = 10 * 1024 * 1024;
+export const MAX_GALLERY_AUDIO = 10;
+export const MAX_GALLERY_PHOTOS = 20;
+export const MAX_BAND_EXPERIENCE_PHOTOS = 10;
+export const AUDIO_FORMATS = ["mp3", "wav", "m4a", "aac", "ogg", "flac", "opus"];
+export const IMAGE_FORMATS = ["jpg", "jpeg", "png", "webp"];
+
+/** Musician profile setup (schema-design §4.4). */
+export const PROFILE_SETUP_STEPS = 8;
+export const MIN_BIO_LENGTH = 30;
+export const MAX_BIO_LENGTH = 1000;
+export const MAX_GENRES_PER_RELATION = 10;
+export const MAX_INSTRUMENTS = 10;
+export const MAX_AVAILABILITY_SLOTS = 21;
+export const MAX_GALLERY_VIDEOS = 10;
+export const MAX_BAND_EXPERIENCES = 10;
+export const MAX_BAND_EXPERIENCE_VIDEOS = 5;
+
+/* Bands (schema-design §4.5). */
+export const MIN_BAND_NAME_LENGTH = 2;
+export const MAX_BAND_NAME_LENGTH = 100;
+export const MIN_BAND_BIO_LENGTH = 30;
+export const MAX_BAND_BIO_LENGTH = 2000;
+export const MAX_BAND_GENRES = 10;
+/** Owner included. */
+export const MAX_BAND_MEMBERS = 30;
+export const MAX_MEMBER_NAME_LENGTH = 100;
+export const MAX_MEMBER_POSITION_LENGTH = 120;
+export const MAX_BAND_PHOTOS = 20;
+export const MAX_BAND_VIDEOS = 10;
+/** Member search: shortest query, and how many results. */
+export const MIN_MEMBER_SEARCH_LENGTH = 2;
+export const MAX_MEMBER_SEARCH_RESULTS = 10;

@@ -19,6 +19,12 @@ import { ENV } from "@soundcircle/shared/utils/util/constant";
 import "@soundcircle/shared/utils/util/sort-order.query-builder";
 
 async function bootstrap(): Promise<void> {
+  // Without these every login is a 500, so refuse to boot instead. `--watch` restarts reuse the old env, which is why the hint says restart.
+  for (const name of ["JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"]) {
+    if (!ENV[name])
+      throw new Error(`${name} is not set. Add it to .env (see .env.example), then stop and restart the API: --watch does not reload .env`);
+  }
+
   const app = await NestFactory.create(AppModule);
 
   // A proxy or load balancer fronts the app, so the real client IP is in the forwarded chain —

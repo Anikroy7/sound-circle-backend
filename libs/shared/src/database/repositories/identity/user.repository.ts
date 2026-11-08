@@ -53,12 +53,33 @@ export class UserRepository extends Repository<UserEntity> {
       : builder.getRawMany();
   }
 
-  /** ⚠ Unmasked — for the account's own reader only (the create response), never another user. */
+  /** ⚠ Unmasked — for the account's own reader only (the create response, `GET /auth/me`), never another user. */
   async getOne(id: number): Promise<UserEntity> {
     return this.createQueryBuilder("users")
       .select(this.DEFAULT_SELECTED_COLUMNS)
       .where("users.id = :id", { id })
       .andWhere("users.deleted_at IS NULL")
       .getRawOne();
+  }
+
+  /**
+   * ⚠ The one read that selects `password_hash` — for `AuthService.login` to verify against,
+   * and never returned to a client. Undefined when no active account has the email.
+   */
+  async getCredentialsByEmail(email: string): Promise<{ id: number; password_hash: string } | undefined> {
+    return this.createQueryBuilder("users")
+      .select(["users.id as id", "users.password_hash as password_hash"])
+      .where("users.email = :email", { email })
+      .andWhere("users.deleted_at IS NULL")
+      .getRawOne();
+  }
+
+  /** A login is not an edit of the account, so `updated_at` / `updated_by` are deliberately left alone. */
+  async recordLogin(id: number): Promise<void> {
+    await this.createQueryBuilder()
+      .update(UserEntity)
+      .set({ last_login_at: () => "now()", updated_at: () => "updated_at" })
+      .where("id = :id", { id })
+      .execute();
   }
 }
