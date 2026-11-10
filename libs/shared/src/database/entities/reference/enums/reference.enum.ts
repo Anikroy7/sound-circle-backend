@@ -22,3 +22,19 @@ export enum LocationType {
   THANA = 5,
   AREA = 6,
 }
+
+/**
+ * `instruments.family` — the section of a band an instrument plays in. The band page's lineup counts
+ * members per family, so a "Bass guitar" and a "Double bass" would both fill the bass chair.
+ */
+export enum InstrumentFamily {
+  VOCALS = 1,
+  GUITAR = 2,
+  BASS = 3,
+  DRUMS = 4,
+  KEYS = 5,
+  PERCUSSION = 6,
+  STRINGS = 7,
+  WINDS = 8,
+  ELECTRONIC = 9,
+}

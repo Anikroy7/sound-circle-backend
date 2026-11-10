@@ -55,11 +55,15 @@ import {
 } from "@apps/core-api/modules/musician/dto/profile-steps.dto";
 import {
   MediaItemView,
+  MusicianCardView,
+  PublicMusicianView,
+  SearchPage,
   MusicianProfileView,
   ProfileLocationView,
   VideoLinkView,
 } from "@apps/core-api/modules/musician/common/types/musician-profile.type";
 import { computeProfileCompletion } from "@apps/core-api/modules/musician/common/utils/profile-completion.util";
+import { FilterMusicianDto } from "@soundcircle/shared/utils/dtos/musician/filter-musician.dto";
 
 /** Profile setup steps (schema-design §4.4). */
 const STEP = { ABOUT: 1, GENRES: 2, INSTRUMENTS: 3, CONTACT: 4, AVAILABILITY: 5, BAND_INTEREST: 6, GALLERY: 7, BAND_EXPERIENCE: 8 } as const;
@@ -97,7 +101,58 @@ export class MusicianProfileService {
     const userId = this.userId();
     const [user, profile] = await Promise.all([this.userRepository.getOne(userId), this.musicianProfileRepository.getByUserId(userId)]);
     if (!user) throw new UnauthorizedException("Please log in to continue");
+    return this.profileView(user, profile);
+  }
 
+  /**
+   * Anyone's profile by its URL, for visitors too. Contact is masked: the phone shows only when the
+   * musician made it public (schema-design §5.1), and the email never does.
+   */
+  async getPublic(slug: string): Promise<PublicMusicianView> {
+    const profile = await this.musicianProfileRepository.getBySlug(slug);
+    const user = profile ? await this.userRepository.getOne(profile.user_id) : null;
+    if (!profile || !user) throw new NotFoundException("That musician was not found");
+
+    // ⚠ The full view is the owner's (phone unmasked); only the fields below leave for another reader.
+    const { phone, show_phone, setup_step, is_discoverable, ...view } = await this.profileView(user, profile);
+    const viewerId: number | null = AuthUser.get()?.getId?.() ?? null;
+    return {
+      ...view,
+      id: profile.id,
+      slug: profile.slug,
+      user_id: user.id,
+      name: user.name,
+      phone: show_phone ? phone : null,
+      is_self: viewerId === user.id,
+    };
+  }
+
+  /** Musician discovery (schema-design §6). The signed-in viewer never finds themselves. */
+  async search(filters: FilterMusicianDto): Promise<SearchPage<MusicianCardView>> {
+    const viewerId: number | null = AuthUser.get()?.getId?.() ?? null;
+    const page = await this.musicianProfileRepository.search(filters, viewerId);
+    const ids = [...new Set(page.items.map((row) => row.location_id).filter((id): id is number => !!id))];
+    const labels = new Map((await labelLocations(this.locationRepository, ids)).map((location) => [location.id, location.label]));
+
+    return {
+      items: page.items.map((row) => ({
+        user_id: row.user_id,
+        slug: row.slug,
+        name: row.name,
+        photo_url: row.photo_url ?? null,
+        bio: row.bio ?? null,
+        band_interest: row.band_interest ?? null,
+        instruments: row.instruments ? row.instruments.split(", ") : [],
+        genres: row.genres ? row.genres.split(", ") : [],
+        location: row.location_id ? (labels.get(row.location_id) ?? null) : null,
+        more_locations: Math.max(0, Number(row.location_count ?? 0) - 1),
+      })),
+      meta: { total: page.meta.totalItems, page: page.meta.currentPage, page_size: page.meta.itemsPerPage, total_pages: page.meta.totalPages },
+    };
+  }
+
+  private async profileView(user: UserEntity, profile: MusicianProfileEntity | undefined): Promise<MusicianProfileView> {
+    const userId = user.id;
     const contact = { phone: user.phone ?? null, show_phone: user.phone_visibility === ContactVisibility.PUBLIC };
     // Locations belong to the user, not the profile, so they are read either way.
     const locations = await this.locationViews(userId);

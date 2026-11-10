@@ -4,12 +4,14 @@ import { AuthBaseController } from "@soundcircle/shared/utils/controllers/auth-b
 import { ApiResponse } from "@soundcircle/shared/utils/util/utils";
 import { UploadTicket } from "@apps/core-api/modules/media/common/types/media.type";
 import { BandService } from "@apps/core-api/modules/band/band.service";
-import { BandView, MemberCandidateView } from "@apps/core-api/modules/band/common/types/band.type";
+import { BandDashboardView, BandView, MemberCandidateView, MyBandView } from "@apps/core-api/modules/band/common/types/band.type";
 import {
   AddBandMemberDto,
+  AddOpenRoleDto,
   AttachBandPhotoDto,
   BandImageDto,
   MemberSearchDto,
+  SaveIntroductionDto,
   SaveBandInfoDto,
   UpdateBandVideosDto,
 } from "@apps/core-api/modules/band/dto/band.dto";
@@ -23,6 +25,57 @@ import {
 export class BandController extends AuthBaseController {
   constructor(private readonly bandService: BandService) {
     super();
+  }
+
+  @Get("me")
+  @ApiOperation({ summary: "Every band I'm in, owned first; my own drafts too" })
+  async getMine(): Promise<MyBandView[]> {
+    const bands: MyBandView[] = await this.bandService.getMine();
+    return ApiResponse(bands, "Fetch Successfully");
+  }
+
+  @Get(":id/dashboard")
+  @ApiOperation({ summary: "The band's own dashboard, for its members; the owner also gets its invitations and join requests" })
+  async getDashboard(@Param("id", ParseIntPipe) id: number): Promise<BandDashboardView> {
+    const dashboard: BandDashboardView = await this.bandService.getDashboard(id);
+    return ApiResponse(dashboard, "Fetch Successfully");
+  }
+
+  @Post(":id/members/me/welcome")
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: "I saw my welcome to the band (and skipped the introduction)" })
+  async markWelcomed(@Param("id", ParseIntPipe) id: number): Promise<BandView> {
+    const band: BandView = await this.bandService.markWelcomed(id);
+    return ApiResponse(band, "Updated Successfully");
+  }
+
+  @Put(":id/members/me/introduction")
+  @ApiOperation({ summary: "My introduction to the band: a short note, favourite genres, interests (each optional)" })
+  async saveIntroduction(@Param("id", ParseIntPipe) id: number, @Body() reqDto: SaveIntroductionDto): Promise<BandView> {
+    const band: BandView = await this.bandService.saveIntroduction(id, reqDto);
+    return ApiResponse(band, "Updated Successfully");
+  }
+
+  @Post(":id/leave")
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: "Leave the band (members only; the owner can't)" })
+  async leave(@Param("id", ParseIntPipe) id: number): Promise<null> {
+    await this.bandService.leave(id);
+    return ApiResponse(null, "Deleted Successfully");
+  }
+
+  @Post(":id/open-roles")
+  @ApiOperation({ summary: "Open a position for an instrument (one per instrument)" })
+  async addOpenRole(@Param("id", ParseIntPipe) id: number, @Body() reqDto: AddOpenRoleDto): Promise<BandView> {
+    const band: BandView = await this.bandService.addOpenRole(id, reqDto);
+    return ApiResponse(band, "Created Successfully");
+  }
+
+  @Delete(":id/open-roles/:roleId")
+  @ApiOperation({ summary: "Close an open position" })
+  async closeOpenRole(@Param("id", ParseIntPipe) id: number, @Param("roleId", ParseIntPipe) roleId: number): Promise<BandView> {
+    const band: BandView = await this.bandService.closeOpenRole(id, roleId);
+    return ApiResponse(band, "Deleted Successfully");
   }
 
   @Get("me/draft")

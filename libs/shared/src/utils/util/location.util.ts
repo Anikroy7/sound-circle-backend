@@ -10,3 +10,10 @@ export const locationCovers = (outer: Pick<LocationEntity, "id">, inner: Locatio
 /** Drops every pick another pick in the set already covers: Dhaka division + Savar → Dhaka division. */
 export const dropCoveredLocations = <T extends LocationAncestry>(locations: T[]): T[] =>
   locations.filter((location) => !locations.some((other) => other.id !== location.id && locationCovers(other, location)));
+
+/**
+ * SQL for "these two locations overlap": one covers the other (schema-design §5.4). `a` and `b` are
+ * aliases of `locations` rows. The musician-to-band match and both discovery location filters use it.
+ */
+export const locationsOverlapSql = (a: string, b: string): string =>
+  `(${b}.id IN (${a}.division_id, ${a}.district_id, ${a}.subdistrict_id, ${a}.id) OR ${a}.id IN (${b}.division_id, ${b}.district_id, ${b}.subdistrict_id))`;

@@ -71,3 +71,42 @@ export interface MusicianProfileView {
   videos: VideoLinkView[];
   band_experiences: BandExperienceView[];
 }
+
+/**
+ * Anyone's profile, for visitors too: the owner's view with contact masked (the phone only when public,
+ * never the email) and the setup bookkeeping left out.
+ */
+export interface PublicMusicianView extends Omit<MusicianProfileView, "id" | "slug" | "phone" | "show_phone" | "setup_step" | "is_discoverable"> {
+  id: number;
+  slug: string;
+  user_id: number;
+  name: string;
+  /** Null unless the musician made it public. */
+  phone: string | null;
+  /** The signed-in viewer is this musician. */
+  is_self: boolean;
+}
+
+/** One musician in the discovery results. */
+export interface MusicianCardView {
+  user_id: number;
+  slug: string;
+  name: string;
+  photo_url: string | null;
+  bio: string | null;
+  band_interest: BandInterest | null;
+  /** Best first. */
+  instruments: string[];
+  /** Genres performed. */
+  genres: string[];
+  /** Their widest location, labelled: "Dhaka". */
+  location: string | null;
+  /** How many more locations they listed. */
+  more_locations: number;
+}
+
+/** A page of search results. */
+export interface SearchPage<T> {
+  items: T[];
+  meta: { total: number; page: number; page_size: number; total_pages: number };
+}

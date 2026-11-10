@@ -1,5 +1,6 @@
 import { Column, Entity, Index } from "typeorm";
 import { AbstractEntity } from "@soundcircle/shared/database/entities/abstract.entity";
+import { InstrumentFamily } from "@soundcircle/shared/database/entities/reference/enums/reference.enum";
 import { TABLE_INSTRUMENTS } from "@soundcircle/shared/utils/util/database.table";
 
 /** Seeded (`instrument.seeder.ts`). ⚠ A band role is an instrument, which is why "Vocals" is a row (schema-design §4.2). */
@@ -11,4 +12,8 @@ export class InstrumentEntity extends AbstractEntity {
 
   @Column({ type: "smallint", nullable: false, default: 0 })
   sort_order: number;
+
+  /** The band section it plays in; null for an instrument added by hand and not yet classified (shown as "Other"). */
+  @Column({ type: "smallint", nullable: true })
+  family: InstrumentFamily | null;
 }

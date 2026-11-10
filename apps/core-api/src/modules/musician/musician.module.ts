@@ -18,6 +18,7 @@ import { LocationModule } from "@apps/core-api/modules/location/location.module"
 import { MediaModule } from "@apps/core-api/modules/media/media.module";
 import { UserModule } from "@apps/core-api/modules/user/user.module";
 import { MusicianProfileController } from "@apps/core-api/modules/musician/musician-profile.controller";
+import { MusicianPublicController } from "@apps/core-api/modules/musician/musician.public.controller";
 import { MusicianProfileService } from "@apps/core-api/modules/musician/musician-profile.service";
 
 /** The musician domain (schema-design §4.4). Reads users (and their locations), locations, instruments, genres and media through their modules. */
@@ -37,7 +38,7 @@ import { MusicianProfileService } from "@apps/core-api/modules/musician/musician
     LocationModule,
     MediaModule,
   ],
-  controllers: [MusicianProfileController],
+  controllers: [MusicianProfileController, MusicianPublicController],
   providers: [
     MusicianProfileRepository,
     MusicianGenreRepository,
@@ -47,6 +48,6 @@ import { MusicianProfileService } from "@apps/core-api/modules/musician/musician
     MusicianVideoLinkRepository,
     MusicianProfileService,
   ],
-  exports: [MusicianProfileRepository],
+  exports: [MusicianProfileRepository, MusicianInstrumentRepository],
 })
 export class MusicianModule {}

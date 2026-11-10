@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 import { Transform } from "class-transformer";
 import { ArrayMaxSize, ArrayMinSize, ArrayUnique, IsArray, IsInt, IsOptional, IsString, Length, MaxLength } from "class-validator";
-import { BandType } from "@soundcircle/shared/database/entities/band/enums/band.enum";
+import { BandType, MusicalInterest } from "@soundcircle/shared/database/entities/band/enums/band.enum";
 import { IsNumeric } from "@soundcircle/shared/utils/validators/is-number-string.validator";
 import { IsValueIn } from "@soundcircle/shared/utils/validators/is-value-in.validator";
 import { enumToString, enumValuesToArray } from "@soundcircle/shared/utils/util/utils";
@@ -10,8 +10,12 @@ import {
   MAX_BAND_GENRES,
   MAX_BAND_NAME_LENGTH,
   MAX_BAND_VIDEOS,
+  MAX_INTRO_GENRES,
+  MAX_INTRO_INTERESTS,
+  MAX_INTRO_LENGTH,
   MAX_MEMBER_NAME_LENGTH,
   MAX_MEMBER_POSITION_LENGTH,
+  MAX_OPEN_ROLE_DESCRIPTION_LENGTH,
   MIN_BAND_BIO_LENGTH,
   MIN_BAND_NAME_LENGTH,
 } from "@soundcircle/shared/utils/util/constant";
@@ -118,4 +122,45 @@ export class MemberSearchDto {
   @MaxLength(100)
   @ApiProperty({ type: String, example: "rafiq" })
   q: string;
+}
+
+/** A position the band is looking to fill. */
+export class AddOpenRoleDto {
+  @IsInt({ message: "Choose the instrument you need" })
+  @ApiProperty({ type: Number, example: 5, description: "An id from GET /instruments" })
+  instrument_id: number;
+
+  @IsOptional()
+  @Transform(trim)
+  @IsString()
+  @MaxLength(MAX_OPEN_ROLE_DESCRIPTION_LENGTH)
+  @ApiPropertyOptional({ type: String, example: "Weekly rehearsals in Mirpur; double-kick a plus" })
+  description?: string;
+}
+
+/** A member introduces themselves to their band. Every field is optional; empty clears it. */
+export class SaveIntroductionDto {
+  @IsOptional()
+  @Transform(trim)
+  @IsString()
+  @MaxLength(MAX_INTRO_LENGTH, { message: `Keep your introduction under ${MAX_INTRO_LENGTH} characters` })
+  @ApiPropertyOptional({ type: String, example: "Drummer from Mirpur — can't wait to write with you all." })
+  intro?: string;
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(MAX_INTRO_GENRES, { message: `Pick up to ${MAX_INTRO_GENRES} genres` })
+  @ArrayUnique()
+  @IsInt({ each: true })
+  @ApiPropertyOptional({ type: [Number], example: [1, 25] })
+  genre_ids?: number[];
+
+  @IsOptional()
+  @IsArray()
+  @ArrayMaxSize(MAX_INTRO_INTERESTS, { message: `Pick up to ${MAX_INTRO_INTERESTS} interests` })
+  @ArrayUnique()
+  @IsInt({ each: true })
+  @IsValueIn(enumValuesToArray(MusicalInterest), { each: true })
+  @ApiPropertyOptional({ type: [Number], enum: MusicalInterest, description: enumToString(MusicalInterest) })
+  interests?: MusicalInterest[];
 }

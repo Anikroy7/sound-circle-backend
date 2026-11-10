@@ -19,6 +19,18 @@ export interface BandMemberRow {
   name: string;
   position: string | null;
   photo_url: string | null;
+  /**
+   * What they play: the membership's own instrument, else (for a SoundCircle user) the best instrument on
+   * their profile, so an owner who never named a position still counts in the lineup.
+   */
+  instrument_id: number | null;
+  /** When they joined: the membership row's creation. */
+  joined_at: Date;
+  /** Their public profile, for a SoundCircle user. */
+  profile_slug: string | null;
+  welcomed_at: Date | null;
+  intro: string | null;
+  introduced_at: Date | null;
 }
 
 /** A SoundCircle user found by the member search. */
@@ -49,6 +61,14 @@ export class BandMemberRepository extends Repository<BandMemberEntity> {
         "COALESCE(band_members.name, users.name) as name",
         "band_members.position as position",
         "COALESCE(band_members.photo_url, profiles.photo_url) as photo_url",
+        `COALESCE(band_members.instrument_id, (SELECT played.instrument_id FROM ${TABLE_MUSICIAN_INSTRUMENTS} played
+            WHERE played.musician_profile_id = profiles.id AND played.deleted_at IS NULL
+            ORDER BY played.skill_level DESC, played.id LIMIT 1)) as instrument_id`,
+        "band_members.created_at as joined_at",
+        "profiles.slug as profile_slug",
+        "band_members.welcomed_at as welcomed_at",
+        "band_members.intro as intro",
+        "band_members.introduced_at as introduced_at",
       ])
       .leftJoin(TABLE_USERS, "users", "users.id = band_members.user_id")
       .leftJoin(TABLE_MUSICIAN_PROFILES, "profiles", "profiles.user_id = band_members.user_id AND profiles.deleted_at IS NULL")

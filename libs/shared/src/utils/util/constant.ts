@@ -60,3 +60,18 @@ export const MAX_BAND_VIDEOS = 10;
 /** Member search: shortest query, and how many results. */
 export const MIN_MEMBER_SEARCH_LENGTH = 2;
 export const MAX_MEMBER_SEARCH_RESULTS = 10;
+
+/* Open roles and membership requests (schema-design §4.5). */
+export const MAX_OPEN_ROLES = 10;
+export const MAX_OPEN_ROLE_DESCRIPTION_LENGTH = 500;
+export const MAX_REQUEST_MESSAGE_LENGTH = 1000;
+/** A pending invitation or join request lapses after this many days. */
+export const MEMBERSHIP_REQUEST_TTL_DAYS = 30;
+/** Musician and band search. */
+export const DEFAULT_SEARCH_PAGE_SIZE = 12;
+export const MAX_SEARCH_PAGE_SIZE = 48;
+
+/* A member's introduction to their band (schema-design §4.5). */
+export const MAX_INTRO_LENGTH = 500;
+export const MAX_INTRO_GENRES = 5;
+export const MAX_INTRO_INTERESTS = 5;

@@ -2,7 +2,7 @@
 
 **What the database is.** Every table, column, enum, index and rule the requirements need, grouped by domain. [`coding-standards.md`](coding-standards.md) owns *how* each table is written in code; this document owns *what* exists. **This document wins** where they disagree.
 
-**Status.** Identity and auth (§4.1), reference data (§4.2), media (§4.3) and the musician profile (§4.4) are built; `users` lags this design (§8). Bands, activity and the public site are designed here and not yet implemented.
+**Status.** Identity and auth (§4.1), reference data (§4.2), media (§4.3), the musician profile (§4.4), bands with open positions, invitations and join requests (§4.5), and musician and band discovery (§6) are built; `users` lags this design (§8). Activity (§4.6) and the public site (§4.7) are designed here and not yet implemented.
 
 ## Contents
 
@@ -175,6 +175,7 @@ Seeded, admin-editable lists. Filters pass ids.
 |---|---|---|---|
 | `name` | `varchar(60)` | no | Vocals, Acoustic guitar, Tabla, Dotara, … `instruments_uq_name` unique `WHERE deleted_at IS NULL` |
 | `sort_order` | `smallint` | no | default 0. The order pickers list them in |
+| `family` | `smallint` | yes | `InstrumentFamily` (`VOCALS 1` · `GUITAR 2` · `BASS 3` · `DRUMS 4` · `KEYS 5` · `PERCUSSION 6` · `STRINGS 7` · `WINDS 8` · `ELECTRONIC 9`): the band section it plays in, for a band's lineup. Seeded; null for one added by hand and not yet classified ("Other"). Added by `add_family_to_instruments` |
 
 ⚠ **A band role is an instrument.** "Looking for a drummer" is `band_open_roles.instrument_id` = Drums, so a role search and an instrument search are the same query. "Vocals" is an instrument row for this reason.
 
@@ -436,7 +437,7 @@ Indexes: `_uq_musician_profile_id_collaboration_type` unique `WHERE deleted_at I
 | 2 Members | SoundCircle users (search) and people outside SoundCircle (name, role, photo) | `band_members` |
 | 3 Performance media | photos, video links | `portfolio_media` (`BAND`), `band_video_links` |
 
-**Invite Members** on a published band's page (owner only) opens the step 2 editor. Members are added to the line-up directly; the invitation-and-accept flow (`band_membership_requests`) is designed, not built.
+**Edit line-up** on a published band's page (owner only) opens the step 2 editor, which adds members directly. **Joining with consent** goes through `band_membership_requests`: the owner invites a musician from their public profile, or a musician asks to fill one of the band's open positions (`band_open_roles`). Both are answered on the dashboard.
 
 #### `bands` ✅ built
 
@@ -486,7 +487,40 @@ The line-up. A member is either a **SoundCircle user** (`user_id`; their name an
 | `band_members_ck_owner_is_user` | `CHECK (role <> 1 OR user_id IS NOT NULL)` |
 | `band_members_idx_user_id` | "My bands" on the dashboard |
 
-Up to 30 members, owner included, checked under a lock on the band row. **Member search** (`GET /bands/:id/member-candidates?q=`, 2+ characters, 10 results) matches users by name, never lists anyone already in the band, and returns only name, profile photo and instruments. The first design's `instrument_id`, `joined_at`, `left_at`, `leave_reason` and `removed_by_user_id` (membership history) are not built.
+Up to 30 members, owner included, checked under a lock on the band row. **Member search** (`GET /bands/:id/member-candidates?q=`, 2+ characters, 10 results) matches users by name, never lists anyone already in the band, and returns only name, profile photo and instruments. The first design's `left_at`, `leave_reason` and `removed_by_user_id` (membership history) are not built; `created_at` is the join date.
+
+**The membership experience** (`add_introduction_to_band_members`):
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `instrument_id` | `int` | yes | FK `instruments`. What they play: an accepted request's instrument, or matched from `position` for a member added by hand (`matchInstrument`: exact name, a catalogue name inside it, or a known word — "Keys" → Keyboard, "Backing vocals" → Vocals). Existing rows were backfilled the same way. The lineup falls back to a SoundCircle member's best profile instrument when it is null |
+| `welcomed_at` | `timestamptz` | yes | Null shows the member their welcome on their next visit to the band page — so it also reaches someone whose join request was accepted while they were away. The owner never gets one |
+| `intro` | `varchar(500)` | yes | Their introduction to the band; favourite genres and interests are child rows |
+| `introduced_at` | `timestamptz` | yes | |
+
+| Route (member of the band) | Does |
+|---|---|
+| `GET /bands/:id/dashboard` | The band's own dashboard: the band, plus (owner only) its 20 newest invitations and its pending join requests. 404 for a non-member |
+| `POST /bands/:id/members/me/welcome` | Marks the welcome seen (skip). Idempotent |
+| `PUT /bands/:id/members/me/introduction` | `{ intro?, genre_ids? (≤5), interests? (≤5) }`, each replaced whole; also marks the welcome seen |
+| `POST /bands/:id/leave` | Soft-removes the caller's row; the owner gets 400 |
+| `GET /bands/:slug/members/:memberId/card` | Public: the member's digital membership card. Its number is `SC-<band id, 4 digits>-<member id, 5 digits>`, unique by construction |
+
+`BandView` carries `lineup` (members per `InstrumentFamily`, the five core sections always present, `needed` from `OPEN` roles), `milestones` (all four, `achieved_at` when unlocked), each member's instrument, join date, introduction and card number, and `viewer.member_id` / `viewer.needs_welcome`.
+
+#### `band_member_genres` ✅ built · `band_member_interests` ✅ built
+
+A member's favourite genres (`genre_id`, FK `genres`) and musical interests (`interest`, `MusicalInterest`: `ORIGINALS 1` · `COVERS 2` · `SONGWRITING 3` · `LIVE_GIGS 4` · `RECORDING 5` · `JAMMING 6` · `TOURING 7` · `PRODUCTION 8` · `IMPROVISATION 9`) from their introduction. Both keyed by `band_member_id` (FK `band_members`), with `_uq_band_member_id_genre_id` / `_uq_band_member_id_interest` unique `WHERE deleted_at IS NULL`.
+
+#### `band_milestones` ✅ built
+
+| Column | Type | Null | Notes |
+|---|---|---|---|
+| `band_id` | `int` | no | FK `bands` |
+| `milestone` | `smallint` | no | `BandMilestone`: `FIRST_MEMBER 1` (2 members) · `THREE_MEMBERS 2` (3) · `FULL_BAND 3` (4, a four-piece) · `FIVE_MEMBERS 4` (5). Thresholds live in `band-milestone.util.ts` |
+| `achieved_at` | `timestamptz` | no | |
+
+`_uq_band_id_milestone` unique `WHERE deleted_at IS NULL`. **Unlocked in the same transaction that adds a member** (direct add, accepted invitation, accepted join request), after the insert and under the band's row lock, so the count is exact. **Never re-locked** when a member later leaves. The create migration backfilled existing bands.
 
 #### `band_video_links` ✅ built
 
@@ -500,9 +534,9 @@ Up to 30 members, owner included, checked under a lock on the band row. **Member
 
 Step 3 replaces the list (up to 10). Performance photos are `portfolio_media` with `owner_type = BAND` (up to 20).
 
-#### `band_open_roles`
+#### `band_open_roles` ✅ built
 
-The roles a band is looking for.
+The roles a band is looking for. The owner adds them (`POST /bands/:id/open-roles { instrument_id, description? }`) and takes them down (`DELETE /bands/:id/open-roles/:roleId` sets `CLOSED`) on the band's page; an accepted request for one sets `FILLED`. At most 10 open, and one open per instrument (service, under a lock on the band row). The band page, `GET /bands` and the musician's join dialog read only `OPEN` rows.
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
@@ -514,9 +548,16 @@ The roles a band is looking for.
 
 Index: `_idx_band_id_status`.
 
-#### `band_membership_requests`
+#### `band_membership_requests` ✅ built
 
-One table for **both directions**: invitations (band → musician) and join requests (musician → band). The dashboard's incoming/outgoing lists and the owner's join-request queue all read it.
+One table for **both directions**: invitations (band → musician) and join requests (musician → band). The dashboard's incoming/outgoing lists and the owner's join-request queue all read it. Routes: `/api/v1/membership-requests/*` (§8).
+
+| Rule | Where |
+|---|---|
+| Only the owner of a **published** band invites; never someone already in it. An invitation's `instrument_id` matching an open role ties it to that role (`open_role_id`) | service |
+| A join request names an **`OPEN` role whose instrument is on the requester's profile** (`musician_instruments`); members cannot send one | service |
+| The musician answers an invitation; the band owner answers a join request; only the sender withdraws (`CANCELLED`). Anyone else gets 404, a request already answered 409 | service, on the locked row |
+| At most one pending request per band and musician, whichever direction | `_uq_band_id_user_id_pending`; a lost race → 409 |
 
 | Column | Type | Null | Notes |
 |---|---|---|---|
@@ -530,7 +571,7 @@ One table for **both directions**: invitations (band → musician) and join requ
 | `sent_by_user_id` | `int` | no | FK `users`: the owner for an invitation, the musician for a request |
 | `responded_by_user_id` | `int` | yes | FK `users` |
 | `responded_at` | `timestamptz` | yes | |
-| `expires_at` | `timestamptz` | no | 30 days after send. A sweep marks overdue rows `EXPIRED` |
+| `expires_at` | `timestamptz` | no | 30 days after send. ⚠ No sweep yet: reads report a pending row past it as `EXPIRED`, answering one is 409, and a new send between the same pair marks it `EXPIRED` first |
 
 | Constraint | Definition |
 |---|---|
@@ -538,7 +579,7 @@ One table for **both directions**: invitations (band → musician) and join requ
 | `_idx_user_id_status` | musician's incoming invitations / outgoing requests |
 | `_idx_band_id_status` | owner's outgoing invitations / incoming requests |
 
-**Accepting** runs in one transaction: lock the request row → re-check `PENDING` → set `ACCEPTED` → insert `band_members` → fill `open_role_id` → insert the notification. A second accept loses the lock race and gets 409.
+**Accepting** runs in one transaction: lock the request row → re-check `PENDING` and not expired → lock the band → insert `band_members` (`MEMBER`, `position` = the instrument's name; skipped if they were added some other way meanwhile; 30-member cap) → fill `open_role_id` if still `OPEN` → set `ACCEPTED`. A second accept loses the lock race and gets 409. Inserting the notification waits for `notifications` (§4.6).
 
 | Viewer | Incoming | Outgoing |
 |---|---|---|
@@ -686,11 +727,28 @@ Computed on the fly, not stored: discoverable profiles that share a genre with t
 | `location_id` | §5.4, with `b` = that location's row. A band's search passes its own `location_id` |
 | `instrument_ids[]` | `EXISTS (musician_instruments … instrument_id IN (:ids))` |
 | `genre_ids[]` | `EXISTS (musician_genres … genre_id IN (:ids))` |
+| `looking_for_band` | `band_interest IN (OPEN_TO_EXISTING_BAND, NEW_BAND_ONLY)` |
 | `experience_levels[]` | `experience_level IN (:levels)` |
 | `availability[]` | `availability IN (:values)` |
 | `collaboration_types[]` | `EXISTS (musician_collaboration_types …)` |
 
-Sort: `newest` (`created_at`), `completion` (`profile_completion`). Default: `completion DESC`. Pagination is the shared `page_no` / `page_size` contract.
+Sort (`sort=`): `completion` (default, `profile_completion DESC`), `newest` (`created_at`), `name`. Always paginated (`page_no`, `page_size` ≤ 48, default 12); the answer is `{ items, meta: { total, page, page_size, total_pages } }`. The signed-in viewer is left out of their own results.
+
+✅ **Built:** `search`, `location_id`, `instrument_ids`, `genre_ids` (genres performed), `looking_for_band`. Id lists are comma-separated (`?instrument_ids=5,4`). Each card carries name, photo, instruments (best first), genres, and the widest location labelled. ⬜ Not built: `experience_levels`, `availability`, `collaboration_types` (no step collects them), and the `pg_trgm` index (a plain `ILIKE` is fast enough at this size).
+
+`GET /musicians/:slug` (public) is the profile §4.4 describes, masked: `phone` only when `phone_visibility = PUBLIC`, never the email, and `is_self` for the viewer.
+
+**`GET /bands`** (public) is the band directory: published bands only, newest first (`sort=name` for A–Z), same paging and answer shape.
+
+| Filter | Predicate |
+|---|---|
+| `search` | `bands.name ILIKE :q` |
+| `genre_ids` | `EXISTS (band_genres … genre_id IN (:ids))` |
+| `location_id` | §5.4 both ways, between the band's practice location and the filter |
+| `band_type` | `band_type = :type` |
+| `hiring_instrument_ids` | `EXISTS` an `OPEN` `band_open_roles` row for one of them |
+| `hiring` | `EXISTS` any `OPEN` role |
+| `member_user_id` | `EXISTS` a `band_members` row for that user (a musician's profile lists their bands with it) |
 
 ---
 
@@ -727,7 +785,10 @@ Sort: `newest` (`created_at`), `completion` (`profile_completion`). Default: `co
 | `instruments`, `genres` | ✅ entity, migration, repository, seeder, `GET /api/v1/instruments`, `GET /api/v1/genres` |
 | `musician_profiles`, `musician_genres`, `musician_instruments`, `musician_availability_slots`, `musician_band_experiences`, `musician_video_links` | ✅ entity, migration, repository, `/api/v1/profiles/me/*` (§4.4) |
 | `portfolio_media` | ✅ entity, migration, repository, Cloudinary signed upload (§4.3) |
-| `bands`, `band_genres`, `band_members`, `band_video_links` | ✅ entity, migration, repository, `/api/v1/bands/*` (§4.5): draft, members, media, publish, public `GET /bands/:slug` |
+| `bands`, `band_genres`, `band_members`, `band_video_links` | ✅ entity, migration, repository, `/api/v1/bands/*` (§4.5): draft, members, media, publish, public `GET /bands/:slug`, `GET /bands` (directory, §6), `GET /bands/me` |
+| `band_open_roles`, `band_membership_requests` | ✅ entity, migration, repository, open positions on `/bands/:id/open-roles`, joining on `/membership-requests/*` (§4.5) |
+| `band_milestones`, `band_member_genres`, `band_member_interests`, `instruments.family`, `band_members.instrument_id` / `welcomed_at` / `intro` | ✅ the membership experience (§4.5): lineup, milestones, welcome, introductions, membership cards, band dashboard |
+| musician discovery | ✅ `GET /musicians`, `GET /musicians/:slug` (§6) |
 | everything else in §4 | ⬜ designed, not built |
 
 **Built routes** (all public except `GET /auth/me`):
@@ -740,4 +801,11 @@ Sort: `newest` (`created_at`), `completion` (`profile_completion`). Default: `co
 | `POST /api/v1/auth/logout` | Clears both cookies. Public, so an expired session can still sign out. ⚠ Cannot revoke the refresh token (§4.1) |
 | `GET /api/v1/auth/me` | The signed-in user (`AuthBaseController`); 401 for a visitor |
 | `GET /api/v1/locations` | The location picker (§4.1). `level`, `parent_id`, `search` (name or `name_bn`), `page_no` / `page_size`, `sort_order_by[]`; default order is by name. `near_location_id` + `radius_km` (default 10, max 300) keeps places within that distance, nearest first, each with `distance_km`. Each row carries `type`, `child_count`, `latitude` and `longitude` |
+| `GET /api/v1/musicians` · `GET /api/v1/musicians/:slug` | Musician search and public profile (§6) |
+| `GET /api/v1/bands` · `GET /api/v1/bands/me` | Band directory (§6); every band I'm in, owned first, my drafts included (signed in) |
+| `POST /api/v1/bands/:id/open-roles` · `DELETE …/open-roles/:roleId` | Owner opens / closes a position (§4.5) |
+| `GET /api/v1/membership-requests/me` | Signed in. My pending invitations and the pending join requests to bands I own, plus the 20 newest I've sent of each kind |
+| `GET /api/v1/membership-requests/invite-options/:userId` | Signed in. My published bands, each with where it stands with that musician (`member` · `invited` · `requested` · null) and its open roles |
+| `POST /api/v1/membership-requests/invitations` · `/join-requests` | Signed in. Send an invitation `{ band_id, user_id, instrument_id?, message? }` or a join request `{ band_id, open_role_id, message? }` |
+| `POST /api/v1/membership-requests/:id/accept` · `/decline` · `/cancel` | Signed in. Answer or withdraw (§4.5 rules) |
 | `GET /api/v1/users` | Lists users. `search` (name), `row_status`, `page_no` / `page_size`, `sort_order_by[]` on `id`, `name`, `created_at`. `email` / `phone` are returned only when `PUBLIC`, because every caller is a visitor until auth lands |

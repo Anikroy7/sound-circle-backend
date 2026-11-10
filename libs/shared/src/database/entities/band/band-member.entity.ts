@@ -3,6 +3,7 @@ import { AbstractEntity } from "@soundcircle/shared/database/entities/abstract.e
 import { BandEntity } from "@soundcircle/shared/database/entities/band/band.entity";
 import { BandMemberRole } from "@soundcircle/shared/database/entities/band/enums/band.enum";
 import { UserEntity } from "@soundcircle/shared/database/entities/identity/user.entity";
+import { InstrumentEntity } from "@soundcircle/shared/database/entities/reference/instrument.entity";
 import { TABLE_BAND_MEMBERS } from "@soundcircle/shared/utils/util/database.table";
 
 /**
@@ -48,4 +49,26 @@ export class BandMemberEntity extends AbstractEntity {
 
   @Column({ type: "varchar", length: 500, nullable: true })
   photo_url: string | null;
+
+  /**
+   * What they play, from the catalogue: the accepted request's instrument, or matched from `position`
+   * for a member added by hand. Null when nothing matched. The lineup counts this.
+   */
+  @Column({ type: "int", nullable: true })
+  instrument_id: number | null;
+
+  @ManyToOne(() => InstrumentEntity)
+  @JoinColumn({ name: "instrument_id", foreignKeyConstraintName: `${TABLE_BAND_MEMBERS}_fk_instrument_id` })
+  instrument: InstrumentEntity;
+
+  /** When the member saw their welcome (and finished or skipped the introduction). Null shows it on their next visit. */
+  @Column({ type: "timestamptz", nullable: true })
+  welcomed_at: Date | null;
+
+  /** Their introduction to the band; favourite genres and interests are child rows. */
+  @Column({ type: "varchar", length: 500, nullable: true })
+  intro: string | null;
+
+  @Column({ type: "timestamptz", nullable: true })
+  introduced_at: Date | null;
 }

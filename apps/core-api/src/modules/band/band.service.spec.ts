@@ -57,6 +57,20 @@ const makeDeps = (): any => {
       verifyImage: jest.fn(async (_folder, publicId) => ({ public_id: publicId, secure_url: `https://res.cloudinary.com/x/${publicId}.webp` })),
       destroyImage: jest.fn(async () => undefined),
     },
+    bandOpenRoleRepository: { getOpenByBandId: jest.fn(async () => []) },
+    bandMembershipRequestRepository: { getPendingBetween: jest.fn(async () => []) },
+    musicianProfileRepository: { getByUserId: jest.fn(async () => undefined) },
+    musicianInstrumentRepository: { getByProfileId: jest.fn(async () => []) },
+    instrumentRepository: {
+      getExistingIds: jest.fn(async (ids) => ids.filter((id: number) => id <= 30)),
+      getAll: jest.fn(async () => [
+        { id: 5, name: "Drums", family: 4 },
+        { id: 6, name: "Keyboard", family: 5 },
+      ]),
+    },
+    bandMilestoneRepository: { getByBandId: jest.fn(async () => []) },
+    bandMemberGenreRepository: { getByMemberIds: jest.fn(async () => []) },
+    bandMemberInterestRepository: { getByMemberIds: jest.fn(async () => []) },
   };
 };
 
@@ -71,6 +85,14 @@ const makeService = (deps: any): BandService =>
     deps.genreRepository,
     deps.locationRepository,
     deps.mediaService,
+    deps.bandOpenRoleRepository,
+    deps.bandMembershipRequestRepository,
+    deps.musicianProfileRepository,
+    deps.musicianInstrumentRepository,
+    deps.instrumentRepository,
+    deps.bandMilestoneRepository,
+    deps.bandMemberGenreRepository,
+    deps.bandMemberInterestRepository,
   );
 
 const as = <T>(userId: number, fn: () => T): T =>
@@ -160,5 +182,92 @@ describe("BandService", () => {
     await expect(as(OWNER_ID, () => service.searchCandidates(3, "i"))).resolves.toEqual([]);
     expect(deps.bandMemberRepository.searchCandidates).not.toHaveBeenCalled();
     await expect(as(OWNER_ID, () => service.searchCandidates(3, "im"))).resolves.toHaveLength(1);
+  });
+
+  it("opens a position, but never a second one for the same instrument", async () => {
+    const deps = makeDeps();
+    await as(OWNER_ID, () => makeService(deps).addOpenRole(3, { instrument_id: 5, description: "  Weekly jams  " }));
+    expect(deps.saved).toContainEqual(
+      expect.objectContaining({ __entity: "BandOpenRoleEntity", band_id: 3, instrument_id: 5, description: "Weekly jams" }),
+    );
+
+    deps.manager.find.mockResolvedValueOnce([{ id: 1, band_id: 3, instrument_id: 5, status: 1 }]);
+    await expect(as(OWNER_ID, () => makeService(deps).addOpenRole(3, { instrument_id: 5 }))).rejects.toBeInstanceOf(ConflictException);
+  });
+
+  it("lets only the owner open a position", async () => {
+    const deps = makeDeps();
+    await expect(as(8, () => makeService(deps).addOpenRole(3, { instrument_id: 5 }))).rejects.toBeInstanceOf(NotFoundException);
+    expect(deps.saved).toHaveLength(0);
+  });
+
+  it("offers a viewer only the open positions their instruments can fill", async () => {
+    const deps = makeDeps();
+    deps.bandRepository.getPublishedBySlug = jest.fn(async () => ({ ...BAND, slug: "x-3", published_at: new Date() }));
+    deps.bandOpenRoleRepository.getOpenByBandId.mockResolvedValue([
+      { id: 21, instrument_id: 5, instrument_name: "Drums", description: null },
+      { id: 22, instrument_id: 4, instrument_name: "Bass guitar", description: null },
+    ]);
+    deps.musicianProfileRepository.getByUserId.mockResolvedValue({ id: 40 });
+    deps.musicianInstrumentRepository.getByProfileId.mockResolvedValue([{ instrument_id: 5 }]);
+
+    const band = await as(8, () => makeService(deps).getPublished("x-3"));
+    expect(band.viewer).toEqual({
+      signed_in: true,
+      is_member: false,
+      pending_request: null,
+      fillable_role_ids: [21],
+      member_id: null,
+      needs_welcome: false,
+    });
+
+    const visitor = await CustomRequest.run({ user_agent: "jest", ip_address: "127.0.0.1", user: null }, () => makeService(deps).getPublished("x-3"));
+    expect(visitor.viewer.signed_in).toBe(false);
+    expect(visitor.viewer.fillable_role_ids).toEqual([]);
+  });
+
+  it("records a hand-added member's instrument from their role and unlocks the first milestone", async () => {
+    const deps = makeDeps();
+    deps.manager.count.mockResolvedValueOnce(2).mockResolvedValueOnce(3);
+    await as(OWNER_ID, () => makeService(deps).addMember(3, { name: "Rafiq", position: "Keys" }));
+
+    expect(deps.saved).toContainEqual(expect.objectContaining({ __entity: "BandMemberEntity", name: "Rafiq", instrument_id: 6 }));
+    const milestones = deps.saved.find((row: any) => Array.isArray(row));
+    expect(milestones.map((row: any) => row.milestone)).toEqual([1, 2]);
+  });
+
+  it("welcomes only the member themselves, and keeps the first time", async () => {
+    const deps = makeDeps();
+    const mine: any = { id: 12, band_id: 3, user_id: 8, role: BandMemberRole.MEMBER, welcomed_at: null };
+    deps.manager.findOne.mockImplementation(async (_entity, { where }) => (where.user_id === 8 ? mine : null));
+
+    await as(8, () => makeService(deps).markWelcomed(3));
+    expect(mine.welcomed_at).toBeInstanceOf(Date);
+    const first = mine.welcomed_at;
+    await as(8, () => makeService(deps).markWelcomed(3));
+    expect(mine.welcomed_at).toBe(first);
+
+    await expect(as(99, () => makeService(deps).markWelcomed(3))).rejects.toBeInstanceOf(NotFoundException);
+  });
+
+  it("saves an introduction, refusing unknown genres", async () => {
+    const deps = makeDeps();
+    const mine: any = { id: 12, band_id: 3, user_id: 8, role: BandMemberRole.MEMBER, welcomed_at: null };
+    deps.manager.findOne.mockImplementation(async () => mine);
+
+    await as(8, () => makeService(deps).saveIntroduction(3, { intro: "  Hi all  ", genre_ids: [1], interests: [4] }));
+    expect(mine).toEqual(expect.objectContaining({ intro: "Hi all", introduced_at: expect.any(Date), welcomed_at: expect.any(Date) }));
+    expect(deps.saved).toContainEqual([expect.objectContaining({ __entity: "BandMemberGenreEntity", band_member_id: 12, genre_id: 1 })]);
+    expect(deps.saved).toContainEqual([expect.objectContaining({ __entity: "BandMemberInterestEntity", interest: 4 })]);
+
+    deps.genreRepository.getExistingIds.mockResolvedValueOnce([]);
+    await expect(as(8, () => makeService(deps).saveIntroduction(3, { genre_ids: [999] }))).rejects.toBeInstanceOf(BadRequestException);
+  });
+
+  it("never lets the owner leave", async () => {
+    const deps = makeDeps();
+    deps.manager.findOne.mockImplementation(async () => ({ id: 10, band_id: 3, user_id: OWNER_ID, role: BandMemberRole.OWNER }));
+    await expect(as(OWNER_ID, () => makeService(deps).leave(3))).rejects.toBeInstanceOf(BadRequestException);
+    expect(deps.manager.softRemove).not.toHaveBeenCalled();
   });
 });

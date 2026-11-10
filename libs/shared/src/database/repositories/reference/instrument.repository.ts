@@ -9,7 +9,7 @@ export class InstrumentRepository extends Repository<InstrumentEntity> {
     super(repository.target, repository.manager, repository.queryRunner);
   }
 
-  LIST_SELECTED_COLUMNS: string[] = ["instruments.id as id", "instruments.name as name"];
+  LIST_SELECTED_COLUMNS: string[] = ["instruments.id as id", "instruments.name as name", "instruments.family as family"];
 
   /** The whole catalogue in picker order. Small and seeded, so never paginated. */
   async getAll(): Promise<InstrumentEntity[]> {

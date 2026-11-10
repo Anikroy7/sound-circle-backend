@@ -29,3 +29,11 @@ export enum AppEnvironment {
   STAGING = "STAGING",
   PRODUCTION = "PRODUCTION",
 }
+
+/** `GET /musicians?sort=`: best-filled profiles first by default. Not persisted. */
+export const MUSICIAN_SORTS = ["completion", "newest", "name"] as const;
+export type MusicianSort = (typeof MUSICIAN_SORTS)[number];
+
+/** `GET /bands?sort=`: newest published first by default. Not persisted. */
+export const BAND_SORTS = ["newest", "name"] as const;
+export type BandSort = (typeof BAND_SORTS)[number];
