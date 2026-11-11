@@ -324,11 +324,12 @@ export class MusicianProfileService {
   }
 
   /* ------------------------------------------------------------------ step 8: band experiences */
+  // Bands share the last page of setup with the gallery, so they can be added once the gallery opens (step 6 done).
 
   async createBandExperience(reqDto: BandExperienceDto): Promise<MusicianProfileView> {
     const links = parseVideoLinks(reqDto.video_urls, MAX_BAND_EXPERIENCE_VIDEOS);
 
-    await this.withProfile(STEP.BAND_EXPERIENCE, async (manager, profile) => {
+    await this.withProfile(STEP.GALLERY, async (manager, profile) => {
       const count = await manager.count(MusicianBandExperienceEntity, { where: { musician_profile_id: profile.id } });
       if (count >= MAX_BAND_EXPERIENCES) throw new BadRequestException(`You can add up to ${MAX_BAND_EXPERIENCES} bands`);
 
@@ -347,7 +348,7 @@ export class MusicianProfileService {
   async updateBandExperience(id: number, reqDto: BandExperienceDto): Promise<MusicianProfileView> {
     const links = parseVideoLinks(reqDto.video_urls, MAX_BAND_EXPERIENCE_VIDEOS);
 
-    await this.withProfile(STEP.BAND_EXPERIENCE, async (manager, profile) => {
+    await this.withProfile(STEP.GALLERY, async (manager, profile) => {
       const experience = await this.ownExperience(manager, profile, id);
       Object.assign(experience, { band_name: reqDto.band_name, role: reqDto.role, is_current: reqDto.is_current });
       await manager.save(experience);
@@ -360,7 +361,7 @@ export class MusicianProfileService {
   async removeBandExperience(id: number): Promise<MusicianProfileView> {
     let removedMedia: PortfolioMediaEntity[] = [];
 
-    await this.withProfile(STEP.BAND_EXPERIENCE, async (manager, profile) => {
+    await this.withProfile(STEP.GALLERY, async (manager, profile) => {
       const experience = await this.ownExperience(manager, profile, id);
       await this.softRemoveAll(manager, await manager.find(MusicianVideoLinkEntity, { where: { band_experience_id: experience.id } }));
       removedMedia = await this.mediaService.softRemoveForOwner(manager, MediaOwnerType.BAND_EXPERIENCE, experience.id);

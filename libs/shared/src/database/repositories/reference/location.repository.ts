@@ -66,6 +66,13 @@ export class LocationRepository extends Repository<LocationEntity> {
 
     builder.sortOrder(filters?.sort_order_by);
     if (near) builder.addOrderBy("ST_Distance(locations.center_point, origin.center_point)", "ASC");
+    // A search ranks names that start with the text first, then wider places before narrower ones.
+    if (filters?.search) {
+      builder
+        .addOrderBy("CASE WHEN locations.name ILIKE :prefix OR locations.name_bn ILIKE :prefix THEN 0 ELSE 1 END", "ASC")
+        .addOrderBy("locations.level", "ASC")
+        .setParameter("prefix", `${filters.search}%`);
+    }
     builder.addOrderBy("locations.name", "ASC");
 
     // After `sortOrder()`: expressions it cannot parse into its allowlist.
